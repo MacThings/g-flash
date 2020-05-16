@@ -267,4 +267,17 @@ function _check_programmer()
   fi
 }
 
+function _detect_programmer()
+{
+  "$ScriptPath"/../bin/lsusb > /private/tmp/usbdetection
+  devices=$( cat /private/tmp/usbdetection )
+  rm /private/tmp/usbdetection
+  
+  echo "$devices" |grep "1a86:5512"
+  if [[ "$?" = "0" ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "1"
+  fi
+  
+}
+
 $1

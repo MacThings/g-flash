@@ -21,6 +21,8 @@ class MainWindow: NSViewController {
     
     @IBOutlet weak var get_chip_type_text: NSTextField!
     
+    @IBOutlet weak var devices_pulldown: NSPopUpButton!
+    
     @IBOutlet weak var programmer_detect_text: NSTextField!
     @IBOutlet weak var programmer_green_dot: NSImageView!
     @IBOutlet weak var programmer_red_dot: NSImageView!
@@ -42,6 +44,15 @@ class MainWindow: NSViewController {
         self.syncShellExec(path: self.scriptPath, args: ["_list_usb_devices"])
     }
     
+    @IBAction func detect_devices(_ sender: Any) {
+        self.programmer_orange_dot.isHidden=false
+        self.programmer_progress_wheel.isHidden=false
+        self.programmer_progress_wheel?.startAnimation(self);
+        self.syncShellExec(path: self.scriptPath, args: ["_detect_programmer"])
+        programmer_chooser("")
+        self.programmer_progress_wheel?.stopAnimation(self);
+        self.programmer_progress_wheel.isHidden=true
+    }
     
     @IBAction func get_chip_type(_ sender: Any) {
         self.syncShellExec(path: self.scriptPath, args: ["_get_chip_type"])

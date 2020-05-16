@@ -825,7 +825,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-AW-ArN">
-                                <rect key="frame" x="563" y="441" width="130" height="18"/>
+                                <rect key="frame" x="18" y="421" width="130" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Verify saved ROM" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tOv-Pr-H4v">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -836,7 +836,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-qq-HZ2">
-                                <rect key="frame" x="563" y="421" width="178" height="18"/>
+                                <rect key="frame" x="152" y="421" width="178" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Verbose complete Output" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ufz-GF-7vE">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -914,10 +914,22 @@ Cg
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgm-i3-gDq">
+                                <rect key="frame" x="564" y="435" width="122" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Autodetect" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="RuQ-Hg-Xk0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="miniSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="detect_devices:" target="XfG-lQ-9wD" id="ksE-KP-x2z"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="content_scroller" destination="kng-oJ-uW5" id="MkL-jk-EPv"/>
+                        <outlet property="devices_pulldown" destination="b4Z-40-q16" id="Fty-Th-usu"/>
                         <outlet property="erase_eeprom_button" destination="BE9-U9-p1u" id="y60-fI-gtc"/>
                         <outlet property="get_chip_type_button" destination="lR3-rC-D2t" id="qDO-O6-264"/>
                         <outlet property="get_chip_type_text" destination="aEf-zU-PgD" id="RoH-jV-e1k"/>
