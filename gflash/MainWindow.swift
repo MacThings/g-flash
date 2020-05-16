@@ -236,7 +236,7 @@ class MainWindow: NSViewController {
     
     func save_rom(sender: AnyObject) {
           let dialog = NSSavePanel();
-          dialog.title                   = "Choose a Filepath (.bin)";
+          dialog.title                   = NSLocalizedString("Choose a Filepath (.bin)", comment: "");
           dialog.nameFieldStringValue    = "ROM.bin";
           dialog.showsResizeIndicator    = true;
           dialog.showsHiddenFiles        = false;
@@ -258,7 +258,7 @@ class MainWindow: NSViewController {
 
     func write_rom(sender: AnyObject) {
           let dialog = NSOpenPanel();
-          dialog.title                   = "Choose a ROM File";
+          dialog.title                   = NSLocalizedString("Choose a ROM File", comment: "");
           dialog.showsResizeIndicator    = true;
           dialog.showsHiddenFiles        = false;
           dialog.canCreateDirectories    = false;
