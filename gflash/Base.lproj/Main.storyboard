@@ -707,11 +707,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainWindow" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="809" height="434"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKg-3a-ZRO">
-                                <rect key="frame" x="155" y="203" width="81" height="32"/>
+                                <rect key="frame" x="155" y="367" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VFl-2j-4lx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -722,19 +722,31 @@
                                 </connections>
                             </button>
                             <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kng-oJ-uW5" userLabel="Content Scroller">
-                                <rect key="frame" x="50" y="55" width="384" height="135"/>
+                                <rect key="frame" x="50" y="55" width="595" height="284"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="b2u-rT-mct">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="135"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="595" height="284"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="TVA-gz-7F6" userLabel="Output Window">
-                                            <rect key="frame" x="0.0" y="0.0" width="384" height="135"/>
+                                        <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" smartInsertDelete="YES" id="TVA-gz-7F6" userLabel="Output Window">
+                                            <rect key="frame" x="0.0" y="0.0" width="595" height="284"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="384" height="135"/>
-                                            <size key="maxSize" width="384" height="10000000"/>
+                                            <size key="minSize" width="595" height="284"/>
+                                            <size key="maxSize" width="595" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment>
+                                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" metaFont="system" size="19"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
@@ -757,7 +769,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="239.5" y="737"/>
         </scene>
     </scenes>
 </document>

@@ -13,16 +13,10 @@ class MainWindow: NSViewController {
 
     @IBOutlet var output_window: NSTextView!
     @IBOutlet weak var content_scroller: NSScrollView!
+    
+    let userDesktopDirectory:String = NSHomeDirectory()
  
     let scriptPath = Bundle.main.path(forResource: "/script/script", ofType: "command")!
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-  }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
 
     @IBAction func test(_ sender: Any) {
         self.syncShellExec(path: self.scriptPath, args: ["_loaded"])
@@ -30,6 +24,19 @@ class MainWindow: NSViewController {
     
     
     func syncShellExec(path: String, args: [String] = []) {
+        let theme_check = UserDefaults.standard.string(forKey: "System Theme")
+        if theme_check == "Dark" {
+            output_window.textColor = NSColor.white
+        } else {
+            output_window.textColor = NSColor.black
+        }
+        
+        let fontsize = CGFloat(15)
+        let fontfamily = "Menlo"
+        output_window.font = NSFont(name: fontfamily, size: fontsize)
+        
+        output_window.textStorage?.mutableString.setString("")
+
         let process            = Process()
         process.launchPath     = "/bin/bash"
         process.arguments      = [path] + args
@@ -59,4 +66,5 @@ class MainWindow: NSViewController {
         process.waitUntilExit() // Wait for process to terminate.
     }
 
+        
 }
