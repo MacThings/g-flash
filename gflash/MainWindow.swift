@@ -70,9 +70,9 @@ class MainWindow: NSViewController {
         }
         
     }
+
     
     @IBAction func write_rom(_ sender: Any) {
-        
         UserDefaults.standard.removeObject(forKey: "Successful")
         let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
         if programmer_check == "0" {
@@ -86,21 +86,37 @@ class MainWindow: NSViewController {
         if success_check == true {
             successful()
         } else {
- 
-            
             if chip_type_mismatch == true {
                 wrong_type_entered()
             } else {
                 not_successful()
             }
         }
-
-        
-        
+ 
         
         
     }
     
+    @IBAction func erase_eeprom(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
+        if programmer_check == "0" {
+            programmer_not_choosed()
+            return
+        }
+        self.syncShellExec(path: self.scriptPath, args: ["_erase_eeprom"])
+        let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
+        let success_check = UserDefaults.standard.bool(forKey: "Successful")
+        if success_check == true {
+            successful()
+        } else {
+            if chip_type_mismatch == true {
+                wrong_type_entered()
+            } else {
+                not_successful()
+            }
+        }
+    }
     
     @IBAction func programmer_chooser(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "Chip Type Mismatch")
@@ -272,13 +288,13 @@ class MainWindow: NSViewController {
         alert.messageText = NSLocalizedString("Multiple chip types found!", comment: "")
         alert.informativeText = NSLocalizedString(chip_types! + " chip types has been recognized. Please enter the correct value in the input field that just appeared.", comment: "")
         alert.alertStyle = .warning
-        let Button = NSLocalizedString("Bummer", comment: "")
+        let Button = NSLocalizedString("I understand", comment: "")
         alert.addButton(withTitle: Button)
         alert.runModal()
     }
     
     func wrong_type_entered (){
-        let chip_type = UserDefaults.standard.string(forKey: "Chip Type")
+        //let chip_type = UserDefaults.standard.string(forKey: "Chip Type")
         self.get_chip_type_text.isHidden = false
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Wrong chip type entered!", comment: "")

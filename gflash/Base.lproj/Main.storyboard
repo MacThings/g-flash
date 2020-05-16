@@ -855,7 +855,7 @@ Cg
                                 </connections>
                             </textField>
                             <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1p-64-d2B">
-                                <rect key="frame" x="293" y="394" width="144" height="32"/>
+                                <rect key="frame" x="400" y="394" width="144" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="List USB Devices" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="0OT-jf-NVF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -863,6 +863,39 @@ Cg
                                 </buttonCell>
                                 <connections>
                                     <action selector="list_usb_devices:" target="XfG-lQ-9wD" id="Apu-qm-k1b"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-AW-ArN">
+                                <rect key="frame" x="277" y="339" width="130" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Verify saved ROM" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tOv-Pr-H4v">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="4Qo-6o-qbk" name="value" keyPath="values.Verify saved ROM" id="w3K-d9-Eid"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-qq-HZ2">
+                                <rect key="frame" x="106" y="310" width="178" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Verbose complete Output" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ufz-GF-7vE">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="4Qo-6o-qbk" name="value" keyPath="values.Verbose" id="Gye-U3-ngX"/>
+                                </connections>
+                            </button>
+                            <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BE9-U9-p1u">
+                                <rect key="frame" x="275" y="394" width="125" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Erase EEprom" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="xO4-GM-CGG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="erase_eeprom:" target="XfG-lQ-9wD" id="aUS-p1-FTb"/>
                                 </connections>
                             </button>
                         </subviews>
