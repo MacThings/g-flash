@@ -22,6 +22,7 @@ class MainWindow: NSViewController {
     @IBOutlet weak var get_chip_type_text: NSTextField!
     
     @IBOutlet weak var devices_pulldown: NSPopUpButton!
+    @IBOutlet weak var devices_empty_entry: NSMenuItem!
     
     @IBOutlet weak var programmer_detect_text: NSTextField!
     @IBOutlet weak var programmer_green_dot: NSImageView!
@@ -152,6 +153,7 @@ class MainWindow: NSViewController {
     }
     
     @IBAction func programmer_chooser(_ sender: Any) {
+        self.devices_empty_entry.isHidden=true
         UserDefaults.standard.removeObject(forKey: "Chip Type Mismatch")
         UserDefaults.standard.removeObject(forKey: "Force Chip Type")
         self.programmer_detect_text.stringValue = NSLocalizedString("Checking connected USB Device", comment: "")

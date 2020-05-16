@@ -747,12 +747,12 @@
                                     <menu key="menu" id="Qmg-9Y-DdC">
                                         <items>
                                             <menuItem title="Choose Programmer ..." state="on" id="Vid-Mc-Omj"/>
-                                            <menuItem title="1a86:5512 - CH341a_Spi " tag="1" id="92M-XG-3Xr"/>
-                                            <menuItem title="1443:0007 - Digilent_Spi" tag="2" id="zGq-P8-8en"/>
-                                            <menuItem title="04d8:0033 - Pickit2_Spi" tag="3" id="YN2-og-Scm"/>
-                                            <menuItem title="09fb:6001 - USB-Blaster" tag="4" id="OTN-mh-Wi1"/>
-                                            <menuItem title="10c4:ea60 - Developerbox" tag="5" id="qWB-st-pRW"/>
-                                            <menuItem title="0483:dada - Dediprog" tag="6" id="H9b-b5-XhB"/>
+                                            <menuItem title="CH341A" tag="1" toolTip="1a86:5512" id="92M-XG-3Xr"/>
+                                            <menuItem title="Development board JTAG" tag="2" toolTip="1443:0007" id="zGq-P8-8en"/>
+                                            <menuItem title="PICkit 2" tag="3" toolTip="04d8:0033" id="YN2-og-Scm"/>
+                                            <menuItem title="USB-Blaster" tag="4" toolTip="09fb:6001" id="OTN-mh-Wi1"/>
+                                            <menuItem title="CP2102N USB to UART Bridge Controller" tag="5" toolTip="10c4:ea60" id="qWB-st-pRW"/>
+                                            <menuItem title="SF100/SF200/SF600" tag="6" toolTip="0483:dada" id="H9b-b5-XhB"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
@@ -929,6 +929,7 @@ Cg
                     </view>
                     <connections>
                         <outlet property="content_scroller" destination="kng-oJ-uW5" id="MkL-jk-EPv"/>
+                        <outlet property="devices_empty_entry" destination="Vid-Mc-Omj" id="Yic-8O-4Uv"/>
                         <outlet property="devices_pulldown" destination="b4Z-40-q16" id="Fty-Th-usu"/>
                         <outlet property="erase_eeprom_button" destination="BE9-U9-p1u" id="y60-fI-gtc"/>
                         <outlet property="get_chip_type_button" destination="lR3-rC-D2t" id="qDO-O6-264"/>
