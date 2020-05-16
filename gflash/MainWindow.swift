@@ -15,7 +15,10 @@ class MainWindow: NSViewController {
     @IBOutlet weak var content_scroller: NSScrollView!
     
     @IBOutlet weak var save_rom_button: NSButton!
-    
+    @IBOutlet weak var write_rom_button: NSButton!
+    @IBOutlet weak var get_chip_type_button: NSButton!
+   
+    @IBOutlet weak var get_chip_type_text: NSTextField!
     
     @IBOutlet weak var programmer_detect_text: NSTextField!
     @IBOutlet weak var programmer_green_dot: NSImageView!
@@ -38,6 +41,18 @@ class MainWindow: NSViewController {
     }
     
     
+    @IBAction func get_chip_type(_ sender: Any) {
+        self.syncShellExec(path: self.scriptPath, args: ["_get_chip_type"])
+        let chiptypes_check = UserDefaults.standard.string(forKey: "Chip Types")
+        if chiptypes_check == "0" {
+            no_chip_found()
+            return
+        } else if chiptypes_check != "1" {
+            multiple_types()
+        }
+    }
+    
+    
     @IBAction func save_rom(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "Successful")
         let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
@@ -56,8 +71,40 @@ class MainWindow: NSViewController {
         
     }
     
+    @IBAction func write_rom(_ sender: Any) {
+        
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
+        if programmer_check == "0" {
+            programmer_not_choosed()
+            return
+        }
+        write_rom(sender: "" as AnyObject)
+        self.syncShellExec(path: self.scriptPath, args: ["_write_rom"])
+        let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
+        let success_check = UserDefaults.standard.bool(forKey: "Successful")
+        if success_check == true {
+            successful()
+        } else {
+ 
+            
+            if chip_type_mismatch == true {
+                wrong_type_entered()
+            } else {
+                not_successful()
+            }
+        }
+
+        
+        
+        
+        
+    }
+    
     
     @IBAction func programmer_chooser(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "Chip Type Mismatch")
+        UserDefaults.standard.removeObject(forKey: "Force Chip Type")
         self.programmer_detect_text.stringValue = NSLocalizedString("Checking connected USB Devices", comment: "")
         self.programmer_progress_wheel.isHidden = false
         self.programmer_orange_dot.isHidden = true
@@ -72,12 +119,16 @@ class MainWindow: NSViewController {
             self.programmer_green_dot.isHidden = false
             self.programmer_detect_text.stringValue = NSLocalizedString("Device found", comment: "")
             self.save_rom_button.isEnabled = true
+            self.write_rom_button.isEnabled = true
+            self.get_chip_type_button.isEnabled = true
         } else {
             self.programmer_orange_dot.isHidden = true
             self.programmer_red_dot.isHidden = false
             self.programmer_green_dot.isHidden = true
             self.programmer_detect_text.stringValue = NSLocalizedString("Device not found", comment: "")
             self.save_rom_button.isEnabled = false
+            self.write_rom_button.isEnabled = false
+            self.get_chip_type_button.isEnabled = false
         }
 
         self.programmer_progress_wheel.isHidden = true
@@ -151,7 +202,28 @@ class MainWindow: NSViewController {
               return
           }
       }
-       
+
+    func write_rom(sender: AnyObject) {
+          let dialog = NSOpenPanel();
+          dialog.title                   = "Choose a ROM File";
+          dialog.showsResizeIndicator    = true;
+          dialog.showsHiddenFiles        = false;
+          dialog.canCreateDirectories    = false;
+          dialog.allowedFileTypes        = ["bin"];
+          
+          if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+              let result = dialog.url // Pathname of the file
+              
+              if (result != nil) {
+                  let path = result!.path
+                  let rompath = (path as String)
+                  UserDefaults.standard.set(rompath, forKey: "ROM Readpath")
+              }
+          } else {
+              return
+          }
+      }
+    
     func programmer_not_choosed (){
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("You did not have selected any Programmer!", comment: "")
@@ -176,6 +248,41 @@ class MainWindow: NSViewController {
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("An Error has occured!", comment: "")
         alert.informativeText = NSLocalizedString("Something went wrong. Please try again.", comment: "")
+        alert.alertStyle = .warning
+        let Button = NSLocalizedString("Bummer", comment: "")
+        alert.addButton(withTitle: Button)
+        alert.runModal()
+    }
+ 
+    func no_chip_found (){
+        let alert = NSAlert()
+        alert.messageText = NSLocalizedString("Cannot detect any chip!", comment: "")
+        alert.informativeText = NSLocalizedString("Make sure the pliers is properly seated on the chip.", comment: "")
+        alert.alertStyle = .warning
+        let Button = NSLocalizedString("Bummer", comment: "")
+        alert.addButton(withTitle: Button)
+        alert.runModal()
+    }
+ 
+    func multiple_types (){
+        UserDefaults.standard.set(true, forKey: "Force Chip Type")
+        let chip_types = UserDefaults.standard.string(forKey: "Chip Types")
+        self.get_chip_type_text.isHidden = false
+        let alert = NSAlert()
+        alert.messageText = NSLocalizedString("Multiple chip types found!", comment: "")
+        alert.informativeText = NSLocalizedString(chip_types! + " chip types has been recognized. Please enter the correct value in the input field that just appeared.", comment: "")
+        alert.alertStyle = .warning
+        let Button = NSLocalizedString("Bummer", comment: "")
+        alert.addButton(withTitle: Button)
+        alert.runModal()
+    }
+    
+    func wrong_type_entered (){
+        let chip_type = UserDefaults.standard.string(forKey: "Chip Type")
+        self.get_chip_type_text.isHidden = false
+        let alert = NSAlert()
+        alert.messageText = NSLocalizedString("Wrong chip type entered!", comment: "")
+        alert.informativeText = NSLocalizedString("No or not the correct chip type was entered in the input field. Please try it again.", comment: "")
         alert.alertStyle = .warning
         let Button = NSLocalizedString("Bummer", comment: "")
         alert.addButton(withTitle: Button)

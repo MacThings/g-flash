@@ -24,7 +24,8 @@ function _helpDefaultRead()
 
 function _set_programmer()
 {
-  rom_path=$( _helpDefaultRead "ROM Savepath" )
+  rom_savepath=$( _helpDefaultRead "ROM Savepath" )
+  rom_readpath=$( _helpDefaultRead "ROM Readpath" )
   programmer=$( _helpDefaultRead "Programmer" )
   if [[ $programmer = "1" ]]; then
     programmer="ch341a_spi"
@@ -51,12 +52,43 @@ function _not_successful()
   defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Successful" -bool false
 }
 
+function _get_chip_type()
+{
+  _set_programmer
+  cd "$ScriptPath"/../bin/
+  ./flashrom --programmer "$programmer" | grep -w "Found" > /private/tmp/flashtemp
+  
+  count=$( cat /private/tmp/flashtemp |wc -l |xargs )
+  
+  if [[ "$count" = 0 ]]; then
+    _not_successful
+  fi
+  
+  if [[ "$count" = 1 ]]; then
+    _successful
+    cat /private/tmp/flashtemp
+  fi
+  
+  if [[ "$count" -gt 1 ]]; then
+    _successful
+    cat /private/tmp/flashtemp
+    echo " "
+    echo -e "\n#################### Attention! ###################"
+    echo -e "Notice that it finds multiple versions of the chip.\nIf you are able to read the print on your chips,\nthere are numbers that match the output of the\nabove command. Mine had “MX25L3206E” printed on it."
+    echo "###################################################"
+    echo " "
+  fi
+
+  defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Types" "5"
+ 
+}
+
 function _save_rom()
 {
   _set_programmer
-  echo -e "Writing ROM to: $rom_path\n"
+  echo -e "Saving ROM to: $rom_savepath\n"
   cd "$ScriptPath"/../bin/
-  ./flashrom --programmer "$programmer" -r "$rom_path"
+  ./flashrom --programmer "$programmer" -r "$rom_savepath"
   if [[ "$?" = "0" ]]; then
     _successful
   else
@@ -64,9 +96,48 @@ function _save_rom()
   fi
 }
 
+function _write_rom()
+{
+  _set_programmer
+  
+  verify_chip_type=$( defaults read "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type" )
+  chip_types=$( defaults read "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Types" )
+
+    if [[ "$chip_types" -gt "1" ]]; then
+        echo -e "Flashing ROM from: $rom_readpath\n"
+        cd "$ScriptPath"/../bin/
+        if [[ "$chip_types" -gt "1" ]]; then
+            ./flashrom --programmer "$programmer" -w "$rom_readpath" -c "$verify_chip_type"
+            if [[ "$?" = "0" ]]; then
+              defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool false
+              _successful
+            else
+              defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool true
+              _not_successful
+            fi
+        else
+            defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool true
+            _not_successful
+        fi
+    else
+    
+            echo -e "Flashing ROM from: $rom_readpath\n"
+            cd "$ScriptPath"/../bin/
+            ./flashrom --programmer "$programmer" -w "$rom_readpath"
+            if [[ "$?" = "0" ]]; then
+              defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool false
+              _successful
+            else
+              defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool true
+              _not_successful
+            fi
+    fi
+
+}
+
 function _list_usb_devices()
 {
-  "$ScriptPath"/../bin/lsusb
+  "$ScriptPath"/../bin/lsusb 
 }
 
 function _check_programmer()

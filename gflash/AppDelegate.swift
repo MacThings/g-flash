@@ -20,11 +20,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         check_theme()
         UserDefaults.standard.set("0", forKey: "Programmer")
         UserDefaults.standard.removeObject(forKey: "Programmer found")
+        
+        //let force_chip_type = UserDefaults.standard.string(forKey: "Force Chip Type")
+        //if force_chip_type == nil{
+            UserDefaults.standard.set(false, forKey: "Force Chip Type")
+        //}
         defaults.synchronize()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+        UserDefaults.standard.removeObject(forKey: "Successful")
     }
 
     func check_theme() -> Void {
