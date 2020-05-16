@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A163B3C246FF766007DB90A /* MainWindow.swift */; };
+		2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */; };
+		2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC297B246FF35D00ED7AD1 /* ViewController.swift */; };
+		2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */; };
+		2AEC2981246FF35E00ED7AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297F246FF35E00ED7AD1 /* Main.storyboard */; };
+		2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298D246FF45A00ED7AD1 /* flashrom */; };
+		2AEC2992246FF47F00ED7AD1 /* lib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298C246FF45A00ED7AD1 /* lib */; };
+		2AEC2996246FF52700ED7AD1 /* script.command in Copy 'script' */ = {isa = PBXBuildFile; fileRef = 2AEC2993246FF50700ED7AD1 /* script.command */; };
+		EAC50701F65FEECFAB8DC503 /* Pods_G_Flash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A87F8BF4E5A2DAAF39FA2C /* Pods_G_Flash.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2AEC2990246FF46900ED7AD1 /* Copy 'bin' */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = bin;
+			dstSubfolderSpec = 7;
+			files = (
+				2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */,
+				2AEC2992246FF47F00ED7AD1 /* lib in Copy 'bin' */,
+			);
+			name = "Copy 'bin'";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AEC2995246FF51600ED7AD1 /* Copy 'script' */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = script;
+			dstSubfolderSpec = 7;
+			files = (
+				2AEC2996246FF52700ED7AD1 /* script.command in Copy 'script' */,
+			);
+			name = "Copy 'script'";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A163B3C246FF766007DB90A /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		2AEC2976246FF35D00ED7AD1 /* G-Flash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Flash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2AEC297B246FF35D00ED7AD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AEC2980246FF35E00ED7AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AEC2982246FF35E00ED7AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AEC2983246FF35E00ED7AD1 /* gflash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gflash.entitlements; sourceTree = "<group>"; };
+		2AEC298C246FF45A00ED7AD1 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
+		2AEC298D246FF45A00ED7AD1 /* flashrom */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = flashrom; sourceTree = "<group>"; };
+		2AEC2993246FF50700ED7AD1 /* script.command */ = {isa = PBXFileReference; lastKnownFileType = text; path = script.command; sourceTree = "<group>"; };
+		7FD7536265EA205E4E3BD7C9 /* Pods-G-Flash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G-Flash.debug.xcconfig"; path = "Target Support Files/Pods-G-Flash/Pods-G-Flash.debug.xcconfig"; sourceTree = "<group>"; };
+		83A87F8BF4E5A2DAAF39FA2C /* Pods_G_Flash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G_Flash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A81C7CA8CC6B505E5169E7FE /* Pods-G-Flash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G-Flash.release.xcconfig"; path = "Target Support Files/Pods-G-Flash/Pods-G-Flash.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AEC2973246FF35D00ED7AD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAC50701F65FEECFAB8DC503 /* Pods_G_Flash.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AEC296D246FF35D00ED7AD1 = {
+			isa = PBXGroup;
+			children = (
+				2AEC2978246FF35D00ED7AD1 /* gflash */,
+				2AEC2977246FF35D00ED7AD1 /* Products */,
+				7E1B9B50F48CDE7E12F6E559 /* Pods */,
+				BEB1FBAC84E74CD142F4CADE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2AEC2977246FF35D00ED7AD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AEC2976246FF35D00ED7AD1 /* G-Flash.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AEC2978246FF35D00ED7AD1 /* gflash */ = {
+			isa = PBXGroup;
+			children = (
+				2AEC298B246FF43B00ED7AD1 /* script */,
+				2AEC298A246FF43300ED7AD1 /* bin */,
+				2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */,
+				2AEC297B246FF35D00ED7AD1 /* ViewController.swift */,
+				2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */,
+				2AEC297F246FF35E00ED7AD1 /* Main.storyboard */,
+				2A163B3C246FF766007DB90A /* MainWindow.swift */,
+				2AEC2982246FF35E00ED7AD1 /* Info.plist */,
+				2AEC2983246FF35E00ED7AD1 /* gflash.entitlements */,
+			);
+			path = gflash;
+			sourceTree = "<group>";
+		};
+		2AEC298A246FF43300ED7AD1 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				2AEC298D246FF45A00ED7AD1 /* flashrom */,
+				2AEC298C246FF45A00ED7AD1 /* lib */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		2AEC298B246FF43B00ED7AD1 /* script */ = {
+			isa = PBXGroup;
+			children = (
+				2AEC2993246FF50700ED7AD1 /* script.command */,
+			);
+			path = script;
+			sourceTree = "<group>";
+		};
+		7E1B9B50F48CDE7E12F6E559 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FD7536265EA205E4E3BD7C9 /* Pods-G-Flash.debug.xcconfig */,
+				A81C7CA8CC6B505E5169E7FE /* Pods-G-Flash.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BEB1FBAC84E74CD142F4CADE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83A87F8BF4E5A2DAAF39FA2C /* Pods_G_Flash.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AEC2975246FF35D00ED7AD1 /* G-Flash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AEC2986246FF35E00ED7AD1 /* Build configuration list for PBXNativeTarget "G-Flash" */;
+			buildPhases = (
+				95990D4883E169D9B2ACE7C5 /* [CP] Check Pods Manifest.lock */,
+				2AEC2972246FF35D00ED7AD1 /* Sources */,
+				2AEC2973246FF35D00ED7AD1 /* Frameworks */,
+				2AEC2974246FF35D00ED7AD1 /* Resources */,
+				2AEC2989246FF3EF00ED7AD1 /* Code sign */,
+				2AEC2990246FF46900ED7AD1 /* Copy 'bin' */,
+				2AEC2995246FF51600ED7AD1 /* Copy 'script' */,
+				E96D62226C55ABA2FAB233CB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "G-Flash";
+			productName = gflash;
+			productReference = 2AEC2976246FF35D00ED7AD1 /* G-Flash.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AEC296E246FF35D00ED7AD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "sl-soft.de";
+				TargetAttributes = {
+					2AEC2975246FF35D00ED7AD1 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 2AEC2971246FF35D00ED7AD1 /* Build configuration list for PBXProject "G-Flash" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AEC296D246FF35D00ED7AD1;
+			productRefGroup = 2AEC2977246FF35D00ED7AD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AEC2975246FF35D00ED7AD1 /* G-Flash */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AEC2974246FF35D00ED7AD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */,
+				2AEC2981246FF35E00ED7AD1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2AEC2989246FF3EF00ED7AD1 /* Code sign */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Code sign";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#codesign --force --sign \"Apple Development: profdrluigi@gmx.de (TTMSQ63D2J)\" \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n";
+		};
+		95990D4883E169D9B2ACE7C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-G-Flash-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E96D62226C55ABA2FAB233CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-G-Flash/Pods-G-Flash-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-G-Flash/Pods-G-Flash-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-G-Flash/Pods-G-Flash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AEC2972246FF35D00ED7AD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */,
+				2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */,
+				2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2AEC297F246FF35E00ED7AD1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AEC2980246FF35E00ED7AD1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AEC2984246FF35E00ED7AD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2AEC2985246FF35E00ED7AD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2AEC2987246FF35E00ED7AD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD7536265EA205E4E3BD7C9 /* Pods-G-Flash.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = gflash/gflash.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = gflash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2AEC2988246FF35E00ED7AD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A81C7CA8CC6B505E5169E7FE /* Pods-G-Flash.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = gflash/gflash.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = gflash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AEC2971246FF35D00ED7AD1 /* Build configuration list for PBXProject "G-Flash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AEC2984246FF35E00ED7AD1 /* Debug */,
+				2AEC2985246FF35E00ED7AD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AEC2986246FF35E00ED7AD1 /* Build configuration list for PBXNativeTarget "G-Flash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AEC2987246FF35E00ED7AD1 /* Debug */,
+				2AEC2988246FF35E00ED7AD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AEC296E246FF35D00ED7AD1 /* Project object */;
+}
