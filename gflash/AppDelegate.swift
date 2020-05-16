@@ -13,11 +13,14 @@ import LetsMove
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     let userDesktopDirectory:String = NSHomeDirectory()
+    let defaults = UserDefaults.standard
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         PFMoveToApplicationsFolderIfNecessary()
         check_theme()
         UserDefaults.standard.set("0", forKey: "Programmer")
+        UserDefaults.standard.removeObject(forKey: "Programmer found")
+        defaults.synchronize()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -34,7 +37,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             UserDefaults.standard.set("Light", forKey: "System Theme")
         }
     }
-        let defaults = UserDefaults.standard
         defaults.synchronize()
     }
     
