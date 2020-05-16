@@ -762,22 +762,22 @@
                                 </connections>
                             </popUpButton>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBQ-6e-zNx" userLabel="Dot_green">
-                                <rect key="frame" x="565" y="468" width="16" height="16"/>
+                                <rect key="frame" x="563" y="458" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="qPp-gk-S5Y"/>
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-HG-Ul8" userLabel="Dot_red">
-                                <rect key="frame" x="565" y="468" width="16" height="16"/>
+                                <rect key="frame" x="563" y="458" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="7JL-V1-P5n"/>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nw-A4-U1n" userLabel="Dot_orange">
-                                <rect key="frame" x="565" y="468" width="16" height="16"/>
+                                <rect key="frame" x="563" y="458" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusPartiallyAvailable" id="AdW-QW-4GZ"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whE-YS-4EV">
-                                <rect key="frame" x="584" y="465" width="227" height="20"/>
+                                <rect key="frame" x="582" y="455" width="227" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;&lt; do not localize &gt;&gt;" id="tr1-hm-r49">
                                     <font key="font" metaFont="system"/>
@@ -786,7 +786,7 @@
                                 </textFieldCell>
                             </textField>
                             <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="pag-eb-ygV">
-                                <rect key="frame" x="565" y="468" width="16" height="16"/>
+                                <rect key="frame" x="563" y="458" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                             </progressIndicator>
                             <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lR3-rC-D2t">
@@ -905,21 +905,21 @@ Cg
                                         </textView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Wc5-sK-fAg">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Wc5-sK-fAg">
                                     <rect key="frame" x="-100" y="-100" width="769" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="uoZ-ZP-PR2">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="uoZ-ZP-PR2">
                                     <rect key="frame" x="754" y="0.0" width="15" height="284"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgm-i3-gDq">
-                                <rect key="frame" x="564" y="435" width="122" height="22"/>
+                                <rect key="frame" x="557" y="418" width="206" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Autodetect" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="RuQ-Hg-Xk0">
+                                <buttonCell key="cell" type="push" title="Autodetect" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="RuQ-Hg-Xk0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="miniSystem"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="detect_devices:" target="XfG-lQ-9wD" id="ksE-KP-x2z"/>

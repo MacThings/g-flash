@@ -252,7 +252,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncodesign --force --sign \"Mac Developer: s.lamprecht@sl-soft.de (85JZW6284R)\" \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#codesign --force --sign \"Mac Developer: s.lamprecht@sl-soft.de (85JZW6284R)\" \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n";
 		};
 		95990D4883E169D9B2ACE7C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

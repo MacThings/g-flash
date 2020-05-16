@@ -272,10 +272,24 @@ function _detect_programmer()
   "$ScriptPath"/../bin/lsusb > /private/tmp/usbdetection
   devices=$( cat /private/tmp/usbdetection )
   rm /private/tmp/usbdetection
-  
-  echo "$devices" |grep "1a86:5512"
-  if [[ "$?" = "0" ]]; then
+
+  if [[ $devices == *"1a86:5512"* ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "1"
+  fi
+  if [[ $devices == *"1443:0007"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "2"
+  fi
+  if [[ $devices == *"04d8:0033"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "3"
+  fi
+  if [[ $devices == *"09fb:6001"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "4"
+  fi
+  if [[ $devices == *"10c4:ea60"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "5"
+  fi
+  if [[ $devices == *"0483:dada"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "6"
   fi
   
 }

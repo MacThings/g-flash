@@ -45,7 +45,10 @@ class MainWindow: NSViewController {
     }
     
     @IBAction func detect_devices(_ sender: Any) {
-        self.programmer_orange_dot.isHidden=false
+        self.programmer_detect_text.stringValue = NSLocalizedString("Searching for Device", comment: "")
+        self.programmer_orange_dot.isHidden=true
+        self.programmer_green_dot.isHidden=true
+        self.programmer_red_dot.isHidden=true
         self.programmer_progress_wheel.isHidden=false
         self.programmer_progress_wheel?.startAnimation(self);
         self.syncShellExec(path: self.scriptPath, args: ["_detect_programmer"])
@@ -151,7 +154,7 @@ class MainWindow: NSViewController {
     @IBAction func programmer_chooser(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "Chip Type Mismatch")
         UserDefaults.standard.removeObject(forKey: "Force Chip Type")
-        self.programmer_detect_text.stringValue = NSLocalizedString("Checking connected USB Devices", comment: "")
+        self.programmer_detect_text.stringValue = NSLocalizedString("Checking connected USB Device", comment: "")
         self.programmer_progress_wheel.isHidden = false
         self.programmer_orange_dot.isHidden = true
         self.programmer_red_dot.isHidden = true
