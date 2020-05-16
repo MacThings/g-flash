@@ -15,10 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let userDesktopDirectory:String = NSHomeDirectory()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
         PFMoveToApplicationsFolderIfNecessary()
         check_theme()
-        
+        UserDefaults.standard.set("0", forKey: "Programmer")
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -22,10 +22,16 @@ function _helpDefaultRead()
     fi
 }
 
-function _loaded()
+function _read_rom()
 {
   cd "$ScriptPath"/../bin/
   ./flashrom --programmer ch341a_spi -r toll
+}
+
+function _list_usb_devices()
+{
+  cd "$ScriptPath"/../bin/
+  ./lsusb
 }
 
 $1

@@ -18,10 +18,13 @@ class MainWindow: NSViewController {
  
     let scriptPath = Bundle.main.path(forResource: "/script/script", ofType: "command")!
 
-    @IBAction func test(_ sender: Any) {
-        self.syncShellExec(path: self.scriptPath, args: ["_loaded"])
+    @IBAction func list_usb_devices(_ sender: Any) {
+        self.syncShellExec(path: self.scriptPath, args: ["_list_usb_devices"])
     }
     
+    @IBAction func read_rom(_ sender: Any) {
+        self.syncShellExec(path: self.scriptPath, args: ["_read_rom"])
+    }
     
     func syncShellExec(path: String, args: [String] = []) {
         let theme_check = UserDefaults.standard.string(forKey: "System Theme")
@@ -31,7 +34,7 @@ class MainWindow: NSViewController {
             output_window.textColor = NSColor.black
         }
         
-        let fontsize = CGFloat(15)
+        let fontsize = CGFloat(14)
         let fontfamily = "Menlo"
         output_window.font = NSFont(name: fontfamily, size: fontsize)
         
@@ -66,5 +69,31 @@ class MainWindow: NSViewController {
         process.waitUntilExit() // Wait for process to terminate.
     }
 
+    @IBAction func browseFile(sender: AnyObject) {
+          
+          let dialog = NSOpenPanel();
+          
+          dialog.title                   = "Choose a Folder";
+          dialog.showsResizeIndicator    = true;
+          dialog.showsHiddenFiles        = false;
+          dialog.canChooseDirectories    = true;
+          dialog.canCreateDirectories    = true;
+          dialog.allowsMultipleSelection = false;
+          dialog.allowedFileTypes        = ["iso"];
+          
+          if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+              let result = dialog.url // Pathname of the file
+              
+              if (result != nil) {
+                  let path = result!.path
+                  let isopath = (path as String)
+                  UserDefaults.standard.set(isopath, forKey: "Isopath")
+                  self.syncShellExec(path: self.scriptPath, args: ["_get_isoname"])
+              }
+          } else {
+              return
+          }
+    
+      }
         
 }

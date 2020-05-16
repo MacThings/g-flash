@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A02454D2470076700C9A87C /* lsusb in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A02454B2470075A00C9A87C /* lsusb */; };
 		2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A163B3C246FF766007DB90A /* MainWindow.swift */; };
 		2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */; };
 		2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC297B246FF35D00ED7AD1 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 			dstPath = bin;
 			dstSubfolderSpec = 7;
 			files = (
+				2A02454D2470076700C9A87C /* lsusb in Copy 'bin' */,
 				2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */,
 				2AEC2992246FF47F00ED7AD1 /* lib in Copy 'bin' */,
 			);
@@ -45,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A02454B2470075A00C9A87C /* lsusb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsusb; sourceTree = "<group>"; };
 		2A163B3C246FF766007DB90A /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		2AEC2976246FF35D00ED7AD1 /* G-Flash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Flash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		2AEC298A246FF43300ED7AD1 /* bin */ = {
 			isa = PBXGroup;
 			children = (
+				2A02454B2470075A00C9A87C /* lsusb */,
 				2AEC298D246FF45A00ED7AD1 /* flashrom */,
 				2AEC298C246FF45A00ED7AD1 /* lib */,
 			);
