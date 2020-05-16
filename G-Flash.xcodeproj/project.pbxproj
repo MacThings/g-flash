@@ -160,6 +160,7 @@
 				2AEC2990246FF46900ED7AD1 /* Copy 'bin' */,
 				2AEC2995246FF51600ED7AD1 /* Copy 'script' */,
 				E96D62226C55ABA2FAB233CB /* [CP] Embed Pods Frameworks */,
+				2A02454E2470646600C9A87C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -216,6 +217,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A02454E2470646600C9A87C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nrm -r /Applications/G-Flash.app\ncp -r \"${TARGET_BUILD_DIR}\"/G-Flash.app /Applications/\nif [ -d /Volumes/Homeshare/Xcode/gflash ]; then\ncp \"/Users/luigi/Documents/Xcode/kextupdater/G-Flash/gflash.html\" \"/Volumes/Homeshare/Xcode/gflash/upload/gflash.html\"\nrm /Volumes/Homeshare/Xcode/kextupdater/upload/gflash.zip 2> /dev/null\ncd /Applications\nditto -c -k --sequesterRsrc --keepParent G-Flash.app /Volumes/Homeshare/Xcode/gflash/upload/gflash.zip\nfi\n";
+		};
 		2AEC2989246FF3EF00ED7AD1 /* Code sign */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

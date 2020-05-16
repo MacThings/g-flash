@@ -17,7 +17,8 @@ class MainWindow: NSViewController {
     @IBOutlet weak var save_rom_button: NSButton!
     @IBOutlet weak var write_rom_button: NSButton!
     @IBOutlet weak var get_chip_type_button: NSButton!
-   
+    @IBOutlet weak var erase_eeprom_button: NSButton!
+    
     @IBOutlet weak var get_chip_type_text: NSTextField!
     
     @IBOutlet weak var programmer_detect_text: NSTextField!
@@ -29,11 +30,12 @@ class MainWindow: NSViewController {
     let userDesktopDirectory:String = NSHomeDirectory()
     let scriptPath = Bundle.main.path(forResource: "/script/script", ofType: "command")!
     let defaults = UserDefaults.standard
-
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         self.programmer_detect_text.stringValue = NSLocalizedString("No Device selected", comment: "")
+        self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
     }
     
     @IBAction func list_usb_devices(_ sender: Any) {
@@ -50,6 +52,23 @@ class MainWindow: NSViewController {
         } else if chiptypes_check != "1" {
             multiple_types()
         }
+
+        let force_check = UserDefaults.standard.bool(forKey: "Force Chip Type")
+        if force_check == false {
+            self.write_rom_button.isEnabled = true
+            self.save_rom_button.isEnabled = true
+            self.erase_eeprom_button.isEnabled = true
+        } else {
+            self.write_rom_button.isEnabled = false
+            self.save_rom_button.isEnabled = false
+            self.erase_eeprom_button.isEnabled = false
+        }
+    }
+    
+    @IBAction func input_detection(_ sender: Any) {
+        self.write_rom_button.isEnabled = true
+        self.save_rom_button.isEnabled = true
+        self.erase_eeprom_button.isEnabled = true
     }
     
     
@@ -134,9 +153,10 @@ class MainWindow: NSViewController {
             self.programmer_red_dot.isHidden = true
             self.programmer_green_dot.isHidden = false
             self.programmer_detect_text.stringValue = NSLocalizedString("Device found", comment: "")
-            self.save_rom_button.isEnabled = true
-            self.write_rom_button.isEnabled = true
+            //self.save_rom_button.isEnabled = true
+            //self.write_rom_button.isEnabled = true
             self.get_chip_type_button.isEnabled = true
+            //self.erase_eeprom_button.isEnabled = true
         } else {
             self.programmer_orange_dot.isHidden = true
             self.programmer_red_dot.isHidden = false
@@ -145,6 +165,7 @@ class MainWindow: NSViewController {
             self.save_rom_button.isEnabled = false
             self.write_rom_button.isEnabled = false
             self.get_chip_type_button.isEnabled = false
+            self.erase_eeprom_button.isEnabled = false
         }
 
         self.programmer_progress_wheel.isHidden = true
@@ -286,7 +307,7 @@ class MainWindow: NSViewController {
         self.get_chip_type_text.isHidden = false
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Multiple chip types found!", comment: "")
-        alert.informativeText = NSLocalizedString(chip_types! + " chip types has been recognized. Please enter the correct value in the input field that just appeared.", comment: "")
+        alert.informativeText = NSLocalizedString(chip_types! + " chip types has been recognized. Please enter the correct value in the input field that just appeared. It´s important to press 'Enter' after entering the chip type.", comment: "")
         alert.alertStyle = .warning
         let Button = NSLocalizedString("I understand", comment: "")
         alert.addButton(withTitle: Button)
@@ -303,6 +324,22 @@ class MainWindow: NSViewController {
         let Button = NSLocalizedString("Bummer", comment: "")
         alert.addButton(withTitle: Button)
         alert.runModal()
+    }
+    
+    func erase_confirmation (){
+        let alert = NSAlert()
+        alert.messageText = NSLocalizedString("Do you want it really?", comment: "")
+        alert.informativeText = NSLocalizedString("All content on the chip will be erased!", comment: "")
+        alert.alertStyle = .informational
+        let Button = NSLocalizedString("Yes", comment: "")
+        alert.addButton(withTitle: Button)
+        let CancelButtonText = NSLocalizedString("No", comment: "")
+        alert.addButton(withTitle: CancelButtonText)
+        
+        if alert.runModal() != .alertFirstButtonReturn {
+
+            return
+        }
     }
     
 }

@@ -83,7 +83,7 @@ function _get_chip_type()
     echo " "
   fi
 
-  defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Types" "5"
+  defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Types" "$count"
  
 }
 

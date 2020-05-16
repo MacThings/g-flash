@@ -15,11 +15,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let userDesktopDirectory:String = NSHomeDirectory()
     let defaults = UserDefaults.standard
     
+    func applicationShouldTerminateAfterLastWindowClosed (_
+        theApplication: NSApplication) -> Bool {
+        return true
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         PFMoveToApplicationsFolderIfNecessary()
         check_theme()
         UserDefaults.standard.set("0", forKey: "Programmer")
         UserDefaults.standard.removeObject(forKey: "Programmer found")
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        UserDefaults.standard.removeObject(forKey: "Chip Type")
+        UserDefaults.standard.removeObject(forKey: "Chip Types")
+        UserDefaults.standard.removeObject(forKey: "Programmer found")
+
         
         //let force_chip_type = UserDefaults.standard.string(forKey: "Force Chip Type")
         //if force_chip_type == nil{
@@ -31,6 +41,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         UserDefaults.standard.removeObject(forKey: "Successful")
+        UserDefaults.standard.removeObject(forKey: "Chip Type")
+        UserDefaults.standard.removeObject(forKey: "Chip Types")
+        UserDefaults.standard.removeObject(forKey: "Programmer found")
+        defaults.synchronize()
+        
     }
 
     func check_theme() -> Void {
@@ -45,7 +60,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
         defaults.synchronize()
     }
-    
-}
+
+    }
+
 
 
