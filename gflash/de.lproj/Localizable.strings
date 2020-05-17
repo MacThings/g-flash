@@ -20,7 +20,7 @@
 "Choose a ROM File (.bin)" = "Wähle eine ROM Datei aus (.bin)";
 
 /* No comment provided by engineer. */
-"Device found" = "Gerät gefunden";
+"Device ready" = "Gerät bereit";
 
 /* No comment provided by engineer. */
 "Device not found" = "Gerät nicht gefunden";
@@ -73,3 +73,4 @@
 /* No comment provided by engineer. */
 "You did not have selected any Programmer!" = "Du hast keinen Programmer ausgewählt!";
 
+" chip types has been recognized. Please enter the correct value in the input field that just appeared. It´s important to press 'Enter' after entering the chip type." = " Chiptypen wurden erkannt. Bitte gib den korrekten Wert in das Eingabefeld ein. Nach der Eingabe bitte mit 'Enter' bestätigen.";

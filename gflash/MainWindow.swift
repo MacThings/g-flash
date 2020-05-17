@@ -20,7 +20,7 @@ class MainWindow: NSViewController {
     @IBOutlet weak var erase_eeprom_button: NSButton!
     
     @IBOutlet weak var get_chip_type_text: NSTextField!
-    @IBOutlet weak var get_chip_type_label: NSTextField!
+    @IBOutlet weak var get_chip_type_progressbar: NSProgressIndicator!
     
     @IBOutlet weak var devices_pulldown: NSPopUpButton!
     @IBOutlet weak var devices_empty_entry: NSMenuItem!
@@ -31,19 +31,20 @@ class MainWindow: NSViewController {
     @IBOutlet weak var programmer_orange_dot: NSImageView!
     @IBOutlet weak var programmer_progress_wheel: NSProgressIndicator!
     
-    @IBOutlet weak var version_info: NSTextField!
-    
     let userDesktopDirectory:String = NSHomeDirectory()
     let scriptPath = Bundle.main.path(forResource: "/script/script", ofType: "command")!
     let defaults = UserDefaults.standard
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
   
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window?.title = "G-Flash v" + appVersion!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         self.programmer_detect_text.stringValue = NSLocalizedString("No Device selected", comment: "")
-        self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        self.version_info.stringValue="v " + appVersion!
         
         let theme_check = UserDefaults.standard.string(forKey: "System Theme")
         if theme_check == "Dark" {
@@ -71,6 +72,11 @@ class MainWindow: NSViewController {
     
     
     @IBAction func detect_devices(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "Chip Type")
+        self.write_rom_button.isEnabled = false
+        self.save_rom_button.isEnabled = false
+        self.erase_eeprom_button.isEnabled = false
+        self.get_chip_type_text.isEditable = false
         self.programmer_detect_text.stringValue = NSLocalizedString("Searching for Device", comment: "")
         self.programmer_orange_dot.isHidden=true
         self.programmer_green_dot.isHidden=true
@@ -88,6 +94,9 @@ class MainWindow: NSViewController {
     
     @IBAction func get_chip_type(_ sender: Any) {
         clear_window()
+        UserDefaults.standard.removeObject(forKey: "Chip Type")
+        self.get_chip_type_progressbar.isHidden=false
+        self.get_chip_type_progressbar?.startAnimation(self);
         DispatchQueue.global(qos: .background).async {
             self.syncShellExec(path: self.scriptPath, args: ["_get_chip_type"])
             DispatchQueue.main.async {
@@ -108,6 +117,8 @@ class MainWindow: NSViewController {
                     self.save_rom_button.isEnabled = false
                     self.erase_eeprom_button.isEnabled = false
                 }
+                self.get_chip_type_progressbar.isHidden=true
+                self.get_chip_type_progressbar?.stopAnimation(self);
             }
         }
     }
@@ -134,11 +145,16 @@ class MainWindow: NSViewController {
             DispatchQueue.global(qos: .background).async {
                 self.syncShellExec(path: self.scriptPath, args: ["_save_rom"])
                 DispatchQueue.main.async {
+                    let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
                     let success_check = UserDefaults.standard.bool(forKey: "Successful")
                     if success_check == true {
                         self.successful()
                     } else {
-                        self.not_successful()
+                        if chip_type_mismatch == true {
+                            self.wrong_type_entered()
+                        } else {
+                            self.not_successful()
+                        }
                     }
                 }
             }
@@ -216,6 +232,11 @@ class MainWindow: NSViewController {
     
     
     @IBAction func programmer_chooser(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "Chip Type")
+        self.write_rom_button.isEnabled = false
+        self.save_rom_button.isEnabled = false
+        self.erase_eeprom_button.isEnabled = false
+        self.get_chip_type_text.isEditable = false
         clear_window()
         self.devices_empty_entry.isHidden=true
         UserDefaults.standard.removeObject(forKey: "Chip Type Mismatch")
@@ -234,7 +255,7 @@ class MainWindow: NSViewController {
                     self.programmer_orange_dot.isHidden = true
                     self.programmer_red_dot.isHidden = true
                     self.programmer_green_dot.isHidden = false
-                    self.programmer_detect_text.stringValue = NSLocalizedString("Device found", comment: "")
+                    self.programmer_detect_text.stringValue = NSLocalizedString("Device ready", comment: "")
                     self.get_chip_type_button.isEnabled = true
                 } else {
                     self.programmer_orange_dot.isHidden = true
@@ -383,7 +404,6 @@ class MainWindow: NSViewController {
         let chip_types = UserDefaults.standard.string(forKey: "Chip Types")
         //self.get_chip_type_text.isEnabled = true
         self.get_chip_type_text.isEditable = true
-        self.get_chip_type_label.isHidden = false
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Multiple chip types found!", comment: "")
         alert.informativeText = chip_types! + NSLocalizedString(" chip types has been recognized. Please enter the correct value in the input field that just appeared. It´s important to press 'Enter' after entering the chip type.", comment: "")
@@ -398,7 +418,6 @@ class MainWindow: NSViewController {
         //let chip_type = UserDefaults.standard.string(forKey: "Chip Type")
         //self.get_chip_type_text.isEnabled = true
         self.get_chip_type_text.isEditable = true
-        self.get_chip_type_label.isHidden = false
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Wrong chip type entered!", comment: "")
         alert.informativeText = NSLocalizedString("No or not the correct chip type was entered in the input field. Please try it again.", comment: "")

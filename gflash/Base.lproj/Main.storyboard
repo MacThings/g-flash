@@ -70,6 +70,28 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Edit" id="UbS-6y-QkJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Edit" id="e5j-Zf-dtJ">
+                                    <items>
+                                        <menuItem title="Cut" keyEquivalent="x" id="QIt-6O-MT8">
+                                            <connections>
+                                                <action selector="cut:" target="Ady-hI-5gd" id="nIG-ol-N3L"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Copy" keyEquivalent="c" id="rNA-7N-0F6">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="6FV-74-rgv"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste" keyEquivalent="v" id="dmb-yP-hOp">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="KoF-wX-v9N"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
@@ -118,16 +140,20 @@
                 <customObject id="ViO-7r-Tb6" customClass="SUUpdater"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="855" y="465"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="G-Flash" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="1028" height="575"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="1028" height="300"/>
+                        <value key="maxSize" type="size" width="1028" height="750"/>
+                        <value key="minFullScreenContentSize" type="size" width="1028" height="300"/>
+                        <value key="maxFullScreenContentSize" type="size" width="1028" height="750"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -137,8 +163,9 @@
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="hkM-tF-iKv"/>
             </objects>
-            <point key="canvasLocation" x="-409" y="228"/>
+            <point key="canvasLocation" x="-942" y="830"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="kB3-Fv-E1D">
@@ -200,19 +227,27 @@ DQ
                 <customObject id="8wM-rS-Jpg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController id="Ueu-80-FGQ"/>
             </objects>
-            <point key="canvasLocation" x="546" y="144.5"/>
+            <point key="canvasLocation" x="933" y="711"/>
         </scene>
-        <!--Main Window-->
+        <!--G-Flash-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MainWindow" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="G-Flash" id="XfG-lQ-9wD" customClass="MainWindow" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1028" height="575"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kng-oJ-uW5" userLabel="Content Scroller">
-                                <rect key="frame" x="26" y="21" width="982" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <box fixedFrame="YES" boxType="custom" borderWidth="2" cornerRadius="6" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="9CN-Cw-vEV" userLabel="Deco Box">
+                                <rect key="frame" x="20" y="18" width="989" height="406"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <view key="contentView" id="3OB-rv-L6z">
+                                    <rect key="frame" x="2" y="2" width="985" height="402"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </box>
+                            <scrollView focusRingType="none" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kng-oJ-uW5" userLabel="Content Scroller">
+                                <rect key="frame" x="23" y="21" width="982" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="b2u-rT-mct">
                                     <rect key="frame" x="0.0" y="0.0" width="982" height="400"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,14 +284,6 @@ Cg
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <box fixedFrame="YES" boxType="custom" borderWidth="2" cornerRadius="6" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="9CN-Cw-vEV" userLabel="Deco Box">
-                                <rect key="frame" x="27" y="20" width="981" height="403"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="3OB-rv-L6z">
-                                    <rect key="frame" x="2" y="2" width="977" height="399"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </box>
                             <box fixedFrame="YES" title="Programmer" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ILZ-rs-xXb" userLabel="Prgrammer Box">
                                 <rect key="frame" x="730" y="435" width="281" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -464,11 +491,11 @@ Cg
                                                 <binding destination="4Qo-6o-qbk" name="value" keyPath="values.Chip Type" id="cqr-Sd-bQA"/>
                                             </connections>
                                         </textField>
-                                        <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxg-n6-2y0">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxg-n6-2y0">
                                             <rect key="frame" x="145" y="6" width="47" height="11"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Chip type" id="LE7-ED-lcl">
-                                                <font key="font" metaFont="label" size="9"/>
+                                                <font key="font" metaFont="menu" size="9"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -484,11 +511,15 @@ Cg
                                                 <segue destination="0ec-NJ-RYn" kind="sheet" id="aeT-yU-Iqc"/>
                                             </connections>
                                         </button>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-kH-SgR">
+                                            <rect key="frame" x="15" y="0.0" width="120" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
                                     </subviews>
                                 </view>
                             </box>
                             <box fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="qqg-lx-xGq">
-                                <rect key="frame" x="13" y="507" width="276" height="58"/>
+                                <rect key="frame" x="13" y="511" width="276" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="84l-eq-KV1">
                                     <rect key="frame" x="0.0" y="0.0" width="276" height="58"/>
@@ -512,20 +543,11 @@ Cg
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CaN-lZ-xz9">
-                                            <rect key="frame" x="200" y="20" width="116" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;&lt; do not localize &gt;&gt;" id="13g-yC-ZVr">
-                                                <font key="font" metaFont="message" size="11"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                     </subviews>
                                 </view>
                             </box>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qL0-fB-hPN">
-                                <rect key="frame" x="113" y="429" width="77" height="77"/>
+                                <rect key="frame" x="113" y="433" width="77" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="1BV-pR-xuH"/>
                             </imageView>
@@ -538,6 +560,7 @@ Cg
                         <outlet property="erase_eeprom_button" destination="BE9-U9-p1u" id="y60-fI-gtc"/>
                         <outlet property="get_chip_type_button" destination="lR3-rC-D2t" id="qDO-O6-264"/>
                         <outlet property="get_chip_type_label" destination="yxg-n6-2y0" id="B6e-vM-yeg"/>
+                        <outlet property="get_chip_type_progressbar" destination="vxQ-kH-SgR" id="OLE-TH-lLq"/>
                         <outlet property="get_chip_type_text" destination="aEf-zU-PgD" id="RoH-jV-e1k"/>
                         <outlet property="output_window" destination="TVA-gz-7F6" id="RlI-Mb-Yfp"/>
                         <outlet property="programmer_detect_text" destination="whE-YS-4EV" id="uEX-3h-UA8"/>
@@ -546,7 +569,6 @@ Cg
                         <outlet property="programmer_progress_wheel" destination="pag-eb-ygV" id="P18-aX-Znk"/>
                         <outlet property="programmer_red_dot" destination="Ogg-HG-Ul8" id="7Eb-cF-hcD"/>
                         <outlet property="save_rom_button" destination="MKg-3a-ZRO" id="bWj-4l-9XI"/>
-                        <outlet property="version_info" destination="CaN-lZ-xz9" id="buH-8O-eIU"/>
                         <outlet property="write_rom_button" destination="hkc-Hb-EgL" id="HCX-Vc-TJD"/>
                     </connections>
                 </viewController>
@@ -595,7 +617,7 @@ Cg
                 </viewController>
                 <customObject id="L19-U4-Pxu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-387" y="-186"/>
+            <point key="canvasLocation" x="246" y="233"/>
         </scene>
     </scenes>
     <resources>
