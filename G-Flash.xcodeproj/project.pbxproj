@@ -10,6 +10,8 @@
 		2A02454D2470076700C9A87C /* lsusb in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A02454B2470075A00C9A87C /* lsusb */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A163B3C246FF766007DB90A /* MainWindow.swift */; };
 		2A8B5EC92470A7080098B8BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B5EC72470A7080098B8BF /* Localizable.strings */; };
+		2AB9DF0724712B1200677A16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB9DF0524712B1200677A16 /* InfoPlist.strings */; };
+		2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DF08247132BD00677A16 /* Preferences.swift */; };
 		2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */; };
 		2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC297B246FF35D00ED7AD1 /* ViewController.swift */; };
 		2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		2A8B5EC32470A5C20098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		2A8B5EC82470A7080098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2AA27D352470656B00F8E25B /* gflash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gflash.html; sourceTree = "<group>"; };
+		2AB9DF0624712B1200677A16 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AB9DF08247132BD00677A16 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		2AEC2976246FF35D00ED7AD1 /* G-Flash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Flash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AEC297B246FF35D00ED7AD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +113,9 @@
 				2AEC297F246FF35E00ED7AD1 /* Main.storyboard */,
 				2A8B5EC72470A7080098B8BF /* Localizable.strings */,
 				2A163B3C246FF766007DB90A /* MainWindow.swift */,
+				2AB9DF08247132BD00677A16 /* Preferences.swift */,
 				2AEC2982246FF35E00ED7AD1 /* Info.plist */,
+				2AB9DF0524712B1200677A16 /* InfoPlist.strings */,
 				2AEC2983246FF35E00ED7AD1 /* gflash.entitlements */,
 				2AA27D352470656B00F8E25B /* gflash.html */,
 			);
@@ -165,8 +171,8 @@
 				2AEC2990246FF46900ED7AD1 /* Copy 'bin' */,
 				2AEC2995246FF51600ED7AD1 /* Copy 'script' */,
 				E96D62226C55ABA2FAB233CB /* [CP] Embed Pods Frameworks */,
-				2A02454E2470646600C9A87C /* ShellScript */,
 				2AEC2989246FF3EF00ED7AD1 /* Code sign */,
+				2A02454E2470646600C9A87C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */,
+				2AB9DF0724712B1200677A16 /* InfoPlist.strings in Resources */,
 				2A8B5EC92470A7080098B8BF /* Localizable.strings in Resources */,
 				2AEC2981246FF35E00ED7AD1 /* Main.storyboard in Resources */,
 			);
@@ -258,7 +265,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#codesign --force --sign \"Mac Developer: s.lamprecht@sl-soft.de (85JZW6284R)\" \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncodesign --force --sign \"Mac Developer: s.lamprecht@sl-soft.de (85JZW6284R)\" \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n";
 		};
 		95990D4883E169D9B2ACE7C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -308,6 +315,7 @@
 			files = (
 				2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */,
 				2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */,
+				2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */,
 				2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +329,14 @@
 				2A8B5EC82470A7080098B8BF /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2AB9DF0524712B1200677A16 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AB9DF0624712B1200677A16 /* de */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		2AEC297F246FF35E00ED7AD1 /* Main.storyboard */ = {
@@ -467,7 +483,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -492,7 +508,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

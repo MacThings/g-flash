@@ -20,6 +20,7 @@ class MainWindow: NSViewController {
     @IBOutlet weak var erase_eeprom_button: NSButton!
     
     @IBOutlet weak var get_chip_type_text: NSTextField!
+    @IBOutlet weak var get_chip_type_label: NSTextField!
     
     @IBOutlet weak var devices_pulldown: NSPopUpButton!
     @IBOutlet weak var devices_empty_entry: NSMenuItem!
@@ -94,15 +95,24 @@ class MainWindow: NSViewController {
             programmer_not_choosed()
             return
         }
-        save_rom(sender: "" as AnyObject)
-        self.syncShellExec(path: self.scriptPath, args: ["_save_rom"])
-        let success_check = UserDefaults.standard.bool(forKey: "Successful")
-        if success_check == true {
-            successful()
-        } else {
-            not_successful()
-        }
         
+
+            save_rom(sender: "" as AnyObject)
+        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
+        if abort_check == false {
+            self.syncShellExec(path: self.scriptPath, args: ["_save_rom"])
+            let success_check = UserDefaults.standard.bool(forKey: "Successful")
+            if success_check == true {
+                successful()
+            } else {
+                not_successful()
+            }
+            
+        }
+        else {
+            return
+        }
+        UserDefaults.standard.removeObject(forKey: "Abort")
     }
 
     
@@ -114,6 +124,8 @@ class MainWindow: NSViewController {
             return
         }
         write_rom(sender: "" as AnyObject)
+        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
+        if abort_check == false {
         self.syncShellExec(path: self.scriptPath, args: ["_write_rom"])
         let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
         let success_check = UserDefaults.standard.bool(forKey: "Successful")
@@ -126,18 +138,23 @@ class MainWindow: NSViewController {
                 not_successful()
             }
         }
- 
+            
+        }
+        UserDefaults.standard.removeObject(forKey: "Abort")
         
         
     }
     
     @IBAction func erase_eeprom(_ sender: Any) {
+        erase_confirmation()
         UserDefaults.standard.removeObject(forKey: "Successful")
         let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
         if programmer_check == "0" {
             programmer_not_choosed()
             return
         }
+        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
+        if abort_check == false {
         self.syncShellExec(path: self.scriptPath, args: ["_erase_eeprom"])
         let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
         let success_check = UserDefaults.standard.bool(forKey: "Successful")
@@ -150,6 +167,8 @@ class MainWindow: NSViewController {
                 not_successful()
             }
         }
+        }
+        UserDefaults.standard.removeObject(forKey: "Abort")
     }
     
     @IBAction func programmer_chooser(_ sender: Any) {
@@ -235,8 +254,8 @@ class MainWindow: NSViewController {
 
     
     func save_rom(sender: AnyObject) {
-          let dialog = NSSavePanel();
-          dialog.title                   = NSLocalizedString("Choose a Filepath (.bin)", comment: "");
+          let dialog                     = NSSavePanel();
+          dialog.title                   = NSLocalizedString("Choose a Filepath", comment: "");
           dialog.nameFieldStringValue    = "ROM.bin";
           dialog.showsResizeIndicator    = true;
           dialog.showsHiddenFiles        = false;
@@ -250,15 +269,18 @@ class MainWindow: NSViewController {
                   let path = result!.path
                   let rompath = (path as String)
                   UserDefaults.standard.set(rompath, forKey: "ROM Savepath")
+                  UserDefaults.standard.set(false, forKey: "Abort")
               }
           } else {
+              UserDefaults.standard.set(true, forKey: "Abort")
+              defaults.synchronize()
               return
           }
       }
 
     func write_rom(sender: AnyObject) {
           let dialog = NSOpenPanel();
-          dialog.title                   = NSLocalizedString("Choose a ROM File", comment: "");
+          dialog.title                   = NSLocalizedString("Choose a ROM File (.bin)", comment: "");
           dialog.showsResizeIndicator    = true;
           dialog.showsHiddenFiles        = false;
           dialog.canCreateDirectories    = false;
@@ -271,8 +293,10 @@ class MainWindow: NSViewController {
                   let path = result!.path
                   let rompath = (path as String)
                   UserDefaults.standard.set(rompath, forKey: "ROM Readpath")
+                  UserDefaults.standard.set(false, forKey: "Abort")
               }
           } else {
+              UserDefaults.standard.set(true, forKey: "Abort")
               return
           }
       }
@@ -320,10 +344,11 @@ class MainWindow: NSViewController {
     func multiple_types (){
         UserDefaults.standard.set(true, forKey: "Force Chip Type")
         let chip_types = UserDefaults.standard.string(forKey: "Chip Types")
-        self.get_chip_type_text.isHidden = false
+        self.get_chip_type_text.isEnabled = true
+        self.get_chip_type_label.isHidden = false
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Multiple chip types found!", comment: "")
-        alert.informativeText = NSLocalizedString(chip_types! + " chip types has been recognized. Please enter the correct value in the input field that just appeared. It´s important to press 'Enter' after entering the chip type.", comment: "")
+        alert.informativeText = chip_types! + NSLocalizedString(" chip types has been recognized. Please enter the correct value in the input field that just appeared. It´s important to press 'Enter' after entering the chip type.", comment: "")
         alert.alertStyle = .warning
         let Button = NSLocalizedString("I understand", comment: "")
         alert.addButton(withTitle: Button)
@@ -332,7 +357,8 @@ class MainWindow: NSViewController {
     
     func wrong_type_entered (){
         //let chip_type = UserDefaults.standard.string(forKey: "Chip Type")
-        self.get_chip_type_text.isHidden = false
+        self.get_chip_type_text.isEnabled = true
+        self.get_chip_type_label.isHidden = false
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Wrong chip type entered!", comment: "")
         alert.informativeText = NSLocalizedString("No or not the correct chip type was entered in the input field. Please try it again.", comment: "")
@@ -353,7 +379,7 @@ class MainWindow: NSViewController {
         alert.addButton(withTitle: CancelButtonText)
         
         if alert.runModal() != .alertFirstButtonReturn {
-
+            UserDefaults.standard.set(true, forKey: "Abort")
             return
         }
     }
