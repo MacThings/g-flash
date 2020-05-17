@@ -453,9 +453,9 @@ Cg
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CaN-lZ-xz9">
-                                            <rect key="frame" x="200" y="20" width="39" height="14"/>
+                                            <rect key="frame" x="200" y="20" width="116" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="(v 0.3)" id="13g-yC-ZVr">
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;&lt; do not localize &gt;&gt;" id="13g-yC-ZVr">
                                                 <font key="font" metaFont="message" size="11"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -486,6 +486,7 @@ Cg
                         <outlet property="programmer_progress_wheel" destination="pag-eb-ygV" id="P18-aX-Znk"/>
                         <outlet property="programmer_red_dot" destination="Ogg-HG-Ul8" id="7Eb-cF-hcD"/>
                         <outlet property="save_rom_button" destination="MKg-3a-ZRO" id="bWj-4l-9XI"/>
+                        <outlet property="version_info" destination="CaN-lZ-xz9" id="buH-8O-eIU"/>
                         <outlet property="write_rom_button" destination="hkc-Hb-EgL" id="HCX-Vc-TJD"/>
                     </connections>
                 </viewController>

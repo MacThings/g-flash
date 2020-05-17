@@ -31,6 +31,8 @@ class MainWindow: NSViewController {
     @IBOutlet weak var programmer_orange_dot: NSImageView!
     @IBOutlet weak var programmer_progress_wheel: NSProgressIndicator!
     
+    @IBOutlet weak var version_info: NSTextField!
+    
     let userDesktopDirectory:String = NSHomeDirectory()
     let scriptPath = Bundle.main.path(forResource: "/script/script", ofType: "command")!
     let defaults = UserDefaults.standard
@@ -40,6 +42,8 @@ class MainWindow: NSViewController {
         // Do view setup here.
         self.programmer_detect_text.stringValue = NSLocalizedString("No Device selected", comment: "")
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        self.version_info.stringValue="v " + appVersion!
     }
     
     @IBAction func list_usb_devices(_ sender: Any) {
