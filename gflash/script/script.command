@@ -235,6 +235,126 @@ function _check_programmer()
       defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
     fi
   fi
+  if [[ $programmer = "7" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "15ba:002a" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "8" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "15ba:002b" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "9" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "15ba:0004" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "10" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "15ba:0003" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "11" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "1457:5118" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "12" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "18d1:5003" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "13" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "18d1:5002" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "14" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "18d1:5001" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "15" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "096c:1449" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "16" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "0403:cff8" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "17" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "0403:8a99" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "18" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "0403:8a98" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "19" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "0403:6014" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "20" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "0403:6011" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
+  if [[ $programmer = "21" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "0403:6010" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
 }
 
 function _detect_programmer()
