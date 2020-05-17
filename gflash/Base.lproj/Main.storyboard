@@ -302,38 +302,50 @@ Cg
                                                         <menuItem title="Choose Programmer ..." state="on" id="Vid-Mc-Omj">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="CH341A" tag="1" toolTip="1a86:5512" id="92M-XG-3Xr">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                            <accessibility description="Bla" help="Bla" identifier="Bla"/>
-                                                        </menuItem>
-                                                        <menuItem title="Development board JTAG" tag="2" toolTip="1443:0007" id="zGq-P8-8en">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="PICkit 2" tag="3" toolTip="04d8:0033" id="YN2-og-Scm">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="USB-Blaster" tag="4" toolTip="09fb:6001" id="OTN-mh-Wi1">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="CP2102N USB to UART Bridge Controller" tag="5" toolTip="10c4:ea60" id="qWB-st-pRW">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="SF100/SF200/SF600" tag="6" toolTip="0483:dada" id="H9b-b5-XhB">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="ARM-USB-TINY-H" tag="7" toolTip="15ba:002a" id="aMO-EX-sG2">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="ARM-USB-OCD-H" tag="8" toolTip="15ba:002b" id="W5v-6Q-Hor">
+                                                        <menuItem title="ARM-USB-OCD" tag="10" toolTip="15ba:0003" id="zhe-ra-H6Y">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="ARM-USB-TINY" tag="9" toolTip="15ba:0004" id="jgh-OE-SYY">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="ARM-USB-OCD" tag="10" toolTip="15ba:0003" id="zhe-ra-H6Y">
+                                                        <menuItem title="ARM-USB-OCD-H" tag="8" toolTip="15ba:002b" id="W5v-6Q-Hor">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="ARM-USB-TINY-H" tag="7" toolTip="15ba:002a" id="aMO-EX-sG2">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="CH341A" tag="1" toolTip="1a86:5512" id="92M-XG-3Xr">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                            <accessibility description="Bla" help="Bla" identifier="Bla"/>
+                                                        </menuItem>
+                                                        <menuItem title="CP2102N USB to UART Bridge Controller" tag="5" toolTip="10c4:ea60" id="qWB-st-pRW">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Development board JTAG" tag="2" toolTip="1443:0007" id="zGq-P8-8en">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="FT232H" tag="19" toolTip="0403:6014" id="cpd-q8-fOx">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="FT2232H" tag="21" toolTip="0403:6010" id="2zI-6r-FYX">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="FT4232H" tag="20" toolTip="0403:6011" id="bNg-7U-1tx">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="JTAGkey" tag="16" toolTip="0403:cff8" id="E6g-0D-KLL">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="OpenMoko Neo1973 Debug board (V2+)" tag="11" toolTip="1457:5118" id="t1b-6m-kLQ">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="PICkit 2" tag="3" toolTip="04d8:0033" id="YN2-og-Scm">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="PicoTAP" tag="15" toolTip="096c:1449" id="mUr-DQ-VfL">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Servo" tag="14" toolTip="18d1:5001" id="hcc-ZW-3Kp">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="Servo V2" tag="12" toolTip="18d1:5003" id="nLO-83-TY1">
@@ -342,28 +354,16 @@ Cg
                                                         <menuItem title="Servo V2 Legacy" tag="13" toolTip="18d1:5002" id="LfA-GM-2N2">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="Servo" tag="14" toolTip="18d1:5001" id="hcc-ZW-3Kp">
+                                                        <menuItem title="SF100/SF200/SF600" tag="6" toolTip="0483:dada" id="H9b-b5-XhB">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="PicoTAP" tag="15" toolTip="096c:1449" id="mUr-DQ-VfL">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="JTAGkey" tag="16" toolTip="0403:cff8" id="E6g-0D-KLL">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="USB Multi-Protocol Adapter Lite" tag="17" toolTip="0403:8a99" id="mU6-0Z-fXz">
+                                                        <menuItem title="USB-Blaster" tag="4" toolTip="09fb:6001" id="OTN-mh-Wi1">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="USB Multi-Protocol Adapter" tag="18" toolTip="0403:8a98" id="ttZ-wE-yZp">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="FT232H" tag="19" toolTip="0403:6014" id="cpd-q8-fOx">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="FT4232H" tag="20" toolTip="0403:6011" id="bNg-7U-1tx">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="FT2232H" tag="21" toolTip="0403:6010" id="2zI-6r-FYX">
+                                                        <menuItem title="USB Multi-Protocol Adapter Lite" tag="17" toolTip="0403:8a99" id="mU6-0Z-fXz">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                     </items>
