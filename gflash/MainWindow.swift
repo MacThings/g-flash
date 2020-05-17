@@ -35,24 +35,21 @@ class MainWindow: NSViewController {
     let scriptPath = Bundle.main.path(forResource: "/script/script", ofType: "command")!
     let defaults = UserDefaults.standard
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-  
+    
     override func viewDidAppear() {
         super.viewDidAppear()
         self.view.window?.title = "G-Flash v" + appVersion!
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         self.programmer_detect_text.stringValue = NSLocalizedString("No Device selected", comment: "")
-        
-        let theme_check = UserDefaults.standard.string(forKey: "System Theme")
-        if theme_check == "Dark" {
-            output_window.textColor = NSColor.white
-        } else {
-            output_window.textColor = NSColor.black
+
+        if #available(OSX 10.14, *) {
+            output_window.textColor = (NSApp.effectiveAppearance.name == NSAppearance.Name.darkAqua ? NSColor.white : NSColor.black)
         }
-        
         let fontsize = CGFloat(14)
         let fontfamily = "Menlo"
         output_window.font = NSFont(name: fontfamily, size: fontsize)
@@ -72,6 +69,7 @@ class MainWindow: NSViewController {
     
     
     @IBAction func detect_devices(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "Programmer found")
         UserDefaults.standard.removeObject(forKey: "Chip Type")
         self.write_rom_button.isEnabled = false
         self.save_rom_button.isEnabled = false
@@ -237,7 +235,9 @@ class MainWindow: NSViewController {
     
     @IBAction func programmer_chooser(_ sender: Any) {
         self.get_chip_type_button.isEnabled = false
+        UserDefaults.standard.removeObject(forKey: "Programmer found")
         UserDefaults.standard.removeObject(forKey: "Chip Type")
+        //UserDefaults.standard.removeObject(forKey: "Programmer")
         self.write_rom_button.isEnabled = false
         self.save_rom_button.isEnabled = false
         self.erase_eeprom_button.isEnabled = false
@@ -456,4 +456,5 @@ class MainWindow: NSViewController {
         output_window.textStorage?.mutableString.setString("")
     }
     
+   
 }
