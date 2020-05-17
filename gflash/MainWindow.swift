@@ -104,6 +104,8 @@ class MainWindow: NSViewController {
                 let chiptypes_check = UserDefaults.standard.string(forKey: "Chip Types")
                 if chiptypes_check == "0" {
                     self.no_chip_found()
+                    self.get_chip_type_progressbar.isHidden=true
+                    self.get_chip_type_progressbar?.stopAnimation(self);
                     return
                 } else if chiptypes_check != "1" {
                     self.multiple_types()
@@ -326,6 +328,7 @@ class MainWindow: NSViewController {
                   let rompath = (path as String)
                   UserDefaults.standard.set(rompath, forKey: "ROM Savepath")
                   UserDefaults.standard.set(false, forKey: "Abort")
+                  defaults.synchronize()
               }
           } else {
               UserDefaults.standard.set(true, forKey: "Abort")
@@ -350,9 +353,11 @@ class MainWindow: NSViewController {
                   let rompath = (path as String)
                   UserDefaults.standard.set(rompath, forKey: "ROM Readpath")
                   UserDefaults.standard.set(false, forKey: "Abort")
+                  defaults.synchronize()
               }
           } else {
               UserDefaults.standard.set(true, forKey: "Abort")
+              defaults.synchronize()
               return
           }
     }
