@@ -42,6 +42,8 @@ function _set_programmer()
     programmer="developerbox"
   elif [[ $programmer = "6" ]]; then
     programmer="dediprog"
+  elif [[ $programmer -gt "6" ]]; then
+    programmer="ft2232_spi"
   fi
 }
 
@@ -62,7 +64,8 @@ function _get_chip_type()
   
   ./flashrom --programmer "$programmer" | grep -w "Found" > /private/tmp/flashtemp
   
-  count=$( cat /private/tmp/flashtemp |wc -l |xargs )
+  #count=$( cat /private/tmp/flashtemp |wc -l |xargs )
+  count="10"
   
   if [[ "$count" = 0 ]]; then
     _not_successful
@@ -70,10 +73,12 @@ function _get_chip_type()
   
   if [[ "$count" = 1 ]]; then
     _successful
-    cat /private/tmp/flashtemp
+    #cat /private/tmp/flashtemp
+    chip_type=$( cat /private/tmp/flashtemp |sed -e 's/.*\ "//g' -e 's/".*//g' |xargs )
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type" "'$chip_type'"
   fi
   
-  if [[ "$count" -gt 1 ]]; then
+  if [[ "$count" > 1 ]]; then
     _successful
     cat /private/tmp/flashtemp
     echo " "
@@ -275,23 +280,48 @@ function _detect_programmer()
 
   if [[ $devices == *"1a86:5512"* ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "1"
-  fi
-  if [[ $devices == *"1443:0007"* ]]; then
+  elif [[ $devices == *"1443:0007"* ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "2"
-  fi
-  if [[ $devices == *"04d8:0033"* ]]; then
+  elif [[ $devices == *"04d8:0033"* ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "3"
-  fi
-  if [[ $devices == *"09fb:6001"* ]]; then
+  elif [[ $devices == *"09fb:6001"* ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "4"
-  fi
-  if [[ $devices == *"10c4:ea60"* ]]; then
+  elif [[ $devices == *"10c4:ea60"* ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "5"
-  fi
-  if [[ $devices == *"0483:dada"* ]]; then
+  elif [[ $devices == *"0483:dada"* ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "6"
+  elif [[ $devices == *"15ba:002a"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "7"
+  elif [[ $devices == *"15ba:002b"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "8"
+  elif [[ $devices == *"15ba:0004"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "9"
+  elif [[ $devices == *"15ba:0003"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "10"
+  elif [[ $devices == *"1457:5118"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "11"
+  elif [[ $devices == *"18d1:5003"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "12"
+  elif [[ $devices == *"18d1:5002"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "13"
+  elif [[ $devices == *"18d1:5001"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "14"
+  elif [[ $devices == *"096c:1449"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "15"
+  elif [[ $devices == *"0403:cff8"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "16"
+  elif [[ $devices == *"0403:8a99"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "17"
+  elif [[ $devices == *"0403:8a98"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "18"
+  elif [[ $devices == *"0403:6014"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "19"
+  elif [[ $devices == *"0403:6011"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "20"
+  elif [[ $devices == *"0403:6010"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "21"
   fi
-  
+
 }
 
 $1

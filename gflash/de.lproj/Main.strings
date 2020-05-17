@@ -124,8 +124,8 @@
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
 "Vdr-fp-XzO.title" = "Andere ausblenden";
 
-/* Class = "NSButtonCell"; title = "Save ROM"; ObjectID = "VFl-2j-4lx"; */
-"VFl-2j-4lx.title" = "ROM speichern";
+/* Class = "NSButtonCell"; title = "Read ROM"; ObjectID = "VFl-2j-4lx"; */
+"VFl-2j-4lx.title" = "ROM auslesen";
 
 /* Class = "NSMenuItem"; title = "Choose Programmer ..."; ObjectID = "Vid-Mc-Omj"; */
 "Vid-Mc-Omj.title" = "Programmer auswählen...";
@@ -139,8 +139,8 @@
 /* Class = "NSTextFieldCell"; title = "The ultimate \"flashrom\"-GUI for the Mac"; ObjectID = "XhB-Ia-2Jr"; */
 "XhB-Ia-2Jr.title" = "Die ultimative flashrom-GUI für macOS";
 
-/* Class = "NSButtonCell"; title = "Erase EEprom"; ObjectID = "xO4-GM-CGG"; */
-"xO4-GM-CGG.title" = "EEprom löschen";
+/* Class = "NSButtonCell"; title = "Erase EEPROM"; ObjectID = "xO4-GM-CGG"; */
+"xO4-GM-CGG.title" = "EEPROM löschen";
 
 /* Class = "NSMenuItem"; ibShadowedToolTip = "04d8:0033"; ObjectID = "YN2-og-Scm"; */
 "YN2-og-Scm.ibShadowedToolTip" = "04d8:0033";

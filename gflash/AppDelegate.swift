@@ -29,12 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UserDefaults.standard.removeObject(forKey: "Chip Type")
         UserDefaults.standard.removeObject(forKey: "Chip Types")
         UserDefaults.standard.removeObject(forKey: "Programmer found")
-
-        
-        //let force_chip_type = UserDefaults.standard.string(forKey: "Force Chip Type")
-        //if force_chip_type == nil{
-            UserDefaults.standard.set(false, forKey: "Force Chip Type")
-        //}
+        UserDefaults.standard.set(false, forKey: "Force Chip Type")
         defaults.synchronize()
     }
 
@@ -61,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.synchronize()
     }
 
-    }
+}
 
 
 

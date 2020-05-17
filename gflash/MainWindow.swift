@@ -44,176 +44,7 @@ class MainWindow: NSViewController {
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         self.version_info.stringValue="v " + appVersion!
-    }
-    
-    @IBAction func list_usb_devices(_ sender: Any) {
-        self.syncShellExec(path: self.scriptPath, args: ["_list_usb_devices"])
-    }
-    
-    @IBAction func detect_devices(_ sender: Any) {
-        self.programmer_detect_text.stringValue = NSLocalizedString("Searching for Device", comment: "")
-        self.programmer_orange_dot.isHidden=true
-        self.programmer_green_dot.isHidden=true
-        self.programmer_red_dot.isHidden=true
-        self.programmer_progress_wheel.isHidden=false
-        self.programmer_progress_wheel?.startAnimation(self);
-        self.syncShellExec(path: self.scriptPath, args: ["_detect_programmer"])
-        programmer_chooser("")
-        self.programmer_progress_wheel?.stopAnimation(self);
-        self.programmer_progress_wheel.isHidden=true
-    }
-    
-    @IBAction func get_chip_type(_ sender: Any) {
-        self.syncShellExec(path: self.scriptPath, args: ["_get_chip_type"])
-        let chiptypes_check = UserDefaults.standard.string(forKey: "Chip Types")
-        if chiptypes_check == "0" {
-            no_chip_found()
-            return
-        } else if chiptypes_check != "1" {
-            multiple_types()
-        }
-
-        let force_check = UserDefaults.standard.bool(forKey: "Force Chip Type")
-        if force_check == false {
-            self.write_rom_button.isEnabled = true
-            self.save_rom_button.isEnabled = true
-            self.erase_eeprom_button.isEnabled = true
-        } else {
-            self.write_rom_button.isEnabled = false
-            self.save_rom_button.isEnabled = false
-            self.erase_eeprom_button.isEnabled = false
-        }
-    }
-    
-    @IBAction func input_detection(_ sender: Any) {
-        self.write_rom_button.isEnabled = true
-        self.save_rom_button.isEnabled = true
-        self.erase_eeprom_button.isEnabled = true
-    }
-    
-    
-    @IBAction func save_rom(_ sender: Any) {
-        UserDefaults.standard.removeObject(forKey: "Successful")
-        let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
-        if programmer_check == "0" {
-            programmer_not_choosed()
-            return
-        }
         
-
-            save_rom(sender: "" as AnyObject)
-        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
-        if abort_check == false {
-            self.syncShellExec(path: self.scriptPath, args: ["_save_rom"])
-            let success_check = UserDefaults.standard.bool(forKey: "Successful")
-            if success_check == true {
-                successful()
-            } else {
-                not_successful()
-            }
-            
-        }
-        else {
-            return
-        }
-        UserDefaults.standard.removeObject(forKey: "Abort")
-    }
-
-    
-    @IBAction func write_rom(_ sender: Any) {
-        UserDefaults.standard.removeObject(forKey: "Successful")
-        let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
-        if programmer_check == "0" {
-            programmer_not_choosed()
-            return
-        }
-        write_rom(sender: "" as AnyObject)
-        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
-        if abort_check == false {
-        self.syncShellExec(path: self.scriptPath, args: ["_write_rom"])
-        let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
-        let success_check = UserDefaults.standard.bool(forKey: "Successful")
-        if success_check == true {
-            successful()
-        } else {
-            if chip_type_mismatch == true {
-                wrong_type_entered()
-            } else {
-                not_successful()
-            }
-        }
-            
-        }
-        UserDefaults.standard.removeObject(forKey: "Abort")
-        
-        
-    }
-    
-    @IBAction func erase_eeprom(_ sender: Any) {
-        erase_confirmation()
-        UserDefaults.standard.removeObject(forKey: "Successful")
-        let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
-        if programmer_check == "0" {
-            programmer_not_choosed()
-            return
-        }
-        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
-        if abort_check == false {
-        self.syncShellExec(path: self.scriptPath, args: ["_erase_eeprom"])
-        let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
-        let success_check = UserDefaults.standard.bool(forKey: "Successful")
-        if success_check == true {
-            successful()
-        } else {
-            if chip_type_mismatch == true {
-                wrong_type_entered()
-            } else {
-                not_successful()
-            }
-        }
-        }
-        UserDefaults.standard.removeObject(forKey: "Abort")
-    }
-    
-    @IBAction func programmer_chooser(_ sender: Any) {
-        self.devices_empty_entry.isHidden=true
-        UserDefaults.standard.removeObject(forKey: "Chip Type Mismatch")
-        UserDefaults.standard.removeObject(forKey: "Force Chip Type")
-        self.programmer_detect_text.stringValue = NSLocalizedString("Checking connected USB Device", comment: "")
-        self.programmer_progress_wheel.isHidden = false
-        self.programmer_orange_dot.isHidden = true
-        self.programmer_red_dot.isHidden = true
-        self.programmer_green_dot.isHidden = true
-        self.programmer_progress_wheel?.startAnimation(self);
-        self.syncShellExec(path: self.scriptPath, args: ["_check_programmer"])
-        let programmer_found = UserDefaults.standard.bool(forKey: "Programmer found")
-        if programmer_found == true {
-            self.programmer_orange_dot.isHidden = true
-            self.programmer_red_dot.isHidden = true
-            self.programmer_green_dot.isHidden = false
-            self.programmer_detect_text.stringValue = NSLocalizedString("Device found", comment: "")
-            //self.save_rom_button.isEnabled = true
-            //self.write_rom_button.isEnabled = true
-            self.get_chip_type_button.isEnabled = true
-            //self.erase_eeprom_button.isEnabled = true
-        } else {
-            self.programmer_orange_dot.isHidden = true
-            self.programmer_red_dot.isHidden = false
-            self.programmer_green_dot.isHidden = true
-            self.programmer_detect_text.stringValue = NSLocalizedString("Device not found", comment: "")
-            self.save_rom_button.isEnabled = false
-            self.write_rom_button.isEnabled = false
-            self.get_chip_type_button.isEnabled = false
-            self.erase_eeprom_button.isEnabled = false
-        }
-
-        self.programmer_progress_wheel.isHidden = true
-        self.programmer_progress_wheel?.stopAnimation(self);
-        defaults.synchronize()
-    }
-    
-    
-    func syncShellExec(path: String, args: [String] = []) {
         let theme_check = UserDefaults.standard.string(forKey: "System Theme")
         if theme_check == "Dark" {
             output_window.textColor = NSColor.white
@@ -226,7 +57,204 @@ class MainWindow: NSViewController {
         output_window.font = NSFont(name: fontfamily, size: fontsize)
         
         output_window.textStorage?.mutableString.setString("")
+    }
+    
+    
+    @IBAction func list_usb_devices(_ sender: Any) {
+        clear_window()
+        DispatchQueue.global(qos: .background).async {
+            self.syncShellExec(path: self.scriptPath, args: ["_list_usb_devices"])
+            DispatchQueue.main.async {
+            }
+        }
+    }
+    
+    
+    @IBAction func detect_devices(_ sender: Any) {
+        self.programmer_detect_text.stringValue = NSLocalizedString("Searching for Device", comment: "")
+        self.programmer_orange_dot.isHidden=true
+        self.programmer_green_dot.isHidden=true
+        self.programmer_red_dot.isHidden=true
+        self.programmer_progress_wheel.isHidden=false
+        self.programmer_progress_wheel?.startAnimation(self);
+        DispatchQueue.global(qos: .background).async {
+            self.syncShellExec(path: self.scriptPath, args: ["_detect_programmer"])
+                DispatchQueue.main.async {
+                    self.programmer_chooser("")
+            }
+        }
+    }
+    
+    
+    @IBAction func get_chip_type(_ sender: Any) {
+        clear_window()
+        DispatchQueue.global(qos: .background).async {
+            self.syncShellExec(path: self.scriptPath, args: ["_get_chip_type"])
+            DispatchQueue.main.async {
+                let chiptypes_check = UserDefaults.standard.string(forKey: "Chip Types")
+                if chiptypes_check == "0" {
+                    self.no_chip_found()
+                    return
+                } else if chiptypes_check != "1" {
+                    self.multiple_types()
+                }
+                let force_check = UserDefaults.standard.bool(forKey: "Force Chip Type")
+                if force_check == false {
+                    self.write_rom_button.isEnabled = true
+                    self.save_rom_button.isEnabled = true
+                    self.erase_eeprom_button.isEnabled = true
+                } else {
+                    self.write_rom_button.isEnabled = false
+                    self.save_rom_button.isEnabled = false
+                    self.erase_eeprom_button.isEnabled = false
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func input_detection(_ sender: Any) {
+        self.write_rom_button.isEnabled = true
+        self.save_rom_button.isEnabled = true
+        self.erase_eeprom_button.isEnabled = true
+    }
+    
+    
+    @IBAction func save_rom(_ sender: Any) {
+        clear_window()
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
+        if programmer_check == "0" {
+            programmer_not_choosed()
+            return
+        }
+        save_rom(sender: "" as AnyObject)
+        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
+        if abort_check == false {
+            DispatchQueue.global(qos: .background).async {
+                self.syncShellExec(path: self.scriptPath, args: ["_save_rom"])
+                DispatchQueue.main.async {
+                    let success_check = UserDefaults.standard.bool(forKey: "Successful")
+                    if success_check == true {
+                        self.successful()
+                    } else {
+                        self.not_successful()
+                    }
+                }
+            }
+        }
+        else {
+            return
+        }
+        UserDefaults.standard.removeObject(forKey: "Abort")
+    }
 
+    
+    @IBAction func write_rom(_ sender: Any) {
+        clear_window()
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
+        if programmer_check == "0" {
+            programmer_not_choosed()
+            return
+        }
+        write_rom(sender: "" as AnyObject)
+        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
+        if abort_check == false {
+        DispatchQueue.global(qos: .background).async {
+            self.syncShellExec(path: self.scriptPath, args: ["_write_rom"])
+            DispatchQueue.main.async {
+                let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
+                let success_check = UserDefaults.standard.bool(forKey: "Successful")
+                if success_check == true {
+                    self.successful()
+                } else {
+                    if chip_type_mismatch == true {
+                        self.wrong_type_entered()
+                    } else {
+                        self.not_successful()
+                    }
+                }
+            }
+        }
+        }
+        UserDefaults.standard.removeObject(forKey: "Abort")
+        
+        
+    }
+    
+    
+    @IBAction func erase_eeprom(_ sender: Any) {
+        erase_confirmation()
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
+        if programmer_check == "0" {
+            programmer_not_choosed()
+            return
+        }
+        let abort_check = UserDefaults.standard.bool(forKey: "Abort")
+        if abort_check == false {
+        DispatchQueue.global(qos: .background).async {
+            self.syncShellExec(path: self.scriptPath, args: ["_erase_eeprom"])
+            DispatchQueue.main.async {
+                let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
+                let success_check = UserDefaults.standard.bool(forKey: "Successful")
+                if success_check == true {
+                    self.successful()
+                } else {
+                    if chip_type_mismatch == true {
+                        self.wrong_type_entered()
+                    } else {
+                        self.not_successful()
+                    }
+                }
+            }
+        }
+        }
+        UserDefaults.standard.removeObject(forKey: "Abort")
+    }
+    
+    
+    @IBAction func programmer_chooser(_ sender: Any) {
+        clear_window()
+        self.devices_empty_entry.isHidden=true
+        UserDefaults.standard.removeObject(forKey: "Chip Type Mismatch")
+        UserDefaults.standard.removeObject(forKey: "Force Chip Type")
+        self.programmer_detect_text.stringValue = NSLocalizedString("Checking connected USB Device", comment: "")
+        self.programmer_progress_wheel.isHidden = false
+        self.programmer_orange_dot.isHidden = true
+        self.programmer_red_dot.isHidden = true
+        self.programmer_green_dot.isHidden = true
+        self.programmer_progress_wheel?.startAnimation(self);
+        DispatchQueue.global(qos: .background).async {
+            self.syncShellExec(path: self.scriptPath, args: ["_check_programmer"])
+            DispatchQueue.main.async {
+                let programmer_found = UserDefaults.standard.bool(forKey: "Programmer found")
+                if programmer_found == true {
+                    self.programmer_orange_dot.isHidden = true
+                    self.programmer_red_dot.isHidden = true
+                    self.programmer_green_dot.isHidden = false
+                    self.programmer_detect_text.stringValue = NSLocalizedString("Device found", comment: "")
+                    self.get_chip_type_button.isEnabled = true
+                } else {
+                    self.programmer_orange_dot.isHidden = true
+                    self.programmer_red_dot.isHidden = false
+                    self.programmer_green_dot.isHidden = true
+                    self.programmer_detect_text.stringValue = NSLocalizedString("Device not found", comment: "")
+                    self.save_rom_button.isEnabled = false
+                    self.write_rom_button.isEnabled = false
+                    self.get_chip_type_button.isEnabled = false
+                    self.erase_eeprom_button.isEnabled = false
+                }
+                self.programmer_progress_wheel.isHidden = true
+                self.programmer_progress_wheel?.stopAnimation(self);
+                self.defaults.synchronize()
+            }
+        }
+    }
+    
+    
+    func syncShellExec(path: String, args: [String] = []) {
         let process            = Process()
         process.launchPath     = "/bin/bash"
         process.arguments      = [path] + args
@@ -280,7 +308,7 @@ class MainWindow: NSViewController {
               defaults.synchronize()
               return
           }
-      }
+    }
 
     func write_rom(sender: AnyObject) {
           let dialog = NSOpenPanel();
@@ -303,7 +331,8 @@ class MainWindow: NSViewController {
               UserDefaults.standard.set(true, forKey: "Abort")
               return
           }
-      }
+    }
+    
     
     func programmer_not_choosed (){
         let alert = NSAlert()
@@ -315,6 +344,7 @@ class MainWindow: NSViewController {
         alert.runModal()
     }
     
+    
     func successful (){
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Operation done!", comment: "")
@@ -324,6 +354,7 @@ class MainWindow: NSViewController {
         alert.addButton(withTitle: Button)
         alert.runModal()
     }
+    
     
     func not_successful (){
         let alert = NSAlert()
@@ -335,6 +366,7 @@ class MainWindow: NSViewController {
         alert.runModal()
     }
  
+    
     func no_chip_found (){
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Cannot detect any chip!", comment: "")
@@ -345,10 +377,12 @@ class MainWindow: NSViewController {
         alert.runModal()
     }
  
+    
     func multiple_types (){
         UserDefaults.standard.set(true, forKey: "Force Chip Type")
         let chip_types = UserDefaults.standard.string(forKey: "Chip Types")
-        self.get_chip_type_text.isEnabled = true
+        //self.get_chip_type_text.isEnabled = true
+        self.get_chip_type_text.isEditable = true
         self.get_chip_type_label.isHidden = false
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Multiple chip types found!", comment: "")
@@ -359,9 +393,11 @@ class MainWindow: NSViewController {
         alert.runModal()
     }
     
+    
     func wrong_type_entered (){
         //let chip_type = UserDefaults.standard.string(forKey: "Chip Type")
-        self.get_chip_type_text.isEnabled = true
+        //self.get_chip_type_text.isEnabled = true
+        self.get_chip_type_text.isEditable = true
         self.get_chip_type_label.isHidden = false
         let alert = NSAlert()
         alert.messageText = NSLocalizedString("Wrong chip type entered!", comment: "")
@@ -371,6 +407,7 @@ class MainWindow: NSViewController {
         alert.addButton(withTitle: Button)
         alert.runModal()
     }
+    
     
     func erase_confirmation (){
         let alert = NSAlert()
@@ -386,6 +423,10 @@ class MainWindow: NSViewController {
             UserDefaults.standard.set(true, forKey: "Abort")
             return
         }
+    }
+  
+    func clear_window (){
+        output_window.textStorage?.mutableString.setString("")
     }
     
 }
