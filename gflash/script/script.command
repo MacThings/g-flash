@@ -75,7 +75,7 @@ function _get_chip_type()
     _successful
     #cat /private/tmp/flashtemp
     chip_type=$( cat /private/tmp/flashtemp |sed -e 's/.*\ "//g' -e 's/".*//g' |xargs )
-    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type" "'$chip_type'"
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type" "\"$chip_type\""
   fi
   
   if [[ "$count" > 1 ]]; then
@@ -97,6 +97,8 @@ function _save_rom()
   _set_programmer
   
   chip_type=$( defaults read "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type" )
+  
+  echo "$chip_type"
   
   echo -e "Saving ROM to: $rom_savepath\n"
   cd "$ScriptPath"/../bin/
