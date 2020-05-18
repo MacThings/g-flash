@@ -507,13 +507,13 @@ Cg
                                             <rect key="frame" x="145" y="6" width="47" height="11"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Chip type" id="LE7-ED-lcl">
-                                                <font key="font" metaFont="label" size="9"/>
+                                                <font key="font" metaFont="menu" size="9"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uP7-cc-gae">
-                                            <rect key="frame" x="264" y="44" width="132" height="32"/>
+                                            <rect key="frame" x="264" y="45" width="132" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Preferences" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zc9-Qv-6Tv">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -527,6 +527,18 @@ Cg
                                             <rect key="frame" x="15" y="0.0" width="120" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </progressIndicator>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-kT-mJ4">
+                                            <rect key="frame" x="137" y="45" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="BIOS modding" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="wA4-lh-bTP">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="list_usb_devices:" target="XfG-lQ-9wD" id="foh-cP-HXe"/>
+                                                <segue destination="utw-dU-1OW" kind="sheet" id="P8q-vn-pzy"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </box>
@@ -588,6 +600,157 @@ Cg
                 <userDefaultsController representsSharedInstance="YES" id="4Qo-6o-qbk"/>
             </objects>
             <point key="canvasLocation" x="122" y="805.5"/>
+        </scene>
+        <!--Biosmodding-->
+        <scene sceneID="RTs-iG-qin">
+            <objects>
+                <viewController id="utw-dU-1OW" customClass="Biosmodding" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="TbV-y2-j1B">
+                        <rect key="frame" x="0.0" y="0.0" width="515" height="418"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Prr-FA-MJ4">
+                                <rect key="frame" x="19" y="357" width="477" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="bDh-sz-qrm">
+                                    <rect key="frame" x="3" y="3" width="471" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t84-8v-SY8">
+                                            <rect key="frame" x="7" y="16" width="152" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="MOD-Files for Model:" id="vJb-2S-X8O">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jnl-04-9fn">
+                                            <rect key="frame" x="149" y="10" width="168" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="Please choose ..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="wNP-bV-CZu" id="Z9a-4k-h5a">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <menu key="menu" id="J0O-MX-Qwd">
+                                                    <items>
+                                                        <menuItem title="Please choose ..." state="on" id="wNP-bV-CZu">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Thinkpad T420" tag="1" id="d59-5s-d6D">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Thinkpad T440" tag="2" id="CZc-WA-sB4"/>
+                                                        <menuItem title="Thinkpad T450s" tag="3" id="wl8-zT-vIL"/>
+                                                        <menuItem title="Thinkpad T520" tag="4" id="kUl-I9-eh8"/>
+                                                        <menuItem title="Thinkpad T520i" tag="5" id="spo-9B-1B6"/>
+                                                        <menuItem title="Thinkpad T530" tag="6" id="ZiW-8P-2Vh"/>
+                                                        <menuItem title="Thinkpad W541" tag="7" id="fVf-J2-NGf"/>
+                                                        <menuItem title="Thinkpad X1 Gen. 3" tag="8" id="iOp-RL-Azd"/>
+                                                        <menuItem title="Thinkpad X220" tag="9" id="mvb-nk-aut"/>
+                                                        <menuItem title="Thinkpad X230" tag="10" id="nRU-em-6dw"/>
+                                                        <menuItem title="Thinkpad X240" tag="11" id="y6B-wM-Oth"/>
+                                                        <menuItem title="Thinkpad Yoga S1" tag="12" id="2US-lk-CMv"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="DEW-va-i2d" name="selectedValue" keyPath="values.Laptopmodel" id="uMO-ZV-mvi"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ybu-OV-cw9">
+                                            <rect key="frame" x="326" y="6" width="141" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Download" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h4x-qu-iOZ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-SX-XP0">
+                                <rect key="frame" x="19" y="57" width="479" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="p3s-1f-LWX">
+                                    <rect key="frame" x="3" y="3" width="473" height="278"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gs-LB-Xsm">
+                                            <rect key="frame" x="71" y="4" width="140" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="10.14 and earlier" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o64-Gk-dGI">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lC-K3-u9U">
+                                            <rect key="frame" x="4" y="62" width="464" height="181"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" selectable="YES" id="ybb-s3-nWi">
+                                                <font key="font" metaFont="system"/>
+                                                <string key="title">To change the BIOS there is only a window tool called "PhoenixTool". There are two ways to use it on macOS. Both are based on "Wine".
+
+Users with 10.14 or earlier can use a Winewrapper that runs independently like a normal app.
+
+Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" program, since 32-bit support has been discontinued since 10.15. After installing CrossOver, just double click on the downloaded xcarchive. The main program then opens and you can start PhoenixTool there.</string>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WS0-Hj-1AU">
+                                            <rect key="frame" x="150" y="249" width="160" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="UEFI Bios Editor" id="gkm-PE-ZFz">
+                                                <font key="font" metaFont="systemBold" size="21"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-dS-gNQ">
+                                            <rect key="frame" x="179" y="40" width="104" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Download" id="pxK-ZI-1pc">
+                                                <font key="font" metaFont="systemBold" size="21"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-BX-qAz">
+                                            <rect key="frame" x="13" y="36" width="435" height="5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </box>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-Gt-8Az">
+                                            <rect key="frame" x="247" y="4" width="140" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="10.15 and higher" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wma-l6-dpl">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X06-1b-MGR">
+                                <rect key="frame" x="192" y="13" width="132" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wxc-4h-FP8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="utw-dU-1OW" id="NS5-ZK-VQV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="UbM-Se-lJC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="DEW-va-i2d"/>
+            </objects>
+            <point key="canvasLocation" x="-51.5" y="1366"/>
         </scene>
         <!--Changelog-->
         <scene sceneID="CNW-KH-BMQ">

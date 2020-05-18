@@ -10,6 +10,7 @@
 		2A02454D2470076700C9A87C /* lsusb in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A02454B2470075A00C9A87C /* lsusb */; };
 		2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A163B3C246FF766007DB90A /* MainWindow.swift */; };
 		2A82F82924713E55006688EC /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A82F82824713E55006688EC /* Website.swift */; };
+		2A8350D5247322DF00C70209 /* Biosmodding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8350D4247322DF00C70209 /* Biosmodding.swift */; };
 		2A8B5EC92470A7080098B8BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B5EC72470A7080098B8BF /* Localizable.strings */; };
 		2AB9DF0724712B1200677A16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB9DF0524712B1200677A16 /* InfoPlist.strings */; };
 		2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DF08247132BD00677A16 /* Preferences.swift */; };
@@ -64,6 +65,7 @@
 		2A02454B2470075A00C9A87C /* lsusb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsusb; sourceTree = "<group>"; };
 		2A163B3C246FF766007DB90A /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		2A82F82824713E55006688EC /* Website.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
+		2A8350D4247322DF00C70209 /* Biosmodding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biosmodding.swift; sourceTree = "<group>"; };
 		2A8B5EC32470A5C20098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		2A8B5EC82470A7080098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2AA27D352470656B00F8E25B /* gflash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gflash.html; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */,
 				2AEC297B246FF35D00ED7AD1 /* ViewController.swift */,
 				2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */,
+				2A8350D4247322DF00C70209 /* Biosmodding.swift */,
 				2AEC297F246FF35E00ED7AD1 /* Main.storyboard */,
 				2A8B5EC72470A7080098B8BF /* Localizable.strings */,
 				2A163B3C246FF766007DB90A /* MainWindow.swift */,
@@ -366,6 +369,7 @@
 				2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */,
 				2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */,
 				2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */,
+				2A8350D5247322DF00C70209 /* Biosmodding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
