@@ -239,10 +239,10 @@ DQ
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="8" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xWt-qj-nFw" userLabel="Gray Box">
-                                <rect key="frame" x="4" y="6" width="1019" height="562"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="6" y="6" width="1016" height="562"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <view key="contentView" id="dnL-WG-MmU">
-                                    <rect key="frame" x="0.0" y="0.0" width="1019" height="562"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1016" height="562"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="fillColor" name="unemphasizedSelectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -289,7 +289,7 @@ Cg
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="uoZ-ZP-PR2">
-                                                <rect key="frame" x="754" y="0.0" width="15" height="284"/>
+                                                <rect key="frame" x="957" y="0.0" width="16" height="390"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
