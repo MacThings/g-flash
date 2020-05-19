@@ -477,7 +477,7 @@ class MainWindow: NSViewController {
  
     @objc private func download_mods(_ sender: Any) {
         DispatchQueue.global(qos: .background).async {
-            self.syncShellExec(path: self.scriptPath, args: ["_download_crossover"])
+            self.syncShellExec(path: self.scriptPath, args: ["_download_mods"])
             DispatchQueue.main.async {
             }
         }

@@ -583,7 +583,6 @@ Cg
                         <outlet property="devices_pulldown" destination="b4Z-40-q16" id="Fty-Th-usu"/>
                         <outlet property="erase_eeprom_button" destination="BE9-U9-p1u" id="y60-fI-gtc"/>
                         <outlet property="get_chip_type_button" destination="lR3-rC-D2t" id="qDO-O6-264"/>
-                        <outlet property="get_chip_type_label" destination="yxg-n6-2y0" id="B6e-vM-yeg"/>
                         <outlet property="get_chip_type_progressbar" destination="vxQ-kH-SgR" id="OLE-TH-lLq"/>
                         <outlet property="get_chip_type_text" destination="aEf-zU-PgD" id="RoH-jV-e1k"/>
                         <outlet property="output_window" destination="TVA-gz-7F6" id="RlI-Mb-Yfp"/>
