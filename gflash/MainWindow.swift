@@ -55,6 +55,24 @@ class MainWindow: NSViewController {
         output_window.font = NSFont(name: fontfamily, size: fontsize)
         
         output_window.textStorage?.mutableString.setString("")
+        
+        NotificationCenter.default.addObserver(
+        self,
+        selector: #selector(self.download_wine),
+        name: NSNotification.Name(rawValue: "download_wine"),
+        object: nil)
+        
+        NotificationCenter.default.addObserver(
+        self,
+        selector: #selector(self.download_crossover),
+        name: NSNotification.Name(rawValue: "download_crossover"),
+        object: nil)
+        
+        NotificationCenter.default.addObserver(
+        self,
+        selector: #selector(self.download_mods),
+        name: NSNotification.Name(rawValue: "download_mods"),
+        object: nil)
     }
     
     
@@ -279,38 +297,7 @@ class MainWindow: NSViewController {
         }
     }
     
-    
-    func syncShellExec(path: String, args: [String] = []) {
-        let process            = Process()
-        process.launchPath     = "/bin/bash"
-        process.arguments      = [path] + args
-        let outputPipe         = Pipe()
-        let filelHandler       = outputPipe.fileHandleForReading
-        process.standardOutput = outputPipe
-        
-        let group = DispatchGroup()
-        group.enter()
-        filelHandler.readabilityHandler = { pipe in
-            let data = pipe.availableData
-            if data.isEmpty { // EOF
-                filelHandler.readabilityHandler = nil
-                group.leave()
-                return
-            }
-            if let line = String(data: data, encoding: String.Encoding.utf8) {
-                DispatchQueue.main.sync {
-                    self.output_window.string += line
-                    self.output_window.scrollToEndOfDocument(nil)
-                }
-            } else {
-                print("Error decoding data: \(data.base64EncodedString())")
-            }
-        }
-        process.launch() // Start process
-        process.waitUntilExit() // Wait for process to terminate.
-    }
-
-    
+  
     func save_rom(sender: AnyObject) {
           let dialog                     = NSSavePanel();
           dialog.title                   = NSLocalizedString("Choose a Filepath", comment: "");
@@ -452,9 +439,83 @@ class MainWindow: NSViewController {
         }
     }
   
+    @objc private func download_wine(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool" + " (Wineskin Wrapper) " + " ... please wait." + "\n", comment: "")
+        DispatchQueue.global(qos: .background).async {
+            self.syncShellExec(path: self.scriptPath, args: ["_download_wine"])
+                DispatchQueue.main.async {
+                    let download_check = UserDefaults.standard.bool(forKey: "Successful")
+                    if download_check == true {
+                        self.output_window.string += NSLocalizedString("\n" + "Operation done!", comment: "")
+                        self.output_window.scrollToEndOfDocument(nil)
+                    } else {
+                        self.output_window.string += NSLocalizedString("\n" + "Something went wrong. Please try again.", comment: "")
+                        self.output_window.scrollToEndOfDocument(nil)
+                    }
+               }
+           }
+       }
+       
+    @objc private func download_crossover(_ sender: Any) {
+           UserDefaults.standard.removeObject(forKey: "Successful")
+           self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool" + " (CrossOver Bottle) " + " ... please wait." + "\n\nMake sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website. \n\n\nhttps://media.codeweavers.com/pub/crossover/cxmac/demo/\n\n", comment: "")
+           DispatchQueue.global(qos: .background).async {
+               self.syncShellExec(path: self.scriptPath, args: ["_download_crossover"])
+                   DispatchQueue.main.async {
+                       let download_check = UserDefaults.standard.bool(forKey: "Successful")
+                       if download_check == true {
+                           self.output_window.string += NSLocalizedString("\n" + "Operation done!", comment: "")
+                           self.output_window.scrollToEndOfDocument(nil)
+                       } else {
+                           self.output_window.string += NSLocalizedString("\n" + "Something went wrong. Please try again.", comment: "")
+                           self.output_window.scrollToEndOfDocument(nil)
+                       }
+                  }
+              }
+       }
+ 
+    @objc private func download_mods(_ sender: Any) {
+        DispatchQueue.global(qos: .background).async {
+            self.syncShellExec(path: self.scriptPath, args: ["_download_crossover"])
+            DispatchQueue.main.async {
+            }
+        }
+    }
+    
     func clear_window (){
         output_window.textStorage?.mutableString.setString("")
     }
+   
     
+    func syncShellExec(path: String, args: [String] = []) {
+        let process            = Process()
+        process.launchPath     = "/bin/bash"
+        process.arguments      = [path] + args
+        let outputPipe         = Pipe()
+        let filelHandler       = outputPipe.fileHandleForReading
+        process.standardOutput = outputPipe
+        
+        let group = DispatchGroup()
+        group.enter()
+        filelHandler.readabilityHandler = { pipe in
+            let data = pipe.availableData
+            if data.isEmpty { // EOF
+                filelHandler.readabilityHandler = nil
+                group.leave()
+                return
+            }
+            if let line = String(data: data, encoding: String.Encoding.utf8) {
+                DispatchQueue.main.sync {
+                    self.output_window.string += line
+                    self.output_window.scrollToEndOfDocument(nil)
+                }
+            } else {
+                print("Error decoding data: \(data.base64EncodedString())")
+            }
+        }
+        process.launch() // Start process
+        process.waitUntilExit() // Wait for process to terminate.
+    }
    
 }

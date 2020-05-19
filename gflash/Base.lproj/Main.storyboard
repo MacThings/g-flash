@@ -507,7 +507,7 @@ Cg
                                             <rect key="frame" x="145" y="6" width="47" height="11"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Chip type" id="LE7-ED-lcl">
-                                                <font key="font" metaFont="menu" size="9"/>
+                                                <font key="font" metaFont="label" size="9"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -664,6 +664,9 @@ Cg
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="download_mods:" target="utw-dU-1OW" id="4OO-XX-Mjv"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>
@@ -682,6 +685,9 @@ Cg
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="download_wine:" target="utw-dU-1OW" id="8g0-H6-7G3"/>
+                                            </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lC-K3-u9U">
                                             <rect key="frame" x="4" y="62" width="464" height="181"/>
@@ -726,7 +732,14 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="download_crossover:" target="utw-dU-1OW" id="0ZR-qC-v18"/>
+                                            </connections>
                                         </button>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="rkr-KT-Y0u">
+                                            <rect key="frame" x="13" y="27" width="435" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
                                     </subviews>
                                 </view>
                             </box>
@@ -746,6 +759,9 @@ DQ
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="download_progressbar" destination="rkr-KT-Y0u" id="O2t-0c-SKz"/>
+                    </connections>
                 </viewController>
                 <customObject id="UbM-Se-lJC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController id="DEW-va-i2d"/>
