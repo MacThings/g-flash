@@ -524,7 +524,7 @@ Cg
                                             </connections>
                                         </button>
                                         <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-kH-SgR">
-                                            <rect key="frame" x="15" y="0.0" width="120" height="20"/>
+                                            <rect key="frame" x="15" y="2" width="120" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </progressIndicator>
                                         <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-kT-mJ4">
@@ -539,6 +539,26 @@ Cg
                                                 <segue destination="utw-dU-1OW" kind="sheet" id="P8q-vn-pzy"/>
                                             </connections>
                                         </button>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Uht-on-pF6">
+                                            <rect key="frame" x="143" y="37" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="GP0-Fs-lgA">
+                                            <rect key="frame" x="15" y="37" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="atA-dv-jLY">
+                                            <rect key="frame" x="16" y="71" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-B7-3jC">
+                                            <rect key="frame" x="144" y="71" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-yb-0Kq">
+                                            <rect key="frame" x="271" y="71" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
                                     </subviews>
                                 </view>
                             </box>
@@ -578,19 +598,24 @@ Cg
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="bios_modding_progressbar" destination="Uht-on-pF6" id="1bR-k8-arZ"/>
                         <outlet property="content_scroller" destination="kng-oJ-uW5" id="MkL-jk-EPv"/>
                         <outlet property="devices_empty_entry" destination="Vid-Mc-Omj" id="Yic-8O-4Uv"/>
                         <outlet property="devices_pulldown" destination="b4Z-40-q16" id="Fty-Th-usu"/>
                         <outlet property="erase_eeprom_button" destination="BE9-U9-p1u" id="y60-fI-gtc"/>
+                        <outlet property="erase_eeprom_progressbar" destination="eOa-yb-0Kq" id="VHh-By-ia1"/>
+                        <outlet property="flash_rom_progressbar" destination="Blt-B7-3jC" id="Lnm-Rb-1Ra"/>
                         <outlet property="get_chip_type_button" destination="lR3-rC-D2t" id="qDO-O6-264"/>
                         <outlet property="get_chip_type_progressbar" destination="vxQ-kH-SgR" id="OLE-TH-lLq"/>
                         <outlet property="get_chip_type_text" destination="aEf-zU-PgD" id="RoH-jV-e1k"/>
+                        <outlet property="list_usb_progressbar" destination="GP0-Fs-lgA" id="i5A-5U-de2"/>
                         <outlet property="output_window" destination="TVA-gz-7F6" id="RlI-Mb-Yfp"/>
                         <outlet property="programmer_detect_text" destination="whE-YS-4EV" id="uEX-3h-UA8"/>
                         <outlet property="programmer_green_dot" destination="rBQ-6e-zNx" id="Pk0-qe-6j8"/>
                         <outlet property="programmer_orange_dot" destination="4nw-A4-U1n" id="Wyi-OE-1xw"/>
                         <outlet property="programmer_progress_wheel" destination="pag-eb-ygV" id="P18-aX-Znk"/>
                         <outlet property="programmer_red_dot" destination="Ogg-HG-Ul8" id="7Eb-cF-hcD"/>
+                        <outlet property="read_rom_progressbar" destination="atA-dv-jLY" id="b5F-3g-gbQ"/>
                         <outlet property="save_rom_button" destination="MKg-3a-ZRO" id="bWj-4l-9XI"/>
                         <outlet property="write_rom_button" destination="hkc-Hb-EgL" id="HCX-Vc-TJD"/>
                     </connections>
@@ -605,11 +630,11 @@ Cg
             <objects>
                 <viewController id="utw-dU-1OW" customClass="Biosmodding" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="TbV-y2-j1B">
-                        <rect key="frame" x="0.0" y="0.0" width="515" height="418"/>
+                        <rect key="frame" x="0.0" y="0.0" width="515" height="439"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Prr-FA-MJ4">
-                                <rect key="frame" x="19" y="357" width="477" height="49"/>
+                                <rect key="frame" x="19" y="378" width="477" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="bDh-sz-qrm">
                                     <rect key="frame" x="3" y="3" width="471" height="43"/>
@@ -625,7 +650,7 @@ Cg
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jnl-04-9fn">
-                                            <rect key="frame" x="149" y="10" width="168" height="25"/>
+                                            <rect key="frame" x="149" y="10" width="200" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Please choose ..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="wNP-bV-CZu" id="Z9a-4k-h5a">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -635,31 +660,32 @@ Cg
                                                         <menuItem title="Please choose ..." state="on" id="wNP-bV-CZu">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="Thinkpad T420" tag="1" id="d59-5s-d6D">
+                                                        <menuItem title="ThinkPad T420 (2012)" tag="1" id="d59-5s-d6D">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="Thinkpad T440" tag="2" id="CZc-WA-sB4"/>
-                                                        <menuItem title="Thinkpad T450s" tag="3" id="wl8-zT-vIL"/>
-                                                        <menuItem title="Thinkpad T520" tag="4" id="kUl-I9-eh8"/>
-                                                        <menuItem title="Thinkpad T520i" tag="5" id="spo-9B-1B6"/>
-                                                        <menuItem title="Thinkpad T530" tag="6" id="ZiW-8P-2Vh"/>
-                                                        <menuItem title="Thinkpad W541" tag="7" id="fVf-J2-NGf"/>
-                                                        <menuItem title="Thinkpad X1 Gen. 3" tag="8" id="iOp-RL-Azd"/>
-                                                        <menuItem title="Thinkpad X220" tag="9" id="mvb-nk-aut"/>
-                                                        <menuItem title="Thinkpad X230" tag="10" id="nRU-em-6dw"/>
-                                                        <menuItem title="Thinkpad X240" tag="11" id="y6B-wM-Oth"/>
-                                                        <menuItem title="Thinkpad Yoga S1" tag="12" id="2US-lk-CMv"/>
+                                                        <menuItem title="ThinkPad T440 (2013)" tag="2" id="CZc-WA-sB4"/>
+                                                        <menuItem title="ThinkPad T450s (2015)" tag="3" id="wl8-zT-vIL"/>
+                                                        <menuItem title="ThinkPad T520 (2012)" tag="4" id="kUl-I9-eh8"/>
+                                                        <menuItem title="ThinkPad T520i (2012)" tag="5" id="spo-9B-1B6"/>
+                                                        <menuItem title="ThinkPad T530 (2014)" tag="6" id="ZiW-8P-2Vh"/>
+                                                        <menuItem title="ThinkPad W541 (2015)" tag="7" id="fVf-J2-NGf"/>
+                                                        <menuItem title="ThinkPad X1 Gen. 3 (2016)" tag="8" id="iOp-RL-Azd"/>
+                                                        <menuItem title="ThinkPad X220 (2011)" tag="9" id="mvb-nk-aut"/>
+                                                        <menuItem title="ThinkPad X230 (2012)" tag="10" id="nRU-em-6dw"/>
+                                                        <menuItem title="ThinkPad X240 (2013)" tag="11" id="y6B-wM-Oth"/>
+                                                        <menuItem title="ThinkPad Yoga S1 (2016)" tag="12" id="2US-lk-CMv"/>
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
                                             <connections>
-                                                <binding destination="DEW-va-i2d" name="selectedValue" keyPath="values.Laptopmodel" id="uMO-ZV-mvi"/>
+                                                <action selector="mod_chooser:" target="utw-dU-1OW" id="D4q-HA-Pmj"/>
+                                                <binding destination="DEW-va-i2d" name="selectedValue" keyPath="values.Model" id="tvA-Sh-y7K"/>
                                             </connections>
                                         </popUpButton>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ybu-OV-cw9">
-                                            <rect key="frame" x="326" y="6" width="141" height="32"/>
+                                            <rect key="frame" x="351" y="6" width="116" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="Download" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h4x-qu-iOZ">
+                                            <buttonCell key="cell" type="push" title="Download" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h4x-qu-iOZ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -671,14 +697,14 @@ Cg
                                 </view>
                             </box>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-SX-XP0">
-                                <rect key="frame" x="19" y="57" width="479" height="284"/>
+                                <rect key="frame" x="19" y="57" width="479" height="305"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="p3s-1f-LWX">
-                                    <rect key="frame" x="3" y="3" width="473" height="278"/>
+                                    <rect key="frame" x="3" y="3" width="473" height="299"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gs-LB-Xsm">
-                                            <rect key="frame" x="71" y="4" width="140" height="32"/>
+                                            <rect key="frame" x="71" y="6" width="140" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="10.14 and earlier" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o64-Gk-dGI">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -689,10 +715,10 @@ Cg
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lC-K3-u9U">
-                                            <rect key="frame" x="4" y="62" width="464" height="181"/>
+                                            <rect key="frame" x="4" y="66" width="464" height="198"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" selectable="YES" id="ybb-s3-nWi">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="12" name="HelveticaNeue"/>
                                                 <string key="title">To change the BIOS there is only a window tool called "PhoenixTool". There are two ways to use it on macOS. Both are based on "Wine".
 
 Users with 10.14 or earlier can use a Winewrapper that runs independently like a normal app.
@@ -703,7 +729,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WS0-Hj-1AU">
-                                            <rect key="frame" x="150" y="249" width="160" height="24"/>
+                                            <rect key="frame" x="150" y="270" width="160" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="UEFI Bios Editor" id="gkm-PE-ZFz">
                                                 <font key="font" metaFont="systemBold" size="21"/>
@@ -712,7 +738,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-dS-gNQ">
-                                            <rect key="frame" x="179" y="40" width="104" height="24"/>
+                                            <rect key="frame" x="179" y="42" width="104" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Download" id="pxK-ZI-1pc">
                                                 <font key="font" metaFont="systemBold" size="21"/>
@@ -721,11 +747,11 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </textFieldCell>
                                         </textField>
                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-BX-qAz">
-                                            <rect key="frame" x="13" y="36" width="435" height="5"/>
+                                            <rect key="frame" x="13" y="38" width="435" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </box>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-Gt-8Az">
-                                            <rect key="frame" x="247" y="4" width="140" height="32"/>
+                                            <rect key="frame" x="247" y="6" width="140" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="10.15 and higher" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wma-l6-dpl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -735,15 +761,20 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                                 <action selector="download_crossover:" target="utw-dU-1OW" id="0ZR-qC-v18"/>
                                             </connections>
                                         </button>
-                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="rkr-KT-Y0u">
-                                            <rect key="frame" x="13" y="27" width="435" height="20"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UkY-7j-Em8">
+                                            <rect key="frame" x="287" y="43" width="145" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        </progressIndicator>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="(Path: ~/Desktop/G-Flash)" id="xx6-XG-H4i">
+                                                <font key="font" size="12" name="HelveticaNeue"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                 </view>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X06-1b-MGR">
-                                <rect key="frame" x="192" y="13" width="132" height="32"/>
+                                <rect key="frame" x="191" y="13" width="132" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wxc-4h-FP8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -759,13 +790,15 @@ DQ
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="download_progressbar" destination="rkr-KT-Y0u" id="O2t-0c-SKz"/>
+                        <outlet property="download_button" destination="Ybu-OV-cw9" id="t2M-IU-pyR"/>
+                        <outlet property="pulldown_empty_entry" destination="wNP-bV-CZu" id="yoN-sK-8j3"/>
+                        <outlet property="pulldown_menu" destination="Jnl-04-9fn" id="bsA-wt-MS6"/>
                     </connections>
                 </viewController>
                 <customObject id="UbM-Se-lJC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController id="DEW-va-i2d"/>
             </objects>
-            <point key="canvasLocation" x="-51.5" y="1366"/>
+            <point key="canvasLocation" x="-51.5" y="1376.5"/>
         </scene>
         <!--Changelog-->
         <scene sceneID="CNW-KH-BMQ">

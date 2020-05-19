@@ -98,8 +98,6 @@ function _save_rom()
   
   chip_type=$( defaults read "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type" )
   
-  echo "$chip_type"
-  
   echo -e "Saving ROM to: $rom_savepath\n"
   cd "$ScriptPath"/../bin/
   
@@ -414,7 +412,7 @@ function _download_wine()
 {
   mkdir ${ScriptHome}/Desktop/G-Flash > /dev/null
   rm -rf "${ScriptHome}"/Desktop/G-Flash/PhoenixTool.app > /dev/null
-  curl -q https://www.sl-soft.de/PhoenixTool.7z > "${ScriptHome}"/Desktop/G-Flash/PhoenixTool.7z
+  curl -q https://www.sl-soft.de/g-flash/PhoenixTool.7z > "${ScriptHome}"/Desktop/G-Flash/PhoenixTool.7z
   "$ScriptPath"/../bin/7za x -y -bsp0 -bso0 "${ScriptHome}"/Desktop/G-Flash/PhoenixTool.7z -o"${ScriptHome}"/Desktop/G-Flash
   if [[ "$?" = "0" ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Successful" -bool true
@@ -426,7 +424,7 @@ function _download_crossover()
 {
   mkdir ${ScriptHome}/Desktop/G-Flash > /dev/null
   rm -rf "${ScriptHome}"/Desktop/G-Flash/PhoenixTool.cxarchive > /dev/null
-  curl -q https://www.sl-soft.de/PhoenixTool.zip > "${ScriptHome}"/Desktop/G-Flash/PhoenixTool.zip
+  curl -q https://www.sl-soft.de/g-flash/PhoenixTool.zip > "${ScriptHome}"/Desktop/G-Flash/PhoenixTool.zip
   "$ScriptPath"/../bin/7za x -y -bsp0 -bso0 "${ScriptHome}"/Desktop/G-Flash/PhoenixTool.zip -o"${ScriptHome}"/Desktop/G-Flash
   if [[ "$?" = "0" ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Successful" -bool true
@@ -437,10 +435,13 @@ function _download_crossover()
 
 function _download_mods()
 {
+
+  model=$( defaults read "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Model" )
+
   mkdir ${ScriptHome}/Desktop/G-Flash > /dev/null
   rm -rf "${ScriptHome}"/Desktop/G-Flash/bios_mod_bundle.zip > /dev/null
-  curl https://www.sl-soft.de/bios_mod_bundle.zip > "${ScriptHome}"/Desktop/G-Flash/bios_mod_bundle.zip
-  "$ScriptPath"/../bin/7za x -y -bsp0 -bso0 "${ScriptHome}"/Desktop/G-Flash/bios_mod_bundle.zip -o"${ScriptHome}"/Desktop/G-Flash
+  curl https://www.sl-soft.de/g-flash/bios_mod_bundle.zip > "${ScriptHome}"/Desktop/G-Flash/bios_mod_bundle.zip
+  "$ScriptPath"/../bin/7za x -y -bsp0 -bso0 "${ScriptHome}"/Desktop/G-Flash/bios_mod_bundle.zip "$model" "Modules.txt" -o"${ScriptHome}"/Desktop/G-Flash
   if [[ "$?" = "0" ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Successful" -bool true
     rm "${ScriptHome}"/Desktop/G-Flash/bios_mod_bundle.zip

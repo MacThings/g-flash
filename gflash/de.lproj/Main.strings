@@ -34,6 +34,12 @@
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "DC7-gv-Fka"; */
 "DC7-gv-Fka.title" = "Auf Updates prüfen...";
 
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "dmb-yP-hOp"; */
+"dmb-yP-hOp.title" = "Einfügen";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "e5j-Zf-dtJ"; */
+"e5j-Zf-dtJ.title" = "Bearbeiten";
+
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "Hilfe";
 
@@ -52,7 +58,7 @@
 /* Class = "NSBox"; title = "Programmer"; ObjectID = "ILZ-rs-xXb"; */
 "ILZ-rs-xXb.title" = "Programmer";
 
-/* Class = "NSWindow"; title = "Window"; ObjectID = "IQv-IB-iLA"; */
+/* Class = "NSWindow"; title = "G-Flash"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "Window";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
@@ -88,6 +94,9 @@
 /* Class = "NSButtonCell"; title = "Get Chip type"; ObjectID = "qcI-Dh-Ab7"; */
 "qcI-Dh-Ab7.title" = "Chip erkennen";
 
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "QIt-6O-MT8"; */
+"QIt-6O-MT8.title" = "Ausschneiden";
+
 /* Class = "NSBox"; title = "Box"; ObjectID = "qqg-lx-xGq"; */
 "qqg-lx-xGq.title" = "Box";
 
@@ -100,6 +109,9 @@
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
 "R4o-n2-Eq4.title" = "Zoom";
 
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "rNA-7N-0F6"; */
+"rNA-7N-0F6.title" = "Kopieren";
+
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "RpA-JL-lVE"; */
 "RpA-JL-lVE.title" = "Schließen";
 
@@ -107,13 +119,16 @@
 "RuQ-Hg-Xk0.title" = "Automatische Erkennung";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
-"Td7-aD-5lo.title" = "Window";
+"Td7-aD-5lo.title" = "Fenster";
 
 /* Class = "NSButtonCell"; title = "Verify saved ROM"; ObjectID = "tOv-Pr-H4v"; */
 "tOv-Pr-H4v.title" = "Überprüfe gespeichertes ROM";
 
 /* Class = "NSTextFieldCell"; title = "<< do not localize >>"; ObjectID = "tr1-hm-r49"; */
 "tr1-hm-r49.title" = "<< do not localize >>";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "UbS-6y-QkJ"; */
+"UbS-6y-QkJ.title" = "Bearbeiten";
 
 /* Class = "NSButtonCell"; title = "Verbose complete Output"; ObjectID = "ufz-GF-7vE"; */
 "ufz-GF-7vE.title" = "Komplette Log-Ausgabe";
@@ -130,17 +145,35 @@
 /* Class = "NSMenuItem"; title = "Choose Programmer ..."; ObjectID = "Vid-Mc-Omj"; */
 "Vid-Mc-Omj.title" = "Programmer auswählen...";
 
-/* Class = "NSButtonCell"; title = "Write ROM"; ObjectID = "vOF-Eb-YiJ"; */
+/* Class = "NSTextFieldCell"; title = "MOD-Files for Model:"; ObjectID = "vJb-2S-X8O"; */
+"vJb-2S-X8O.title" = "MOD-Dateien für Modell:";
+
+/* Class = "NSButtonCell"; title = "Flash ROM"; ObjectID = "vOF-Eb-YiJ"; */
 "vOF-Eb-YiJ.title" = "ROM flashen";
+
+/* Class = "NSButtonCell"; title = "10.15 and higher"; ObjectID = "wma-l6-dpl"; */
+"wma-l6-dpl.title" = "10.15 und höher";
+
+/* Class = "NSMenuItem"; title = "Please choose ..."; ObjectID = "wNP-bV-CZu"; */
+"wNP-bV-CZu.title" = "Bitte auswählen ...";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
 "wpr-3q-Mcd.title" = "Hilfe";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "Wxc-4h-FP8"; */
+"Wxc-4h-FP8.title" = "Schliessen";
 
 /* Class = "NSTextFieldCell"; title = "The ultimate \"flashrom\"-GUI for the Mac"; ObjectID = "XhB-Ia-2Jr"; */
 "XhB-Ia-2Jr.title" = "Die ultimative flashrom-GUI für macOS";
 
 /* Class = "NSButtonCell"; title = "Erase EEPROM"; ObjectID = "xO4-GM-CGG"; */
 "xO4-GM-CGG.title" = "EEPROM löschen";
+
+/* Class = "NSTextFieldCell"; title = "(Path: ~/Desktop/G-Flash)"; ObjectID = "xx6-XG-H4i"; */
+"xx6-XG-H4i.title" = "(Pfad: ~/Desktop/G-Flash)";
+
+/* Class = "NSTextFieldCell"; title = "To change the BIOS there is only a window tool called \"PhoenixTool\". There are two ways to use it on macOS. Both are based on \"Wine\".\n\nUsers with 10.14 or earlier can use a Winewrapper that runs independently like a normal app.\n\nUsers who use 10.15 or higher must first install CodeWeavers' \"CrossOver\" program, since 32-bit support has been discontinued since 10.15. After installing CrossOver, just double click on the downloaded xcarchive. The main program then opens and you can start PhoenixTool there."; ObjectID = "ybb-s3-nWi"; */
+"ybb-s3-nWi.title" = "Um das BIOS zu ändern, gibt es nur ein Windows Tool namens \"PhoenixTool\". Es gibt zwei Möglichkeiten, es unter macOS zu verwenden. Beide basieren auf \"Wine\".\n\nBenutzer mit 10.14 oder früher können einen Winewrapper verwenden, der unabhängig wie eine normale App ausgeführt wird.\n\nBenutzer, die 10.15 oder höher verwenden, müssen zuerst das \"CrossOver\" -Programm von CodeWeavers installieren, da die 32-Bit-Unterstützung seit 10.15 eingestellt wurde. Doppelklicke nach der Installation von CrossOver einfach auf das heruntergeladene xcarchive. Das Hauptprogramm wird dann geöffnet und Du kannst PhoenixTool dort starten.";
 
 /* Class = "NSMenuItem"; ibShadowedToolTip = "04d8:0033"; ObjectID = "YN2-og-Scm"; */
 "YN2-og-Scm.ibShadowedToolTip" = "04d8:0033";

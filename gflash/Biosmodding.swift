@@ -13,10 +13,20 @@ import Cocoa
 class Biosmodding: NSViewController {
 
     
-    @IBOutlet var download_progressbar: NSProgressIndicator!
+    @IBOutlet weak var download_button: NSButton!
+    @IBOutlet weak var pulldown_empty_entry: NSMenuItem!
+    @IBOutlet weak var pulldown_menu: NSPopUpButton!
+    
     
     override func viewDidLoad() {
            super.viewDidLoad()
+        self.pulldown_menu.selectItem(at: 0)
+        self.pulldown_menu.item(withTitle: "")?.isHidden=true
+    }
+    
+    @IBAction func mod_chooser(_ sender: Any) {
+        self.pulldown_empty_entry.isHidden=true
+        self.download_button.isEnabled=true
     }
     
     @IBAction func download_wine(_ sender: Any) {

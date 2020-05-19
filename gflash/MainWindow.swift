@@ -19,8 +19,15 @@ class MainWindow: NSViewController {
     @IBOutlet weak var get_chip_type_button: NSButton!
     @IBOutlet weak var erase_eeprom_button: NSButton!
     
+    @IBOutlet weak var read_rom_progressbar: NSProgressIndicator!
+    @IBOutlet weak var flash_rom_progressbar: NSProgressIndicator!
+    @IBOutlet weak var erase_eeprom_progressbar: NSProgressIndicator!
+    @IBOutlet weak var list_usb_progressbar: NSProgressIndicator!
+    
     @IBOutlet weak var get_chip_type_text: NSTextField!
     @IBOutlet weak var get_chip_type_progressbar: NSProgressIndicator!
+    
+    @IBOutlet weak var bios_modding_progressbar: NSProgressIndicator!
     
     @IBOutlet weak var devices_pulldown: NSPopUpButton!
     @IBOutlet weak var devices_empty_entry: NSMenuItem!
@@ -50,7 +57,7 @@ class MainWindow: NSViewController {
         if #available(OSX 10.14, *) {
             output_window.textColor = (NSApp.effectiveAppearance.name == NSAppearance.Name.darkAqua ? NSColor.white : NSColor.black)
         }
-        let fontsize = CGFloat(14)
+        let fontsize = CGFloat(15)
         let fontfamily = "Menlo"
         output_window.font = NSFont(name: fontfamily, size: fontsize)
         
@@ -78,9 +85,13 @@ class MainWindow: NSViewController {
     
     @IBAction func list_usb_devices(_ sender: Any) {
         clear_window()
+        self.list_usb_progressbar.isHidden=false
+        self.list_usb_progressbar?.startAnimation(self);
         DispatchQueue.global(qos: .background).async {
             self.syncShellExec(path: self.scriptPath, args: ["_list_usb_devices"])
             DispatchQueue.main.async {
+                self.list_usb_progressbar.isHidden=true
+                self.list_usb_progressbar?.stopAnimation(self);
             }
         }
     }
@@ -161,9 +172,13 @@ class MainWindow: NSViewController {
         save_rom(sender: "" as AnyObject)
         let abort_check = UserDefaults.standard.bool(forKey: "Abort")
         if abort_check == false {
+            self.read_rom_progressbar.isHidden=false
+            self.read_rom_progressbar?.startAnimation(self);
             DispatchQueue.global(qos: .background).async {
                 self.syncShellExec(path: self.scriptPath, args: ["_save_rom"])
                 DispatchQueue.main.async {
+                    self.read_rom_progressbar.isHidden=true
+                    self.read_rom_progressbar?.stopAnimation(self);
                     let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
                     let success_check = UserDefaults.standard.bool(forKey: "Successful")
                     if success_check == true {
@@ -175,8 +190,11 @@ class MainWindow: NSViewController {
                             self.not_successful()
                         }
                     }
+                    
+                    
                 }
             }
+            
         }
         else {
             return
@@ -196,9 +214,13 @@ class MainWindow: NSViewController {
         write_rom(sender: "" as AnyObject)
         let abort_check = UserDefaults.standard.bool(forKey: "Abort")
         if abort_check == false {
+        self.flash_rom_progressbar.isHidden=false
+        self.flash_rom_progressbar?.startAnimation(self);
         DispatchQueue.global(qos: .background).async {
             self.syncShellExec(path: self.scriptPath, args: ["_write_rom"])
             DispatchQueue.main.async {
+                self.flash_rom_progressbar.isHidden=true
+                self.flash_rom_progressbar?.stopAnimation(self);
                 let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
                 let success_check = UserDefaults.standard.bool(forKey: "Successful")
                 if success_check == true {
@@ -230,9 +252,13 @@ class MainWindow: NSViewController {
         let abort_check = UserDefaults.standard.bool(forKey: "Abort")
         if abort_check == false {
             clear_window()
+            self.erase_eeprom_progressbar.isHidden=false
+            self.erase_eeprom_progressbar?.startAnimation(self);
             DispatchQueue.global(qos: .background).async {
                 self.syncShellExec(path: self.scriptPath, args: ["_erase_eeprom"])
                 DispatchQueue.main.async {
+                    self.erase_eeprom_progressbar.isHidden=true
+                    self.erase_eeprom_progressbar?.stopAnimation(self);
                     let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
                     let success_check = UserDefaults.standard.bool(forKey: "Successful")
                     if success_check == true {
@@ -440,47 +466,70 @@ class MainWindow: NSViewController {
     }
   
     @objc private func download_wine(_ sender: Any) {
+        self.bios_modding_progressbar.isHidden=false
+        self.bios_modding_progressbar?.startAnimation(self);
         UserDefaults.standard.removeObject(forKey: "Successful")
-        self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool" + " (Wineskin Wrapper) " + " ... please wait." + "\n", comment: "")
+        self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool" , comment: "") + NSLocalizedString(" (Wineskin Wrapper)", comment: "") + NSLocalizedString(" ... please wait.", comment: "") + "\n"
         DispatchQueue.global(qos: .background).async {
             self.syncShellExec(path: self.scriptPath, args: ["_download_wine"])
                 DispatchQueue.main.async {
                     let download_check = UserDefaults.standard.bool(forKey: "Successful")
                     if download_check == true {
-                        self.output_window.string += NSLocalizedString("\n" + "Operation done!", comment: "")
+                        self.output_window.string += "\n" + NSLocalizedString("Operation done!", comment: "")
                         self.output_window.scrollToEndOfDocument(nil)
                     } else {
-                        self.output_window.string += NSLocalizedString("\n" + "Something went wrong. Please try again.", comment: "")
+                        self.output_window.string += "\n" + NSLocalizedString("Something went wrong. Please try again.", comment: "")
                         self.output_window.scrollToEndOfDocument(nil)
                     }
+                    self.bios_modding_progressbar.isHidden=true
+                    self.bios_modding_progressbar?.stopAnimation(self);
                }
            }
        }
-       
+ 
     @objc private func download_crossover(_ sender: Any) {
+        self.bios_modding_progressbar.isHidden=false
+        self.bios_modding_progressbar?.startAnimation(self);
            UserDefaults.standard.removeObject(forKey: "Successful")
-           self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool" + " (CrossOver Bottle) " + " ... please wait." + "\n\nMake sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website. \n\n\nhttps://media.codeweavers.com/pub/crossover/cxmac/demo/\n\n", comment: "")
+           self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool", comment: "") + NSLocalizedString(" (CrossOver Bottle)", comment: "") + NSLocalizedString(" ... please wait.", comment: "") + "\n\n" + NSLocalizedString("Make sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website.", comment: "") + "\n\n\nhttps://media.codeweavers.com/pub/crossover/cxmac/demo/" + "\n\n"
            DispatchQueue.global(qos: .background).async {
                self.syncShellExec(path: self.scriptPath, args: ["_download_crossover"])
                    DispatchQueue.main.async {
                        let download_check = UserDefaults.standard.bool(forKey: "Successful")
                        if download_check == true {
-                           self.output_window.string += NSLocalizedString("\n" + "Operation done!", comment: "")
+                           self.output_window.string += "\n" + NSLocalizedString("Operation done!", comment: "")
                            self.output_window.scrollToEndOfDocument(nil)
                        } else {
-                           self.output_window.string += NSLocalizedString("\n" + "Something went wrong. Please try again.", comment: "")
+                           self.output_window.string += "\n" + NSLocalizedString("Something went wrong. Please try again.", comment: "")
                            self.output_window.scrollToEndOfDocument(nil)
                        }
+                    self.bios_modding_progressbar.isHidden=true
+                    self.bios_modding_progressbar?.stopAnimation(self);
                   }
               }
        }
  
     @objc private func download_mods(_ sender: Any) {
-        DispatchQueue.global(qos: .background).async {
-            self.syncShellExec(path: self.scriptPath, args: ["_download_mods"])
-            DispatchQueue.main.async {
+        self.bios_modding_progressbar.isHidden=false
+        self.bios_modding_progressbar?.startAnimation(self);
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        let model_check = UserDefaults.standard.string(forKey: "Model")
+        self.output_window.string=NSLocalizedString("Downloading and uncompressing ", comment: "") + model_check! + NSLocalizedString(" MOD Files.", comment: "") + "\n"
+         DispatchQueue.global(qos: .background).async {
+             self.syncShellExec(path: self.scriptPath, args: ["_download_mods"])
+                 DispatchQueue.main.async {
+                     let download_check = UserDefaults.standard.bool(forKey: "Successful")
+                     if download_check == true {
+                         self.output_window.string += "\n" + NSLocalizedString("Operation done!", comment: "")
+                         self.output_window.scrollToEndOfDocument(nil)
+                     } else {
+                         self.output_window.string += "\n" + NSLocalizedString("Something went wrong. Please try again.", comment: "")
+                         self.output_window.scrollToEndOfDocument(nil)
+                     }
+                    self.bios_modding_progressbar.isHidden=true
+                    self.bios_modding_progressbar?.stopAnimation(self);
+                }
             }
-        }
     }
     
     func clear_window (){

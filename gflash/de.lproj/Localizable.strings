@@ -20,10 +20,10 @@
 "Choose a ROM File (.bin)" = "Wähle eine ROM Datei aus (.bin)";
 
 /* No comment provided by engineer. */
-"Device ready" = "Gerät bereit";
+"Device not found" = "Gerät nicht gefunden";
 
 /* No comment provided by engineer. */
-"Device not found" = "Gerät nicht gefunden";
+"Device ready" = "Gerät bereit";
 
 /* No comment provided by engineer. */
 "Do you want it really?" = "Möchtest Du das wirklich?";
@@ -73,4 +73,28 @@
 /* No comment provided by engineer. */
 "You did not have selected any Programmer!" = "Du hast keinen Programmer ausgewählt!";
 
-" chip types has been recognized. Please enter the correct value in the input field that just appeared. It´s important to press 'Enter' after entering the chip type." = " Chiptypen wurden erkannt. Bitte gib den korrekten Wert in das Eingabefeld ein. Nach der Eingabe bitte mit 'Enter' bestätigen.";
+/* No comment provided by engineer. */
+"Downloading and uncompressing PhoenixTool" = "Herunterladen und Dekomprimieren von PhoenixTool";
+
+/* No comment provided by engineer. */
+" ... please wait." = " ...bitte warten.";
+
+/* No comment provided by engineer. */
+"Make sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website." = "Stelle sicher, dass Du mindestens CrossOver v19.x installiert hast, um diese Flasche auszuführen. Wenn Du das Programm noch nicht hast, kannst Du die die 14-Tage-Testversion von der Website herunterladen.";
+
+/* No comment provided by engineer. */
+" MOD Files." = " MOD Dateien.";
+
+/* No comment provided by engineer. */
+"Downloading and uncompressing " = "Herunterladen und entpacken von ";
+
+/* No comment provided by engineer. */
+" (CrossOver Bottle)" = " (CrossOver Flasche)";
+
+/* No comment provided by engineer. */
+
+/* No comment provided by engineer. */
+
+/* No comment provided by engineer. */
+
+/* No comment provided by engineer. */

@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UserDefaults.standard.removeObject(forKey: "Programmer found")
         UserDefaults.standard.removeObject(forKey: "Abort")
         UserDefaults.standard.set(false, forKey: "Force Chip Type")
-        UserDefaults.standard.removeObject(forKey: "Download OK")
+        UserDefaults.standard.removeObject(forKey: "Model")
         defaults.synchronize()
     }
 
