@@ -21,6 +21,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        let download_path_check = UserDefaults.standard.string(forKey: "Download Path")
+        if download_path_check == nil{
+            UserDefaults.standard.set("~/Downloads", forKey: "Download Path")
+        }
+        
         PFMoveToApplicationsFolderIfNecessary()
         check_theme()
         UserDefaults.standard.set("0", forKey: "Programmer")

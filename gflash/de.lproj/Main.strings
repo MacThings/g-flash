@@ -61,6 +61,9 @@
 /* Class = "NSWindow"; title = "G-Flash"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "Window";
 
+/* Class = "NSButtonCell"; title = "Change"; ObjectID = "kaU-Rf-qRN"; */
+"kaU-Rf-qRN.title" = "Ändern";
+
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
 "Kd2-mp-pUS.title" = "Alle anzeigen";
 
@@ -69,6 +72,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Chip type"; ObjectID = "LE7-ED-lcl"; */
 "LE7-ED-lcl.title" = "Chiptyp";
+
+/* Class = "NSTextFieldCell"; title = "Download Path"; ObjectID = "llx-Mg-cVb"; */
+"llx-Mg-cVb.title" = "Download Pfad";
 
 /* Class = "NSTextFieldCell"; title = "G-Flash"; ObjectID = "mh5-Zy-jbK"; */
 "mh5-Zy-jbK.title" = "G-Flash";

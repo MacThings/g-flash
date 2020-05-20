@@ -29,7 +29,16 @@
 "Do you want it really?" = "Möchtest Du das wirklich?";
 
 /* No comment provided by engineer. */
+"Downloading and uncompressing PhoenixTool" = "Herunterladen und Dekomprimieren von PhoenixTool";
+
+/* No comment provided by engineer. */
+"Downloading and uncompressing " = "Herunterladen und Dekomprimieren von ";
+
+/* No comment provided by engineer. */
 "I understand" = "Verstanden";
+
+/* No comment provided by engineer. */
+"Make sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website." = "Stelle sicher, dass Du mindestens CrossOver v19.x installiert hast, um diese Flasche auszuführen. Wenn Du das Programm noch nicht hast, kannst Du die die 14-Tage-Testversion von der Website herunterladen.";
 
 /* No comment provided by engineer. */
 "Make sure the pliers is properly seated on the chip." = "Stelle sicher, dass die Zange ordentlich mit dem Chip verbunden ist.";
@@ -56,6 +65,9 @@
 "Operation done!" = "Durchführung erledigt!";
 
 /* No comment provided by engineer. */
+"Please choose a destination Folder" = "Bitte wähle einen Zielordner aus";
+
+/* No comment provided by engineer. */
 "Please choose one from the Pulldown Menu and try again." = "Bitte wähle einen aus dem Pulldown Menu aus und versuche es noch einmal.";
 
 /* No comment provided by engineer. */
@@ -74,27 +86,4 @@
 "You did not have selected any Programmer!" = "Du hast keinen Programmer ausgewählt!";
 
 /* No comment provided by engineer. */
-"Downloading and uncompressing PhoenixTool" = "Herunterladen und Dekomprimieren von PhoenixTool";
-
-/* No comment provided by engineer. */
-" ... please wait." = " ...bitte warten.";
-
-/* No comment provided by engineer. */
-"Make sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website." = "Stelle sicher, dass Du mindestens CrossOver v19.x installiert hast, um diese Flasche auszuführen. Wenn Du das Programm noch nicht hast, kannst Du die die 14-Tage-Testversion von der Website herunterladen.";
-
-/* No comment provided by engineer. */
-" MOD Files." = " MOD Dateien.";
-
-/* No comment provided by engineer. */
-"Downloading and uncompressing " = "Herunterladen und entpacken von ";
-
-/* No comment provided by engineer. */
-" (CrossOver Bottle)" = " (CrossOver Flasche)";
-
-/* No comment provided by engineer. */
-
-/* No comment provided by engineer. */
-
-/* No comment provided by engineer. */
-
-/* No comment provided by engineer. */
+"... please wait." = "... bitte warten.";

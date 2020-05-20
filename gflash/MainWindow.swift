@@ -469,7 +469,7 @@ class MainWindow: NSViewController {
         self.bios_modding_progressbar.isHidden=false
         self.bios_modding_progressbar?.startAnimation(self);
         UserDefaults.standard.removeObject(forKey: "Successful")
-        self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool" , comment: "") + NSLocalizedString(" (Wineskin Wrapper)", comment: "") + NSLocalizedString(" ... please wait.", comment: "") + "\n"
+        self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool" , comment: "") + NSLocalizedString(" (Wineskin Wrapper)", comment: "") + NSLocalizedString("... please wait.", comment: "") + "\n"
         DispatchQueue.global(qos: .background).async {
             self.syncShellExec(path: self.scriptPath, args: ["_download_wine"])
                 DispatchQueue.main.async {
@@ -491,7 +491,7 @@ class MainWindow: NSViewController {
         self.bios_modding_progressbar.isHidden=false
         self.bios_modding_progressbar?.startAnimation(self);
            UserDefaults.standard.removeObject(forKey: "Successful")
-           self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool", comment: "") + NSLocalizedString(" (CrossOver Bottle)", comment: "") + NSLocalizedString(" ... please wait.", comment: "") + "\n\n" + NSLocalizedString("Make sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website.", comment: "") + "\n\n\nhttps://media.codeweavers.com/pub/crossover/cxmac/demo/" + "\n\n"
+           self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool", comment: "") + NSLocalizedString(" (CrossOver Bottle)", comment: "") + NSLocalizedString("... please wait.", comment: "") + "\n\n" + NSLocalizedString("Make sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website.", comment: "") + "\n\n\nhttps://media.codeweavers.com/pub/crossover/cxmac/demo/" + "\n\n"
            DispatchQueue.global(qos: .background).async {
                self.syncShellExec(path: self.scriptPath, args: ["_download_crossover"])
                    DispatchQueue.main.async {
