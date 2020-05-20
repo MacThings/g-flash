@@ -221,7 +221,7 @@
                                             <rect key="frame" x="12" y="33" width="279" height="11"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Download Path (Folder &quot;G-Flash&quot; will created automatic there)" id="llx-Mg-cVb">
-                                                <font key="font" metaFont="system" size="9"/>
+                                                <font key="font" metaFont="menu" size="9"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -231,7 +231,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Change" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kaU-Rf-qRN">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system" size="9"/>
+                                                <font key="font" metaFont="menu" size="9"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="browseFileWithSender:" target="0ec-NJ-RYn" id="xDN-aB-iac"/>
@@ -543,7 +543,7 @@ Cg
                                             <rect key="frame" x="145" y="6" width="47" height="11"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Chip type" id="LE7-ED-lcl">
-                                                <font key="font" metaFont="system" size="9"/>
+                                                <font key="font" metaFont="menu" size="9"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -668,11 +668,11 @@ Cg
             <objects>
                 <viewController id="utw-dU-1OW" customClass="Biosmodding" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="TbV-y2-j1B">
-                        <rect key="frame" x="0.0" y="0.0" width="515" height="434"/>
+                        <rect key="frame" x="0.0" y="0.0" width="515" height="470"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Prr-FA-MJ4">
-                                <rect key="frame" x="19" y="357" width="477" height="65"/>
+                                <rect key="frame" x="19" y="393" width="477" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="bDh-sz-qrm">
                                     <rect key="frame" x="3" y="3" width="471" height="59"/>
@@ -735,14 +735,14 @@ Cg
                                 </view>
                             </box>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-SX-XP0">
-                                <rect key="frame" x="19" y="43" width="479" height="305"/>
+                                <rect key="frame" x="19" y="57" width="479" height="327"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="p3s-1f-LWX">
-                                    <rect key="frame" x="3" y="3" width="473" height="299"/>
+                                    <rect key="frame" x="3" y="3" width="473" height="321"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gs-LB-Xsm">
-                                            <rect key="frame" x="7" y="6" width="140" height="32"/>
+                                            <rect key="frame" x="7" y="4" width="140" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="10.14 and earlier" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o64-Gk-dGI">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -753,7 +753,7 @@ Cg
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lC-K3-u9U">
-                                            <rect key="frame" x="4" y="66" width="464" height="198"/>
+                                            <rect key="frame" x="4" y="64" width="464" height="222"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" selectable="YES" id="ybb-s3-nWi">
                                                 <font key="font" size="12" name="HelveticaNeue"/>
@@ -767,7 +767,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WS0-Hj-1AU">
-                                            <rect key="frame" x="150" y="270" width="160" height="24"/>
+                                            <rect key="frame" x="150" y="292" width="160" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="UEFI Bios Editor" id="gkm-PE-ZFz">
                                                 <font key="font" metaFont="systemBold" size="21"/>
@@ -776,7 +776,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-dS-gNQ">
-                                            <rect key="frame" x="179" y="42" width="104" height="24"/>
+                                            <rect key="frame" x="179" y="40" width="104" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Download" id="pxK-ZI-1pc">
                                                 <font key="font" metaFont="systemBold" size="21"/>
@@ -785,11 +785,11 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </textFieldCell>
                                         </textField>
                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-BX-qAz">
-                                            <rect key="frame" x="13" y="38" width="435" height="5"/>
+                                            <rect key="frame" x="13" y="36" width="435" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </box>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-Gt-8Az">
-                                            <rect key="frame" x="161" y="6" width="140" height="32"/>
+                                            <rect key="frame" x="161" y="4" width="140" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="10.15 and higher" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wma-l6-dpl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -800,7 +800,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-aO-hoa">
-                                            <rect key="frame" x="315" y="6" width="140" height="32"/>
+                                            <rect key="frame" x="315" y="4" width="140" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Windows Exe" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZXM-Ne-WMI">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -814,7 +814,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                 </view>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X06-1b-MGR">
-                                <rect key="frame" x="191" y="6" width="132" height="32"/>
+                                <rect key="frame" x="192" y="13" width="132" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wxc-4h-FP8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -825,6 +825,17 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="dismissController:" target="utw-dU-1OW" id="NS5-ZK-VQV"/>
+                                </connections>
+                            </button>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykr-iG-K0H">
+                                <rect key="frame" x="470" y="16" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5c1-c9-ig4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="help_mods:" target="utw-dU-1OW" id="tMz-Ba-LiT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -838,7 +849,7 @@ DQ
                 <customObject id="UbM-Se-lJC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController id="DEW-va-i2d"/>
             </objects>
-            <point key="canvasLocation" x="-51.5" y="1374"/>
+            <point key="canvasLocation" x="-51.5" y="1392"/>
         </scene>
         <!--Changelog-->
         <scene sceneID="CNW-KH-BMQ">

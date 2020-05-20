@@ -38,6 +38,9 @@
 "Downloading and uncompressing PhoenixTool" = "Herunterladen und Dekomprimieren von PhoenixTool";
 
 /* No comment provided by engineer. */
+"Downloading PhoenixTool" = "Herunterladen von PhoenixTool";
+
+/* No comment provided by engineer. */
 "I understand" = "Verstanden";
 
 /* No comment provided by engineer. */
@@ -91,5 +94,3 @@
 /* No comment provided by engineer. */
 "You did not have selected any Programmer!" = "Du hast keinen Programmer ausgewählt!";
 
-/* No comment provided by engineer. */
-"Downloading PhoenixTool" = "Herunterladen von PhoenixTool";

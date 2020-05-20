@@ -43,15 +43,16 @@ class Biosmodding: NSViewController {
         self.view.window?.close()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "download_phoenixtool"), object: nil)
     }
-
-    
     
     @IBAction func download_mods(_ sender: Any) {
         self.view.window?.close()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "download_mods"), object: nil)
     }
     
-  
+    @IBAction func help_mods(_ sender: Any) {
+        NSWorkspace.shared.open(NSURL(string: "https://www.hackintosh-forum.de/forum/thread/45205-bios-mod-wwan-whitelist-mit-wenigen-schritten-selbstgemacht")! as URL)
+    }
+    
     @objc func cancel(_ sender: Any?) {
         self.view.window?.close()
     }

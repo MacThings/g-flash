@@ -160,6 +160,9 @@
 /* Class = "NSButtonCell"; title = "Flash ROM"; ObjectID = "vOF-Eb-YiJ"; */
 "vOF-Eb-YiJ.title" = "ROM flashen";
 
+/* Class = "NSButtonCell"; title = "BIOS modding"; ObjectID = "wA4-lh-bTP"; */
+"wA4-lh-bTP.title" = "BIOS Modding";
+
 /* Class = "NSButtonCell"; title = "10.15 and higher"; ObjectID = "wma-l6-dpl"; */
 "wma-l6-dpl.title" = "10.15 oder höher";
 
@@ -178,8 +181,8 @@
 /* Class = "NSButtonCell"; title = "Erase EEPROM"; ObjectID = "xO4-GM-CGG"; */
 "xO4-GM-CGG.title" = "EEPROM löschen";
 
-/* Class = "NSTextFieldCell"; title = "To change the BIOS there is only a window tool called \"PhoenixTool\". There are two ways to use it on macOS. Both are based on \"Wine\".\n\nUsers with 10.14 or earlier can use a Winewrapper that runs independently like a normal app.\n\nUsers who use 10.15 or higher must first install CodeWeavers' \"CrossOver\" program, since 32-bit support has been discontinued since 10.15. After installing CrossOver, just double click on the downloaded xcarchive. The main program then opens and you can start PhoenixTool there."; ObjectID = "ybb-s3-nWi"; */
-"ybb-s3-nWi.title" = "Um das BIOS zu ändern, gibt es nur ein Windows Tool namens \"PhoenixTool\". Es gibt zwei Möglichkeiten, es unter macOS zu verwenden. Beide basieren auf \"Wine\".\n\nBenutzer mit 10.14 oder früher können einen Winewrapper verwenden, der unabhängig wie eine normale App ausgeführt wird.\n\nBenutzer, die 10.15 oder höher verwenden, müssen zuerst das \"CrossOver\" -Programm von CodeWeavers installieren, da die 32-Bit-Unterstützung seit 10.15 eingestellt wurde. Doppelklicke nach der Installation von CrossOver einfach auf das heruntergeladene xcarchive. Das Hauptprogramm wird dann geöffnet und Du kannst PhoenixTool dort starten.";
+/* Class = "NSTextFieldCell"; title = "To change the BIOS there is only a window tool called \"PhoenixTool\". There are two ways to use it on macOS. Both are based on \"Wine\".\n\nUsers with 10.14 or earlier can use a Winewrapper that runs independently like a normal app.\n\nUsers who use 10.15 or higher must first install CodeWeavers' \"CrossOver\" program, since 32-bit support has been discontinued since 10.15. After installing CrossOver, just double click on the downloaded xcarchive. The main program then opens and you can start PhoenixTool there. 3rd Option is to Download the plain PhoenixTool.exe for using in a \"real\" Windows Environment."; ObjectID = "ybb-s3-nWi"; */
+"ybb-s3-nWi.title" = "Um das BIOS zu ändern, gibt es nur ein Windows Tool namens \"PhoenixTool\". Es gibt zwei Möglichkeiten, es unter macOS zu verwenden. Beide basieren auf \"Wine\".\n\nBenutzer mit 10.14 oder früher können einen Winewrapper verwenden, der unabhängig wie eine normale App ausgeführt wird.\n\nBenutzer, die 10.15 oder höher verwenden, müssen zuerst das \"CrossOver\" -Programm von CodeWeavers installieren, da die 32-Bit-Unterstützung seit 10.15 eingestellt wurde. Doppelklicke nach der Installation von CrossOver einfach auf das Heruntergeladene xcarchive. Das Hauptprogramm wird dann geöffnet und Du kannst PhoenixTool dort starten. Als dritte Option kannst Du PhoenixTool als solches herunterladen um es in Deiner eigenen Windowsumgebung zu nutzen.";
 
 /* Class = "NSMenuItem"; ibShadowedToolTip = "04d8:0033"; ObjectID = "YN2-og-Scm"; */
 "YN2-og-Scm.ibShadowedToolTip" = "04d8:0033";
