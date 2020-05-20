@@ -43,9 +43,19 @@ function _set_programmer()
     programmer="developerbox"
   elif [[ $programmer = "6" ]]; then
     programmer="dediprog"
-  elif [[ $programmer -gt "6" ]]; then
+  elif [[ $programmer -gt "6" ]] && [[ $programmer -lt "22" ]]; then
     programmer="ft2232_spi"
+  elif [[ $programmer = "22" ]]; then
+    programmer="stlinkv3_spi"
   fi
+  
+  
+  if [[ $a -gt "6" ]] && [[ $programmer -lt "22" ]]; then
+  echo "beide"
+  fi
+  
+  
+  
 }
 
 function _successful()
@@ -356,6 +366,14 @@ function _check_programmer()
       defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
     fi
   fi
+  if [[ $programmer = "22" ]]; then
+    "$ScriptPath"/../bin/lsusb |grep "0483:374f" > /dev/null
+    if [ $? = 0 ]; then
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+    else
+      defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
+    fi
+  fi
 }
 
 function _detect_programmer()
@@ -406,6 +424,8 @@ function _detect_programmer()
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "20"
   elif [[ $devices == *"0403:6010"* ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "21"
+  elif [[ $devices == *"0483:374f"* ]]; then
+    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer" "22"
   fi
 }
 

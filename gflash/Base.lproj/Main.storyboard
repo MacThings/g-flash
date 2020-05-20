@@ -218,7 +218,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAP-JZ-hag">
-                                            <rect key="frame" x="12" y="33" width="279" height="11"/>
+                                            <rect key="frame" x="12" y="33" width="326" height="11"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Download Path (Folder &quot;G-Flash&quot; will created automatic there)" id="llx-Mg-cVb">
                                                 <font key="font" metaFont="menu" size="9"/>
@@ -403,6 +403,9 @@ Cg
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="SF100/SF200/SF600" tag="6" toolTip="0483:dada" id="H9b-b5-XhB">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="STLINK-V3" tag="22" toolTip="0483:374f" id="A5M-R0-eH5">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="USB-Blaster" tag="4" toolTip="09fb:6001" id="OTN-mh-Wi1">
