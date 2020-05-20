@@ -18,6 +18,11 @@ class MainWindow: NSViewController {
     @IBOutlet weak var write_rom_button: NSButton!
     @IBOutlet weak var get_chip_type_button: NSButton!
     @IBOutlet weak var erase_eeprom_button: NSButton!
+    @IBOutlet weak var list_usb_devices_button: NSButton!
+    @IBOutlet weak var bios_modding_button: NSButton!
+    @IBOutlet weak var preferences_button: NSButton!
+    
+    
     
     @IBOutlet weak var read_rom_progressbar: NSProgressIndicator!
     @IBOutlet weak var flash_rom_progressbar: NSProgressIndicator!
@@ -43,6 +48,8 @@ class MainWindow: NSViewController {
     let defaults = UserDefaults.standard
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
+
+    
     override func viewDidAppear() {
         super.viewDidAppear()
         self.view.window?.title = "G-Flash v" + appVersion!
@@ -52,6 +59,7 @@ class MainWindow: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
         self.programmer_detect_text.stringValue = NSLocalizedString("No Device selected", comment: "")
 
         if #available(OSX 10.14, *) {
@@ -73,6 +81,12 @@ class MainWindow: NSViewController {
         self,
         selector: #selector(self.download_crossover),
         name: NSNotification.Name(rawValue: "download_crossover"),
+        object: nil)
+        
+        NotificationCenter.default.addObserver(
+        self,
+        selector: #selector(self.download_phoenixtool),
+        name: NSNotification.Name(rawValue: "download_phoenixtool"),
         object: nil)
         
         NotificationCenter.default.addObserver(
@@ -509,14 +523,13 @@ class MainWindow: NSViewController {
               }
        }
  
-    @objc private func download_mods(_ sender: Any) {
+    @objc private func download_phoenixtool(_ sender: Any) {
         self.bios_modding_progressbar.isHidden=false
         self.bios_modding_progressbar?.startAnimation(self);
         UserDefaults.standard.removeObject(forKey: "Successful")
-        let model_check = UserDefaults.standard.string(forKey: "Model")
-        self.output_window.string=NSLocalizedString("Downloading and uncompressing ", comment: "") + model_check! + NSLocalizedString(" MOD Files.", comment: "") + "\n"
+        self.output_window.string=NSLocalizedString("Downloading PhoenixTool", comment: "") + " " + NSLocalizedString("... please wait.", comment: "") + "\n"
          DispatchQueue.global(qos: .background).async {
-             self.syncShellExec(path: self.scriptPath, args: ["_download_mods"])
+             self.syncShellExec(path: self.scriptPath, args: ["_download_phoenixtool"])
                  DispatchQueue.main.async {
                      let download_check = UserDefaults.standard.bool(forKey: "Successful")
                      if download_check == true {
@@ -535,6 +548,30 @@ class MainWindow: NSViewController {
     func clear_window (){
         output_window.textStorage?.mutableString.setString("")
     }
+    
+    @objc private func download_mods(_ sender: Any) {
+        self.bios_modding_progressbar.isHidden=false
+        self.bios_modding_progressbar?.startAnimation(self);
+        UserDefaults.standard.removeObject(forKey: "Successful")
+        let model_check = UserDefaults.standard.string(forKey: "Model")
+        self.output_window.string=NSLocalizedString("Downloading and uncompressing", comment: "") + " " + model_check! + " " + NSLocalizedString("MOD Files.", comment: "") + "\n"
+         DispatchQueue.global(qos: .background).async {
+             self.syncShellExec(path: self.scriptPath, args: ["_download_mods"])
+                 DispatchQueue.main.async {
+                     let download_check = UserDefaults.standard.bool(forKey: "Successful")
+                     if download_check == true {
+                         self.output_window.string += "\n" + NSLocalizedString("Operation done!", comment: "")
+                         self.output_window.scrollToEndOfDocument(nil)
+                     } else {
+                         self.output_window.string += "\n" + NSLocalizedString("Something went wrong. Please try again.", comment: "")
+                         self.output_window.scrollToEndOfDocument(nil)
+                     }
+                    self.bios_modding_progressbar.isHidden=true
+                    self.bios_modding_progressbar?.stopAnimation(self);
+                }
+            }
+    }
+
    
     
     func syncShellExec(path: String, args: [String] = []) {
@@ -567,4 +604,5 @@ class MainWindow: NSViewController {
         process.waitUntilExit() // Wait for process to terminate.
     }
    
+    
 }

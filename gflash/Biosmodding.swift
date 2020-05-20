@@ -39,6 +39,13 @@ class Biosmodding: NSViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "download_crossover"), object: nil)
     }
 
+    @IBAction func download_phoenixtool(_ sender: Any) {
+        self.view.window?.close()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "download_phoenixtool"), object: nil)
+    }
+
+    
+    
     @IBAction func download_mods(_ sender: Any) {
         self.view.window?.close()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "download_mods"), object: nil)

@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+"... please wait." = "... bitte warten.";
+
+/* No comment provided by engineer. */
 "All content on the chip will be erased!" = "Der Inhalt des Chips wird komplett gelöscht!";
 
 /* No comment provided by engineer. */
@@ -29,10 +32,10 @@
 "Do you want it really?" = "Möchtest Du das wirklich?";
 
 /* No comment provided by engineer. */
-"Downloading and uncompressing PhoenixTool" = "Herunterladen und Dekomprimieren von PhoenixTool";
+"Downloading and uncompressing" = "Herunter und Dekomprimieren von";
 
 /* No comment provided by engineer. */
-"Downloading and uncompressing " = "Herunterladen und Dekomprimieren von ";
+"Downloading and uncompressing PhoenixTool" = "Herunterladen und Dekomprimieren von PhoenixTool";
 
 /* No comment provided by engineer. */
 "I understand" = "Verstanden";
@@ -42,6 +45,9 @@
 
 /* No comment provided by engineer. */
 "Make sure the pliers is properly seated on the chip." = "Stelle sicher, dass die Zange ordentlich mit dem Chip verbunden ist.";
+
+/* No comment provided by engineer. */
+"MOD Files." = "MOD Dateien.";
 
 /* No comment provided by engineer. */
 "Multiple chip types found!" = "Verschiedene Chiptypen erkannt!";
@@ -86,4 +92,4 @@
 "You did not have selected any Programmer!" = "Du hast keinen Programmer ausgewählt!";
 
 /* No comment provided by engineer. */
-"... please wait." = "... bitte warten.";
+"Downloading PhoenixTool" = "Herunterladen von PhoenixTool";

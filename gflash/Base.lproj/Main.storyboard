@@ -218,9 +218,9 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAP-JZ-hag">
-                                            <rect key="frame" x="12" y="33" width="70" height="11"/>
+                                            <rect key="frame" x="12" y="33" width="279" height="11"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Download Path" id="llx-Mg-cVb">
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Download Path (Folder &quot;G-Flash&quot; will created automatic there)" id="llx-Mg-cVb">
                                                 <font key="font" metaFont="system" size="9"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -571,7 +571,6 @@ Cg
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="list_usb_devices:" target="XfG-lQ-9wD" id="foh-cP-HXe"/>
                                                 <segue destination="utw-dU-1OW" kind="sheet" id="P8q-vn-pzy"/>
                                             </connections>
                                         </button>
@@ -634,6 +633,7 @@ Cg
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="bios_modding_button" destination="7OG-kT-mJ4" id="9Zb-8W-CcM"/>
                         <outlet property="bios_modding_progressbar" destination="Uht-on-pF6" id="1bR-k8-arZ"/>
                         <outlet property="content_scroller" destination="kng-oJ-uW5" id="MkL-jk-EPv"/>
                         <outlet property="devices_empty_entry" destination="Vid-Mc-Omj" id="Yic-8O-4Uv"/>
@@ -644,8 +644,10 @@ Cg
                         <outlet property="get_chip_type_button" destination="lR3-rC-D2t" id="qDO-O6-264"/>
                         <outlet property="get_chip_type_progressbar" destination="vxQ-kH-SgR" id="OLE-TH-lLq"/>
                         <outlet property="get_chip_type_text" destination="aEf-zU-PgD" id="RoH-jV-e1k"/>
+                        <outlet property="list_usb_devices_button" destination="G1p-64-d2B" id="ZWi-JM-JPh"/>
                         <outlet property="list_usb_progressbar" destination="GP0-Fs-lgA" id="i5A-5U-de2"/>
                         <outlet property="output_window" destination="TVA-gz-7F6" id="RlI-Mb-Yfp"/>
+                        <outlet property="preferences_button" destination="uP7-cc-gae" id="N8B-af-V3f"/>
                         <outlet property="programmer_detect_text" destination="whE-YS-4EV" id="uEX-3h-UA8"/>
                         <outlet property="programmer_green_dot" destination="rBQ-6e-zNx" id="Pk0-qe-6j8"/>
                         <outlet property="programmer_orange_dot" destination="4nw-A4-U1n" id="Wyi-OE-1xw"/>
@@ -666,27 +668,27 @@ Cg
             <objects>
                 <viewController id="utw-dU-1OW" customClass="Biosmodding" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="TbV-y2-j1B">
-                        <rect key="frame" x="0.0" y="0.0" width="515" height="439"/>
+                        <rect key="frame" x="0.0" y="0.0" width="515" height="434"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Prr-FA-MJ4">
-                                <rect key="frame" x="19" y="378" width="477" height="49"/>
+                                <rect key="frame" x="19" y="357" width="477" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="bDh-sz-qrm">
-                                    <rect key="frame" x="3" y="3" width="471" height="43"/>
+                                    <rect key="frame" x="3" y="3" width="471" height="59"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t84-8v-SY8">
-                                            <rect key="frame" x="7" y="16" width="152" height="16"/>
+                                            <rect key="frame" x="17" y="32" width="230" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="MOD-Files for Model:" id="vJb-2S-X8O">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="11" name="HelveticaNeue"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jnl-04-9fn">
-                                            <rect key="frame" x="149" y="10" width="200" height="25"/>
+                                            <rect key="frame" x="7" y="8" width="241" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Please choose ..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="wNP-bV-CZu" id="Z9a-4k-h5a">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -719,7 +721,7 @@ Cg
                                             </connections>
                                         </popUpButton>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ybu-OV-cw9">
-                                            <rect key="frame" x="351" y="6" width="116" height="32"/>
+                                            <rect key="frame" x="295" y="4" width="132" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Download" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h4x-qu-iOZ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -733,14 +735,14 @@ Cg
                                 </view>
                             </box>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-SX-XP0">
-                                <rect key="frame" x="19" y="57" width="479" height="305"/>
+                                <rect key="frame" x="19" y="43" width="479" height="305"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="p3s-1f-LWX">
                                     <rect key="frame" x="3" y="3" width="473" height="299"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gs-LB-Xsm">
-                                            <rect key="frame" x="71" y="6" width="140" height="32"/>
+                                            <rect key="frame" x="7" y="6" width="140" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="10.14 and earlier" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o64-Gk-dGI">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -755,11 +757,11 @@ Cg
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" selectable="YES" id="ybb-s3-nWi">
                                                 <font key="font" size="12" name="HelveticaNeue"/>
-                                                <string key="title">To change the BIOS there is only a window tool called "PhoenixTool". There are two ways to use it on macOS. Both are based on "Wine".
+                                                <mutableString key="title">To change the BIOS there is only a window tool called "PhoenixTool". There are two ways to use it on macOS. Both are based on "Wine".
 
 Users with 10.14 or earlier can use a Winewrapper that runs independently like a normal app.
 
-Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" program, since 32-bit support has been discontinued since 10.15. After installing CrossOver, just double click on the downloaded xcarchive. The main program then opens and you can start PhoenixTool there.</string>
+Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" program, since 32-bit support has been discontinued since 10.15. After installing CrossOver, just double click on the downloaded xcarchive. The main program then opens and you can start PhoenixTool there. 3rd Option is to Download the plain PhoenixTool.exe for using in a "real" Windows Environment.</mutableString>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -787,7 +789,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </box>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-Gt-8Az">
-                                            <rect key="frame" x="247" y="6" width="140" height="32"/>
+                                            <rect key="frame" x="161" y="6" width="140" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="10.15 and higher" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wma-l6-dpl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -797,20 +799,22 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                                 <action selector="download_crossover:" target="utw-dU-1OW" id="0ZR-qC-v18"/>
                                             </connections>
                                         </button>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UkY-7j-Em8">
-                                            <rect key="frame" x="287" y="43" width="145" height="18"/>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-aO-hoa">
+                                            <rect key="frame" x="315" y="6" width="140" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="(Path: ~/Desktop/G-Flash)" id="xx6-XG-H4i">
-                                                <font key="font" size="12" name="HelveticaNeue"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
+                                            <buttonCell key="cell" type="push" title="Windows Exe" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZXM-Ne-WMI">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="download_phoenixtool:" target="utw-dU-1OW" id="dZg-GH-u8t"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X06-1b-MGR">
-                                <rect key="frame" x="191" y="13" width="132" height="32"/>
+                                <rect key="frame" x="191" y="6" width="132" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wxc-4h-FP8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -834,7 +838,7 @@ DQ
                 <customObject id="UbM-Se-lJC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController id="DEW-va-i2d"/>
             </objects>
-            <point key="canvasLocation" x="-51.5" y="1376.5"/>
+            <point key="canvasLocation" x="-51.5" y="1374"/>
         </scene>
         <!--Changelog-->
         <scene sceneID="CNW-KH-BMQ">

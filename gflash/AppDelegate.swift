@@ -22,9 +22,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true)
+        let userDownloadDirectory = paths[0]
+        
         let download_path_check = UserDefaults.standard.string(forKey: "Download Path")
         if download_path_check == nil{
-            UserDefaults.standard.set("~/Downloads", forKey: "Download Path")
+            UserDefaults.standard.set(userDownloadDirectory, forKey: "Download Path")
         }
         
         PFMoveToApplicationsFolderIfNecessary()
