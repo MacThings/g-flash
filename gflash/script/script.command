@@ -433,7 +433,7 @@ function _download_wine()
 {
   mkdir "$download_path"/G-Flash > /dev/null
   rm -rf "$download_path"/G-Flash/PhoenixTool.app > /dev/null
-  curl -q https://www.sl-soft.de/g-flash/PhoenixTool.7z > "$download_path"/G-Flash/PhoenixTool.7z
+  curl -q https://www.sl-soft.de/extern/g-flash/PhoenixTool.7z > "$download_path"/G-Flash/PhoenixTool.7z
   "$ScriptPath"/../bin/7za x -y -bsp0 -bso0 "$download_path"/G-Flash/PhoenixTool.7z -o"$download_path"/G-Flash
   if [[ "$?" = "0" ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Successful" -bool true
@@ -441,24 +441,11 @@ function _download_wine()
   fi
 }
 
-function _download_crossover()
-{
-  mkdir "$download_path"/G-Flash > /dev/null
-  rm -rf "$download_path"/G-Flash/PhoenixTool.cxarchive > /dev/null
-  curl -q https://www.sl-soft.de/g-flash/PhoenixTool.zip > "$download_path"/G-Flash/PhoenixTool.zip
-  "$ScriptPath"/../bin/7za x -y -bsp0 -bso0 "$download_path"/G-Flash/PhoenixTool.zip -o"$download_path"/G-Flash
-  if [[ "$?" = "0" ]]; then
-    defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Successful" -bool true
-    rm "$download_path"/G-Flash/PhoenixTool.zip
-    rm -rf "$download_path"/G-Flash/__MACOSX
-  fi
-}
-
 function _download_phoenixtool()
 {
   mkdir "$download_path"/G-Flash > /dev/null
   rm -rf "$download_path"/G-Flash/PhoenixTool-Win > /dev/null
-  curl -q https://www.sl-soft.de/g-flash/PhoenixTool-Win.zip > "$download_path"/G-Flash/PhoenixTool-Win.zip
+  curl -q https://www.sl-soft.de/extern/g-flash/PhoenixTool-Win.zip > "$download_path"/G-Flash/PhoenixTool-Win.zip
   #"$ScriptPath"/../bin/7za x -y -bsp0 -bso0 "$download_path"/G-Flash/PhoenixTool-Win.zip -o"$download_path"/G-Flash
   if [[ "$?" = "0" ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Successful" -bool true
@@ -474,7 +461,7 @@ function _download_mods()
     
   mkdir "$download_path"/G-Flash > /dev/null
   rm -rf "$download_path"/G-Flash/bios_mod_bundle.zip > /dev/null
-  curl https://www.sl-soft.de/g-flash/bios_mod_bundle.zip > "$download_path"/G-Flash/bios_mod_bundle.zip
+  curl https://www.sl-soft.de/extern/g-flash/bios_mod_bundle.zip > "$download_path"/G-Flash/bios_mod_bundle.zip
   "$ScriptPath"/../bin/7za x -y -bsp0 -bso0 "$download_path"/G-Flash/bios_mod_bundle.zip "$model" "Modules.txt" -o"$download_path"/G-Flash
   if [[ "$?" = "0" ]]; then
     defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Successful" -bool true

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="16097"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -671,11 +671,11 @@ Cg
             <objects>
                 <viewController id="utw-dU-1OW" customClass="Biosmodding" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="TbV-y2-j1B">
-                        <rect key="frame" x="0.0" y="0.0" width="515" height="470"/>
+                        <rect key="frame" x="0.0" y="0.0" width="515" height="338"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Prr-FA-MJ4">
-                                <rect key="frame" x="19" y="393" width="477" height="65"/>
+                                <rect key="frame" x="19" y="261" width="477" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="bDh-sz-qrm">
                                     <rect key="frame" x="3" y="3" width="471" height="59"/>
@@ -738,39 +738,24 @@ Cg
                                 </view>
                             </box>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-SX-XP0">
-                                <rect key="frame" x="19" y="57" width="479" height="327"/>
+                                <rect key="frame" x="19" y="49" width="479" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="p3s-1f-LWX">
-                                    <rect key="frame" x="3" y="3" width="473" height="321"/>
+                                    <rect key="frame" x="3" y="3" width="473" height="197"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gs-LB-Xsm">
-                                            <rect key="frame" x="7" y="4" width="140" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="10.14 and earlier" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o64-Gk-dGI">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="download_wine:" target="utw-dU-1OW" id="8g0-H6-7G3"/>
-                                            </connections>
-                                        </button>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lC-K3-u9U">
-                                            <rect key="frame" x="4" y="64" width="464" height="222"/>
+                                            <rect key="frame" x="35" y="73" width="393" height="93"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" selectable="YES" id="ybb-s3-nWi">
                                                 <font key="font" size="12" name="HelveticaNeue"/>
-                                                <mutableString key="title">To change the BIOS there is only a window tool called "PhoenixTool". There are two ways to use it on macOS. Both are based on "Wine".
-
-Users with 10.14 or earlier can use a Winewrapper that runs independently like a normal app.
-
-Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" program, since 32-bit support has been discontinued since 10.15. After installing CrossOver, just double click on the downloaded xcarchive. The main program then opens and you can start PhoenixTool there. 3rd Option is to Download the plain PhoenixTool.exe for using in a "real" Windows Environment.</mutableString>
+                                                <string key="title">To change the BIOS there is only a window tool called "PhoenixTool". You can download it as Windows Exe to execute it in your own Windows environment or you can choose a Winewrapper for macOS which behaves like a normal Mac app.</string>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WS0-Hj-1AU">
-                                            <rect key="frame" x="150" y="292" width="160" height="24"/>
+                                            <rect key="frame" x="150" y="168" width="160" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="UEFI Bios Editor" id="gkm-PE-ZFz">
                                                 <font key="font" metaFont="systemBold" size="21"/>
@@ -779,7 +764,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-dS-gNQ">
-                                            <rect key="frame" x="179" y="40" width="104" height="24"/>
+                                            <rect key="frame" x="180" y="49" width="104" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Download" id="pxK-ZI-1pc">
                                                 <font key="font" metaFont="systemBold" size="21"/>
@@ -788,22 +773,22 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                             </textFieldCell>
                                         </textField>
                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-BX-qAz">
-                                            <rect key="frame" x="13" y="36" width="435" height="5"/>
+                                            <rect key="frame" x="14" y="45" width="435" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </box>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-Gt-8Az">
-                                            <rect key="frame" x="161" y="4" width="140" height="32"/>
+                                            <rect key="frame" x="31" y="13" width="178" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="10.15 and higher" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wma-l6-dpl">
+                                            <buttonCell key="cell" type="push" title="macOS (Winewrapper)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wma-l6-dpl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="download_crossover:" target="utw-dU-1OW" id="0ZR-qC-v18"/>
+                                                <action selector="download_wine:" target="utw-dU-1OW" id="lHM-bB-caS"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-aO-hoa">
-                                            <rect key="frame" x="315" y="4" width="140" height="32"/>
+                                            <rect key="frame" x="254" y="13" width="178" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Windows Exe" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZXM-Ne-WMI">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -817,7 +802,7 @@ Users who use 10.15 or higher must first install CodeWeavers' "CrossOver" progra
                                 </view>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X06-1b-MGR">
-                                <rect key="frame" x="192" y="13" width="132" height="32"/>
+                                <rect key="frame" x="194" y="13" width="132" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wxc-4h-FP8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -831,7 +816,7 @@ DQ
                                 </connections>
                             </button>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykr-iG-K0H">
-                                <rect key="frame" x="470" y="16" width="25" height="25"/>
+                                <rect key="frame" x="472" y="16" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5c1-c9-ig4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -852,7 +837,7 @@ DQ
                 <customObject id="UbM-Se-lJC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController id="DEW-va-i2d"/>
             </objects>
-            <point key="canvasLocation" x="-51.5" y="1392"/>
+            <point key="canvasLocation" x="-51.5" y="1326"/>
         </scene>
         <!--Changelog-->
         <scene sceneID="CNW-KH-BMQ">

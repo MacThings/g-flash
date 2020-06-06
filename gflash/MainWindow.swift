@@ -79,12 +79,6 @@ class MainWindow: NSViewController {
         
         NotificationCenter.default.addObserver(
         self,
-        selector: #selector(self.download_crossover),
-        name: NSNotification.Name(rawValue: "download_crossover"),
-        object: nil)
-        
-        NotificationCenter.default.addObserver(
-        self,
         selector: #selector(self.download_phoenixtool),
         name: NSNotification.Name(rawValue: "download_phoenixtool"),
         object: nil)
@@ -499,28 +493,6 @@ class MainWindow: NSViewController {
                     self.bios_modding_progressbar?.stopAnimation(self);
                }
            }
-       }
- 
-    @objc private func download_crossover(_ sender: Any) {
-        self.bios_modding_progressbar.isHidden=false
-        self.bios_modding_progressbar?.startAnimation(self);
-           UserDefaults.standard.removeObject(forKey: "Successful")
-           self.output_window.string=NSLocalizedString("Downloading and uncompressing PhoenixTool", comment: "") + NSLocalizedString(" (CrossOver Bottle)", comment: "") + NSLocalizedString("... please wait.", comment: "") + "\n\n" + NSLocalizedString("Make sure that you have installed CrossOver v19.x to run this Bottle. If you don't already have it you can download the 14 Day trial from their website.", comment: "") + "\n\n\nhttps://media.codeweavers.com/pub/crossover/cxmac/demo/" + "\n\n"
-           DispatchQueue.global(qos: .background).async {
-               self.syncShellExec(path: self.scriptPath, args: ["_download_crossover"])
-                   DispatchQueue.main.async {
-                       let download_check = UserDefaults.standard.bool(forKey: "Successful")
-                       if download_check == true {
-                           self.output_window.string += "\n" + NSLocalizedString("Operation done!", comment: "")
-                           self.output_window.scrollToEndOfDocument(nil)
-                       } else {
-                           self.output_window.string += "\n" + NSLocalizedString("Something went wrong. Please try again.", comment: "")
-                           self.output_window.scrollToEndOfDocument(nil)
-                       }
-                    self.bios_modding_progressbar.isHidden=true
-                    self.bios_modding_progressbar?.stopAnimation(self);
-                  }
-              }
        }
  
     @objc private func download_phoenixtool(_ sender: Any) {
