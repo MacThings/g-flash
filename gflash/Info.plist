@@ -43,7 +43,7 @@
 	<key>SUEnableSystemProfiling</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://update.kextupdater.de/gflash/appcast.xml</string>
+	<string>https://www.sl-soft.de/extern/software/gflash/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>IocWX96bR2E4UoPBgFT3KVRVWbut/1HjJVrfChE6l+s=</string>
 </dict>
