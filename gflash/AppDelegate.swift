@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import LetsMove
+//import LetsMove
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             UserDefaults.standard.set(userDownloadDirectory, forKey: "Download Path")
         }
         
-        PFMoveToApplicationsFolderIfNecessary()
+        //PFMoveToApplicationsFolderIfNecessary()
         check_theme()
         UserDefaults.standard.set("0", forKey: "Programmer")
         UserDefaults.standard.removeObject(forKey: "Programmer found")
