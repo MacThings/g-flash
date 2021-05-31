@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A02454D2470076700C9A87C /* lsusb in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A02454B2470075A00C9A87C /* lsusb */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2A02454D2470076700C9A87C /* lsusb in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A02454B2470075A00C9A87C /* lsusb */; };
 		2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A163B3C246FF766007DB90A /* MainWindow.swift */; };
 		2A82F82924713E55006688EC /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A82F82824713E55006688EC /* Website.swift */; };
 		2A8350D5247322DF00C70209 /* Biosmodding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8350D4247322DF00C70209 /* Biosmodding.swift */; };
-		2A8350DC2473F31600C70209 /* 7za in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A8350DA2473F2EE00C70209 /* 7za */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2A8350DC2473F31600C70209 /* 7za in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A8350DA2473F2EE00C70209 /* 7za */; };
 		2A8B5EC92470A7080098B8BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B5EC72470A7080098B8BF /* Localizable.strings */; };
 		2AB9DF0724712B1200677A16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB9DF0524712B1200677A16 /* InfoPlist.strings */; };
 		2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DF08247132BD00677A16 /* Preferences.swift */; };
@@ -19,9 +19,9 @@
 		2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC297B246FF35D00ED7AD1 /* ViewController.swift */; };
 		2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */; };
 		2AEC2981246FF35E00ED7AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297F246FF35E00ED7AD1 /* Main.storyboard */; };
-		2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298D246FF45A00ED7AD1 /* flashrom */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		2AEC2992246FF47F00ED7AD1 /* lib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298C246FF45A00ED7AD1 /* lib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		2AEC2996246FF52700ED7AD1 /* script.command in Copy 'script' */ = {isa = PBXBuildFile; fileRef = 2AEC2993246FF50700ED7AD1 /* script.command */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298D246FF45A00ED7AD1 /* flashrom */; };
+		2AEC2992246FF47F00ED7AD1 /* lib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298C246FF45A00ED7AD1 /* lib */; };
+		2AEC2996246FF52700ED7AD1 /* script.command in Copy 'script' */ = {isa = PBXBuildFile; fileRef = 2AEC2993246FF50700ED7AD1 /* script.command */; };
 		2AF7DE7624727BD900C07B69 /* Pods_G_Flash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A87F8BF4E5A2DAAF39FA2C /* Pods_G_Flash.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +51,16 @@
 			name = "Copy 'script'";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AF7DE8E247284B800C07B69 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -75,13 +85,6 @@
 		2AEC298D246FF45A00ED7AD1 /* flashrom */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = flashrom; sourceTree = "<group>"; };
 		2AEC2993246FF50700ED7AD1 /* script.command */ = {isa = PBXFileReference; lastKnownFileType = text; path = script.command; sourceTree = "<group>"; };
 		2AF7DE792472844000C07B69 /* patch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = patch.sh; sourceTree = "<group>"; };
-		2AF7DE81247284B800C07B69 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		2AF7DE83247284B800C07B69 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
-		2AF7DE85247284B800C07B69 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
-		2AF7DE88247284B800C07B69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ActionViewController.xib; sourceTree = "<group>"; };
-		2AF7DE8A247284B800C07B69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2AF7DE8B247284B800C07B69 /* Patch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Patch.entitlements; sourceTree = "<group>"; };
-		2AF7DE99247284E700C07B69 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7FD7536265EA205E4E3BD7C9 /* Pods-G-Flash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G-Flash.debug.xcconfig"; path = "Target Support Files/Pods-G-Flash/Pods-G-Flash.debug.xcconfig"; sourceTree = "<group>"; };
 		83A87F8BF4E5A2DAAF39FA2C /* Pods_G_Flash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G_Flash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81C7CA8CC6B505E5169E7FE /* Pods-G-Flash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G-Flash.release.xcconfig"; path = "Target Support Files/Pods-G-Flash/Pods-G-Flash.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,8 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				2AEC2978246FF35D00ED7AD1 /* gflash */,
-				2AF7DE80247284B800C07B69 /* Patch */,
-				2AF7DE98247284E700C07B69 /* Patch */,
 				2AEC2977246FF35D00ED7AD1 /* Products */,
 				7E1B9B50F48CDE7E12F6E559 /* Pods */,
 				BEB1FBAC84E74CD142F4CADE /* Frameworks */,
@@ -161,27 +162,6 @@
 			path = script;
 			sourceTree = "<group>";
 		};
-		2AF7DE80247284B800C07B69 /* Patch */ = {
-			isa = PBXGroup;
-			children = (
-				2AF7DE81247284B800C07B69 /* Media.xcassets */,
-				2AF7DE83247284B800C07B69 /* icon.icns */,
-				2AF7DE85247284B800C07B69 /* ActionViewController.swift */,
-				2AF7DE87247284B800C07B69 /* ActionViewController.xib */,
-				2AF7DE8A247284B800C07B69 /* Info.plist */,
-				2AF7DE8B247284B800C07B69 /* Patch.entitlements */,
-			);
-			path = Patch;
-			sourceTree = "<group>";
-		};
-		2AF7DE98247284E700C07B69 /* Patch */ = {
-			isa = PBXGroup;
-			children = (
-				2AF7DE99247284E700C07B69 /* main.swift */,
-			);
-			path = Patch;
-			sourceTree = "<group>";
-		};
 		7E1B9B50F48CDE7E12F6E559 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +211,7 @@
 				2AEC2995246FF51600ED7AD1 /* Copy 'script' */,
 				E96D62226C55ABA2FAB233CB /* [CP] Embed Pods Frameworks */,
 				2A02454E2470646600C9A87C /* ShellScript */,
+				2AF7DE8E247284B800C07B69 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -248,7 +229,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Sascha Lamprecht";
 				TargetAttributes = {
 					2AEC2975246FF35D00ED7AD1 = {
@@ -394,14 +375,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		2AF7DE87247284B800C07B69 /* ActionViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2AF7DE88247284B800C07B69 /* Base */,
-			);
-			name = ActionViewController.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -432,7 +405,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -460,6 +432,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -493,7 +466,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -528,11 +500,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = gflash/gflash.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 103;
-				DEVELOPMENT_TEAM = 4ATFWV7M4B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = gflash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -555,11 +527,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = gflash/gflash.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 103;
-				DEVELOPMENT_TEAM = 4ATFWV7M4B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = gflash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
