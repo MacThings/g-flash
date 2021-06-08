@@ -62,6 +62,7 @@
 		2A8350DA2473F2EE00C70209 /* 7za */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 7za; sourceTree = "<group>"; };
 		2A8B5EC32470A5C20098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		2A8B5EC82470A7080098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2A9A6328266FAB2700257DE0 /* Sleep-o-Mat.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sleep-o-Mat.psd"; sourceTree = "<group>"; };
 		2AA27D352470656B00F8E25B /* gflash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gflash.html; sourceTree = "<group>"; };
 		2AB9DF0624712B1200677A16 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2AB9DF08247132BD00677A16 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 			children = (
 				2AEC2978246FF35D00ED7AD1 /* G-Flash */,
 				2AEC2977246FF35D00ED7AD1 /* Products */,
+				2A9A6328266FAB2700257DE0 /* Sleep-o-Mat.psd */,
 			);
 			sourceTree = "<group>";
 		};
