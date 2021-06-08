@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		2A8B5EC92470A7080098B8BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B5EC72470A7080098B8BF /* Localizable.strings */; };
 		2AB9DF0724712B1200677A16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB9DF0524712B1200677A16 /* InfoPlist.strings */; };
 		2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DF08247132BD00677A16 /* Preferences.swift */; };
+		2ABF4832266FA4910061B143 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2ABF4831266FA4910061B143 /* Sparkle */; };
+		2ABF4838266FA5EB0061B143 /* LetsMoveIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF4837266FA5EB0061B143 /* LetsMoveIt.swift */; };
 		2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */; };
 		2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC297B246FF35D00ED7AD1 /* ViewController.swift */; };
 		2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */; };
@@ -22,7 +24,6 @@
 		2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298D246FF45A00ED7AD1 /* flashrom */; };
 		2AEC2992246FF47F00ED7AD1 /* lib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298C246FF45A00ED7AD1 /* lib */; };
 		2AEC2996246FF52700ED7AD1 /* script.command in Copy 'script' */ = {isa = PBXBuildFile; fileRef = 2AEC2993246FF50700ED7AD1 /* script.command */; };
-		2AF7DE7624727BD900C07B69 /* Pods_G_Flash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A87F8BF4E5A2DAAF39FA2C /* Pods_G_Flash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,16 +52,6 @@
 			name = "Copy 'script'";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2AF7DE8E247284B800C07B69 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -74,20 +65,18 @@
 		2AA27D352470656B00F8E25B /* gflash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gflash.html; sourceTree = "<group>"; };
 		2AB9DF0624712B1200677A16 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2AB9DF08247132BD00677A16 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		2ABF4837266FA5EB0061B143 /* LetsMoveIt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsMoveIt.swift; sourceTree = "<group>"; };
 		2AEC2976246FF35D00ED7AD1 /* G-Flash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Flash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AEC297B246FF35D00ED7AD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AEC2980246FF35E00ED7AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AEC2982246FF35E00ED7AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2AEC2983246FF35E00ED7AD1 /* gflash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gflash.entitlements; sourceTree = "<group>"; };
+		2AEC2983246FF35E00ED7AD1 /* G-Flash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "G-Flash.entitlements"; sourceTree = "<group>"; };
 		2AEC298C246FF45A00ED7AD1 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
 		2AEC298D246FF45A00ED7AD1 /* flashrom */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = flashrom; sourceTree = "<group>"; };
 		2AEC2993246FF50700ED7AD1 /* script.command */ = {isa = PBXFileReference; lastKnownFileType = text; path = script.command; sourceTree = "<group>"; };
 		2AF7DE792472844000C07B69 /* patch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = patch.sh; sourceTree = "<group>"; };
-		7FD7536265EA205E4E3BD7C9 /* Pods-G-Flash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G-Flash.debug.xcconfig"; path = "Target Support Files/Pods-G-Flash/Pods-G-Flash.debug.xcconfig"; sourceTree = "<group>"; };
-		83A87F8BF4E5A2DAAF39FA2C /* Pods_G_Flash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G_Flash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A81C7CA8CC6B505E5169E7FE /* Pods-G-Flash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G-Flash.release.xcconfig"; path = "Target Support Files/Pods-G-Flash/Pods-G-Flash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AF7DE7624727BD900C07B69 /* Pods_G_Flash.framework in Frameworks */,
+				2ABF4832266FA4910061B143 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,10 +94,8 @@
 		2AEC296D246FF35D00ED7AD1 = {
 			isa = PBXGroup;
 			children = (
-				2AEC2978246FF35D00ED7AD1 /* gflash */,
+				2AEC2978246FF35D00ED7AD1 /* G-Flash */,
 				2AEC2977246FF35D00ED7AD1 /* Products */,
-				7E1B9B50F48CDE7E12F6E559 /* Pods */,
-				BEB1FBAC84E74CD142F4CADE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,7 +107,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2AEC2978246FF35D00ED7AD1 /* gflash */ = {
+		2AEC2978246FF35D00ED7AD1 /* G-Flash */ = {
 			isa = PBXGroup;
 			children = (
 				2AEC298B246FF43B00ED7AD1 /* script */,
@@ -131,15 +118,16 @@
 				2A8350D4247322DF00C70209 /* Biosmodding.swift */,
 				2AEC297F246FF35E00ED7AD1 /* Main.storyboard */,
 				2A8B5EC72470A7080098B8BF /* Localizable.strings */,
+				2ABF4837266FA5EB0061B143 /* LetsMoveIt.swift */,
 				2A163B3C246FF766007DB90A /* MainWindow.swift */,
 				2A82F82824713E55006688EC /* Website.swift */,
 				2AB9DF08247132BD00677A16 /* Preferences.swift */,
 				2AEC2982246FF35E00ED7AD1 /* Info.plist */,
 				2AB9DF0524712B1200677A16 /* InfoPlist.strings */,
-				2AEC2983246FF35E00ED7AD1 /* gflash.entitlements */,
+				2AEC2983246FF35E00ED7AD1 /* G-Flash.entitlements */,
 				2AA27D352470656B00F8E25B /* gflash.html */,
 			);
-			path = gflash;
+			path = "G-Flash";
 			sourceTree = "<group>";
 		};
 		2AEC298A246FF43300ED7AD1 /* bin */ = {
@@ -162,23 +150,6 @@
 			path = script;
 			sourceTree = "<group>";
 		};
-		7E1B9B50F48CDE7E12F6E559 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7FD7536265EA205E4E3BD7C9 /* Pods-G-Flash.debug.xcconfig */,
-				A81C7CA8CC6B505E5169E7FE /* Pods-G-Flash.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		BEB1FBAC84E74CD142F4CADE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				83A87F8BF4E5A2DAAF39FA2C /* Pods_G_Flash.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
@@ -189,7 +160,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /bin/bash;
-			buildWorkingDirectory = "$(SRCROOT)/gflash/bin";
+			buildWorkingDirectory = "$(SRCROOT)/G-Flash/bin";
 			dependencies = (
 			);
 			name = Patch;
@@ -203,21 +174,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AEC2986246FF35E00ED7AD1 /* Build configuration list for PBXNativeTarget "G-Flash" */;
 			buildPhases = (
-				95990D4883E169D9B2ACE7C5 /* [CP] Check Pods Manifest.lock */,
 				2AEC2972246FF35D00ED7AD1 /* Sources */,
 				2AEC2973246FF35D00ED7AD1 /* Frameworks */,
 				2AEC2974246FF35D00ED7AD1 /* Resources */,
 				2AEC2990246FF46900ED7AD1 /* Copy 'bin' */,
 				2AEC2995246FF51600ED7AD1 /* Copy 'script' */,
-				E96D62226C55ABA2FAB233CB /* [CP] Embed Pods Frameworks */,
 				2A02454E2470646600C9A87C /* ShellScript */,
-				2AF7DE8E247284B800C07B69 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "G-Flash";
+			packageProductDependencies = (
+				2ABF4831266FA4910061B143 /* Sparkle */,
+			);
 			productName = gflash;
 			productReference = 2AEC2976246FF35D00ED7AD1 /* G-Flash.app */;
 			productType = "com.apple.product-type.application";
@@ -250,6 +221,9 @@
 				de,
 			);
 			mainGroup = 2AEC296D246FF35D00ED7AD1;
+			packageReferences = (
+				2ABF4830266FA4910061B143 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = 2AEC2977246FF35D00ED7AD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -290,46 +264,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nrm -r /Applications/G-Flash.app\ncp -r \"${TARGET_BUILD_DIR}\"/G-Flash.app /Applications/\nif [ -d /Volumes/Homeshare/Xcode/gflash ]; then\ncp \"/Users/luigi/Documents/Xcode/gflash/gflash/gflash.html\" \"/Volumes/Homeshare/Xcode/gflash/upload/gflash.html\"\nrm /Volumes/Homeshare/Xcode/gflash/upload/gflash.zip 2> /dev/null\ncd /Applications\nditto -c -k --sequesterRsrc --keepParent G-Flash.app /Volumes/Homeshare/Xcode/gflash/upload/gflash.zip\nfi\n";
-		};
-		95990D4883E169D9B2ACE7C5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-G-Flash-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E96D62226C55ABA2FAB233CB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-G-Flash/Pods-G-Flash-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-G-Flash/Pods-G-Flash-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-G-Flash/Pods-G-Flash-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nfind \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"/Contents/Resources -type d -name \"Sparkle.framework\" -exec rm -r \"{}\" \\;\nrm -r /Applications/\"${PRODUCT_NAME}.app\"\ncp -r \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\" /Applications/\nif [ -d /Volumes/Homeshare/Xcode/$newname ]; then\n    newname=$( echo \"${PRODUCT_NAME}\" |tr '[:upper:]' '[:lower:]' |sed -e 's/\\ //g' -e 's/-//g' )\n    cp \"/Users/luigi/Documents/Xcode/$newname/\"${PRODUCT_NAME}\"/$newname.html\" \"/Volumes/Homeshare/Xcode/$newname/upload/$newname.html\"\n    rm /Volumes/Homeshare/Xcode/$newname/upload/$newname.zip 2> /dev/null\n    cd /Applications\n    ditto -c -k --sequesterRsrc --keepParent \"${PRODUCT_NAME}.app\" /Volumes/Homeshare/Xcode/$newname/upload/$newname.zip\n    ditto -c -k --sequesterRsrc --keepParent \"${PRODUCT_NAME}.app\" ~/Desktop/\"${PRODUCT_NAME} ${MARKETING_VERSION}.zip\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -341,6 +276,7 @@
 				2A82F82924713E55006688EC /* Website.swift in Sources */,
 				2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */,
 				2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */,
+				2ABF4838266FA5EB0061B143 /* LetsMoveIt.swift in Sources */,
 				2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */,
 				2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */,
 				2A8350D5247322DF00C70209 /* Biosmodding.swift in Sources */,
@@ -495,25 +431,24 @@
 		};
 		2AEC2987246FF35E00ED7AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FD7536265EA205E4E3BD7C9 /* Pods-G-Flash.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = gflash/gflash.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "G-Flash/G-Flash.entitlements";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 103;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = gflash/Info.plist;
+				INFOPLIST_FILE = "G-Flash/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
+				PRODUCT_BUNDLE_IDENTIFIER = "G-Flash.slsoft.de";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -522,25 +457,24 @@
 		};
 		2AEC2988246FF35E00ED7AD1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A81C7CA8CC6B505E5169E7FE /* Pods-G-Flash.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = gflash/gflash.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "G-Flash/G-Flash.entitlements";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 103;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = gflash/Info.plist;
+				INFOPLIST_FILE = "G-Flash/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
+				PRODUCT_BUNDLE_IDENTIFIER = "G-Flash.slsoft.de";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -603,6 +537,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2ABF4830266FA4910061B143 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.26.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2ABF4831266FA4910061B143 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2ABF4830266FA4910061B143 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2AEC296E246FF35D00ED7AD1 /* Project object */;
 }

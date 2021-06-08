@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="17701"/>
+        <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="G-Flash" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="G-Flash" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About G-Flash" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Check for Updates..." id="DC7-gv-Fka">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="ViO-7r-Tb6" id="aXx-1j-xI6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Changelog" id="SnI-Ph-evE">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="ViO-7r-Tb6" id="ejZ-n8-zYu"/>
+                                                <segue destination="for-Wb-Iyj" kind="show" id="khp-90-GG6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="0dk-tt-Pha"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide G-Flash" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit G-Flash" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Edit" id="UbS-6y-QkJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Edit" id="e5j-Zf-dtJ">
+                                    <items>
+                                        <menuItem title="Cut" keyEquivalent="x" id="QIt-6O-MT8">
+                                            <connections>
+                                                <action selector="cut:" target="Ady-hI-5gd" id="nIG-ol-N3L"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Copy" keyEquivalent="c" id="rNA-7N-0F6">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="6FV-74-rgv"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste" keyEquivalent="v" id="dmb-yP-hOp">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="KoF-wX-v9N"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="aUF-d1-5bR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
+                                        <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="wpr-3q-Mcd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                    <items>
+                                        <menuItem title="G-Flash Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                            <connections>
+                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="G_Flash" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="ViO-7r-Tb6" customClass="SUUpdater"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="465"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="G-Flash" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="1028" height="575"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="1028" height="300"/>
+                        <value key="maxSize" type="size" width="1028" height="750"/>
+                        <value key="minFullScreenContentSize" type="size" width="1028" height="300"/>
+                        <value key="maxFullScreenContentSize" type="size" width="1028" height="750"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="hkM-tF-iKv"/>
+            </objects>
+            <point key="canvasLocation" x="-942" y="830"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="kB3-Fv-E1D">
+            <objects>
+                <viewController title="Preferences" id="0ec-NJ-RYn" customClass="Preferences" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Ld0-NB-TlG">
+                        <rect key="frame" x="0.0" y="0.0" width="465" height="183"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="9Cd-fz-7Oe">
+                                <rect key="frame" x="30" y="57" width="406" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="X7r-6a-gbe">
+                                    <rect key="frame" x="3" y="3" width="400" height="102"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-AW-ArN">
+                                            <rect key="frame" x="12" y="78" width="318" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Verify saved ROM" bezelStyle="regularSquare" imagePosition="left" focusRingType="none" inset="2" id="tOv-Pr-H4v">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="Ueu-80-FGQ" name="value" keyPath="values.Verify saved ROM" id="V8a-dw-ccW"/>
+                                            </connections>
+                                        </button>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-qq-HZ2">
+                                            <rect key="frame" x="12" y="50" width="318" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Verbose complete Output" bezelStyle="regularSquare" imagePosition="left" focusRingType="none" inset="2" id="ufz-GF-7vE">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="Ueu-80-FGQ" name="value" keyPath="values.Verbose" id="HGS-EJ-y4z"/>
+                                            </connections>
+                                        </button>
+                                        <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8g-GG-RNd">
+                                            <rect key="frame" x="11" y="14" width="317" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" id="6al-zT-f1Q">
+                                                <font key="font" metaFont="system" size="10"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="ncr-Dl-68j" name="value" keyPath="values.Download Path" id="4On-Dp-0hb"/>
+                                            </connections>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAP-JZ-hag">
+                                            <rect key="frame" x="12" y="33" width="326" height="11"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Download Path (Folder &quot;G-Flash&quot; will created automatic there)" id="llx-Mg-cVb">
+                                                <font key="font" metaFont="menu" size="9"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYk-ax-YWw">
+                                            <rect key="frame" x="335" y="15" width="58" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Change" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kaU-Rf-qRN">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu" size="9"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="browseFileWithSender:" target="0ec-NJ-RYn" id="xDN-aB-iac"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="85U-9j-Hon">
+                                <rect key="frame" x="167" y="13" width="132" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RpA-JL-lVE">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="0ec-NJ-RYn" id="Cjv-ED-RME"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="selected_download_path" destination="i8g-GG-RNd" id="f8W-LI-JzP"/>
+                    </connections>
+                </viewController>
+                <customObject id="8wM-rS-Jpg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="Ueu-80-FGQ"/>
+                <userDefaultsController id="ncr-Dl-68j"/>
+            </objects>
+            <point key="canvasLocation" x="1019.5" y="729.5"/>
+        </scene>
+        <!--G-Flash-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController title="G-Flash" id="XfG-lQ-9wD" customClass="MainWindow" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="1028" height="575"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="8" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xWt-qj-nFw" userLabel="Gray Box">
+                                <rect key="frame" x="6" y="6" width="1016" height="562"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" id="dnL-WG-MmU">
+                                    <rect key="frame" x="0.0" y="0.0" width="1016" height="562"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="fillColor" name="unemphasizedSelectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </box>
+                            <box fixedFrame="YES" boxType="custom" borderWidth="2" cornerRadius="6" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="9CN-Cw-vEV" userLabel="Deco Box">
+                                <rect key="frame" x="20" y="18" width="989" height="406"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <view key="contentView" id="3OB-rv-L6z">
+                                    <rect key="frame" x="2" y="2" width="985" height="402"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <scrollView focusRingType="none" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kng-oJ-uW5" userLabel="Content Scroller">
+                                            <rect key="frame" x="1" y="1" width="982" height="400"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="b2u-rT-mct">
+                                                <rect key="frame" x="0.0" y="0.0" width="982" height="400"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" smartInsertDelete="YES" id="TVA-gz-7F6" userLabel="Output Window">
+                                                        <rect key="frame" x="0.0" y="0.0" width="982" height="400"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <size key="minSize" width="982" height="400"/>
+                                                        <size key="maxSize" width="1521" height="10000000"/>
+                                                        <attributedString key="textStorage">
+                                                            <fragment>
+                                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" metaFont="system" size="19"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    </textView>
+                                                </subviews>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Wc5-sK-fAg">
+                                                <rect key="frame" x="-100" y="-100" width="769" height="15"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="uoZ-ZP-PR2">
+                                                <rect key="frame" x="957" y="0.0" width="16" height="390"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <box fixedFrame="YES" title="Programmer" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ILZ-rs-xXb" userLabel="Prgrammer Box">
+                                <rect key="frame" x="730" y="435" width="281" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="fh9-J2-Tjp">
+                                    <rect key="frame" x="3" y="3" width="275" height="116"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <popUpButton focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4Z-40-q16">
+                                            <rect key="frame" x="15" y="83" width="243" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="Choose Programmer ..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" focusRingType="none" imageScaling="proportionallyDown" inset="2" selectedItem="Vid-Mc-Omj" id="ZyD-tW-omA">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="Qmg-9Y-DdC">
+                                                    <items>
+                                                        <menuItem title="Choose Programmer ..." state="on" id="Vid-Mc-Omj">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="ARM-USB-OCD" tag="10" toolTip="15ba:0003" id="zhe-ra-H6Y">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="ARM-USB-TINY" tag="9" toolTip="15ba:0004" id="jgh-OE-SYY">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="ARM-USB-OCD-H" tag="8" toolTip="15ba:002b" id="W5v-6Q-Hor">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="ARM-USB-TINY-H" tag="7" toolTip="15ba:002a" id="aMO-EX-sG2">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="CH341A" tag="1" toolTip="1a86:5512" id="92M-XG-3Xr">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                            <accessibility description="Bla" help="Bla" identifier="Bla"/>
+                                                        </menuItem>
+                                                        <menuItem title="CP2102N USB to UART Bridge Controller" tag="5" toolTip="10c4:ea60" id="qWB-st-pRW">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Development board JTAG" tag="2" toolTip="1443:0007" id="zGq-P8-8en">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="FT232H" tag="19" toolTip="0403:6014" id="cpd-q8-fOx">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="FT2232H" tag="21" toolTip="0403:6010" id="2zI-6r-FYX">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="FT4232H" tag="20" toolTip="0403:6011" id="bNg-7U-1tx">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="JTAGkey" tag="16" toolTip="0403:cff8" id="E6g-0D-KLL">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="OpenMoko Neo1973 Debug board (V2+)" tag="11" toolTip="1457:5118" id="t1b-6m-kLQ">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="PICkit 2" tag="3" toolTip="04d8:0033" id="YN2-og-Scm">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="PicoTAP" tag="15" toolTip="096c:1449" id="mUr-DQ-VfL">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Servo" tag="14" toolTip="18d1:5001" id="hcc-ZW-3Kp">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Servo V2" tag="12" toolTip="18d1:5003" id="nLO-83-TY1">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Servo V2 Legacy" tag="13" toolTip="18d1:5002" id="LfA-GM-2N2">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="SF100/SF200/SF600" tag="6" toolTip="0483:dada" id="H9b-b5-XhB">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="STLINK-V3" tag="22" toolTip="0483:374f" id="A5M-R0-eH5">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="USB-Blaster" tag="4" toolTip="09fb:6001" id="OTN-mh-Wi1">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="USB Multi-Protocol Adapter" tag="18" toolTip="0403:8a98" id="ttZ-wE-yZp">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="USB Multi-Protocol Adapter Lite" tag="17" toolTip="0403:8a99" id="mU6-0Z-fXz">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="programmer_chooser:" target="XfG-lQ-9wD" id="fdF-2g-2th"/>
+                                                <binding destination="4Qo-6o-qbk" name="selectedTag" keyPath="values.Programmer" id="hiv-yd-svB"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBQ-6e-zNx" userLabel="Dot_green">
+                                            <rect key="frame" x="17" y="52" width="16" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="qPp-gk-S5Y"/>
+                                        </imageView>
+                                        <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-HG-Ul8" userLabel="Dot_red">
+                                            <rect key="frame" x="17" y="52" width="16" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="7JL-V1-P5n"/>
+                                        </imageView>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nw-A4-U1n" userLabel="Dot_orange">
+                                            <rect key="frame" x="17" y="52" width="16" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusPartiallyAvailable" id="AdW-QW-4GZ"/>
+                                        </imageView>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="pag-eb-ygV">
+                                            <rect key="frame" x="17" y="52" width="16" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgm-i3-gDq">
+                                            <rect key="frame" x="11" y="14" width="250" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Autodetect" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="RuQ-Hg-Xk0">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="detect_devices:" target="XfG-lQ-9wD" id="ksE-KP-x2z"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whE-YS-4EV">
+                                            <rect key="frame" x="39" y="49" width="227" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;&lt; do not localize &gt;&gt;" id="tr1-hm-r49">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="pML-rc-O0K">
+                                <rect key="frame" x="295" y="435" width="413" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="JXF-hM-lWU">
+                                    <rect key="frame" x="3" y="3" width="407" height="116"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkc-Hb-EgL">
+                                            <rect key="frame" x="137" y="79" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Flash ROM" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="vOF-Eb-YiJ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="write_rom:" target="XfG-lQ-9wD" id="3qK-Jq-Cdu"/>
+                                            </connections>
+                                        </button>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKg-3a-ZRO">
+                                            <rect key="frame" x="9" y="79" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Read ROM" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="VFl-2j-4lx">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="save_rom:" target="XfG-lQ-9wD" id="PFO-Dx-HaL"/>
+                                            </connections>
+                                        </button>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BE9-U9-p1u">
+                                            <rect key="frame" x="264" y="79" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Erase EEPROM" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="xO4-GM-CGG">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="erase_eeprom:" target="XfG-lQ-9wD" id="aUS-p1-FTb"/>
+                                            </connections>
+                                        </button>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1p-64-d2B">
+                                            <rect key="frame" x="9" y="45" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="List USB Devices" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="0OT-jf-NVF">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="list_usb_devices:" target="XfG-lQ-9wD" id="Apu-qm-k1b"/>
+                                            </connections>
+                                        </button>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lR3-rC-D2t">
+                                            <rect key="frame" x="9" y="10" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Get Chip type" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="qcI-Dh-Ab7">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="get_chip_type:" target="XfG-lQ-9wD" id="LQt-qF-u4X"/>
+                                            </connections>
+                                        </button>
+                                        <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-zU-PgD">
+                                            <rect key="frame" x="143" y="17" width="247" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" drawsBackground="YES" id="vkT-vM-RhS">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="input_detection:" target="XfG-lQ-9wD" id="wjH-gC-FS4"/>
+                                                <binding destination="4Qo-6o-qbk" name="value" keyPath="values.Chip Type" id="cqr-Sd-bQA"/>
+                                            </connections>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxg-n6-2y0">
+                                            <rect key="frame" x="145" y="6" width="47" height="11"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Chip type" id="LE7-ED-lcl">
+                                                <font key="font" metaFont="menu" size="9"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uP7-cc-gae">
+                                            <rect key="frame" x="264" y="45" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Preferences" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zc9-Qv-6Tv">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <segue destination="0ec-NJ-RYn" kind="sheet" id="aeT-yU-Iqc"/>
+                                            </connections>
+                                        </button>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-kH-SgR">
+                                            <rect key="frame" x="15" y="2" width="120" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-kT-mJ4">
+                                            <rect key="frame" x="137" y="45" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="BIOS modding" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="wA4-lh-bTP">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <segue destination="utw-dU-1OW" kind="sheet" id="P8q-vn-pzy"/>
+                                            </connections>
+                                        </button>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Uht-on-pF6">
+                                            <rect key="frame" x="143" y="37" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="GP0-Fs-lgA">
+                                            <rect key="frame" x="15" y="37" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="atA-dv-jLY">
+                                            <rect key="frame" x="16" y="71" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-B7-3jC">
+                                            <rect key="frame" x="144" y="71" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-yb-0Kq">
+                                            <rect key="frame" x="271" y="71" width="119" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <box fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="qqg-lx-xGq">
+                                <rect key="frame" x="13" y="511" width="276" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="84l-eq-KV1">
+                                    <rect key="frame" x="0.0" y="0.0" width="276" height="58"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0d-fl-pWk">
+                                            <rect key="frame" x="-2" y="2" width="278" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="The ultimate &quot;flashrom&quot;-GUI for the Mac" id="XhB-Ia-2Jr">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SiS-JD-H1Z">
+                                            <rect key="frame" x="-2" y="16" width="278" height="41"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="G-Flash" id="mh5-Zy-jbK">
+                                                <font key="font" metaFont="system" size="35"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qL0-fB-hPN">
+                                <rect key="frame" x="113" y="433" width="77" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="1BV-pR-xuH"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="bios_modding_button" destination="7OG-kT-mJ4" id="9Zb-8W-CcM"/>
+                        <outlet property="bios_modding_progressbar" destination="Uht-on-pF6" id="1bR-k8-arZ"/>
+                        <outlet property="content_scroller" destination="kng-oJ-uW5" id="MkL-jk-EPv"/>
+                        <outlet property="devices_empty_entry" destination="Vid-Mc-Omj" id="Yic-8O-4Uv"/>
+                        <outlet property="devices_pulldown" destination="b4Z-40-q16" id="Fty-Th-usu"/>
+                        <outlet property="erase_eeprom_button" destination="BE9-U9-p1u" id="y60-fI-gtc"/>
+                        <outlet property="erase_eeprom_progressbar" destination="eOa-yb-0Kq" id="VHh-By-ia1"/>
+                        <outlet property="flash_rom_progressbar" destination="Blt-B7-3jC" id="Lnm-Rb-1Ra"/>
+                        <outlet property="get_chip_type_button" destination="lR3-rC-D2t" id="qDO-O6-264"/>
+                        <outlet property="get_chip_type_progressbar" destination="vxQ-kH-SgR" id="OLE-TH-lLq"/>
+                        <outlet property="get_chip_type_text" destination="aEf-zU-PgD" id="RoH-jV-e1k"/>
+                        <outlet property="list_usb_devices_button" destination="G1p-64-d2B" id="ZWi-JM-JPh"/>
+                        <outlet property="list_usb_progressbar" destination="GP0-Fs-lgA" id="i5A-5U-de2"/>
+                        <outlet property="output_window" destination="TVA-gz-7F6" id="RlI-Mb-Yfp"/>
+                        <outlet property="preferences_button" destination="uP7-cc-gae" id="N8B-af-V3f"/>
+                        <outlet property="programmer_detect_text" destination="whE-YS-4EV" id="uEX-3h-UA8"/>
+                        <outlet property="programmer_green_dot" destination="rBQ-6e-zNx" id="Pk0-qe-6j8"/>
+                        <outlet property="programmer_orange_dot" destination="4nw-A4-U1n" id="Wyi-OE-1xw"/>
+                        <outlet property="programmer_progress_wheel" destination="pag-eb-ygV" id="P18-aX-Znk"/>
+                        <outlet property="programmer_red_dot" destination="Ogg-HG-Ul8" id="7Eb-cF-hcD"/>
+                        <outlet property="read_rom_progressbar" destination="atA-dv-jLY" id="b5F-3g-gbQ"/>
+                        <outlet property="save_rom_button" destination="MKg-3a-ZRO" id="bWj-4l-9XI"/>
+                        <outlet property="write_rom_button" destination="hkc-Hb-EgL" id="HCX-Vc-TJD"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="4Qo-6o-qbk"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="805.5"/>
+        </scene>
+        <!--Biosmodding-->
+        <scene sceneID="RTs-iG-qin">
+            <objects>
+                <viewController id="utw-dU-1OW" customClass="Biosmodding" customModule="G_Flash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="TbV-y2-j1B">
+                        <rect key="frame" x="0.0" y="0.0" width="515" height="338"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Prr-FA-MJ4">
+                                <rect key="frame" x="19" y="261" width="477" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="bDh-sz-qrm">
+                                    <rect key="frame" x="3" y="3" width="471" height="59"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t84-8v-SY8">
+                                            <rect key="frame" x="17" y="32" width="230" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="MOD-Files for Model:" id="vJb-2S-X8O">
+                                                <font key="font" size="11" name="HelveticaNeue"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jnl-04-9fn">
+                                            <rect key="frame" x="7" y="8" width="241" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="Please choose ..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="wNP-bV-CZu" id="Z9a-4k-h5a">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="J0O-MX-Qwd">
+                                                    <items>
+                                                        <menuItem title="Please choose ..." state="on" id="wNP-bV-CZu">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="ThinkPad T420 (2012)" tag="1" id="d59-5s-d6D">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="ThinkPad T440 (2013)" tag="2" id="CZc-WA-sB4"/>
+                                                        <menuItem title="ThinkPad T450s (2015)" tag="3" id="wl8-zT-vIL"/>
+                                                        <menuItem title="ThinkPad T520 (2012)" tag="4" id="kUl-I9-eh8"/>
+                                                        <menuItem title="ThinkPad T520i (2012)" tag="5" id="spo-9B-1B6"/>
+                                                        <menuItem title="ThinkPad T530 (2014)" tag="6" id="ZiW-8P-2Vh"/>
+                                                        <menuItem title="ThinkPad W541 (2015)" tag="7" id="fVf-J2-NGf"/>
+                                                        <menuItem title="ThinkPad X1 Gen. 3 (2016)" tag="8" id="iOp-RL-Azd"/>
+                                                        <menuItem title="ThinkPad X220 (2011)" tag="9" id="mvb-nk-aut"/>
+                                                        <menuItem title="ThinkPad X230 (2012)" tag="10" id="nRU-em-6dw"/>
+                                                        <menuItem title="ThinkPad X240 (2013)" tag="11" id="y6B-wM-Oth"/>
+                                                        <menuItem title="ThinkPad Yoga S1 (2016)" tag="12" id="2US-lk-CMv"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="mod_chooser:" target="utw-dU-1OW" id="D4q-HA-Pmj"/>
+                                                <binding destination="DEW-va-i2d" name="selectedValue" keyPath="values.Model" id="tvA-Sh-y7K"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ybu-OV-cw9">
+                                            <rect key="frame" x="295" y="4" width="132" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Download" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h4x-qu-iOZ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="download_mods:" target="utw-dU-1OW" id="4OO-XX-Mjv"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-SX-XP0">
+                                <rect key="frame" x="19" y="49" width="479" height="203"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="p3s-1f-LWX">
+                                    <rect key="frame" x="3" y="3" width="473" height="197"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lC-K3-u9U">
+                                            <rect key="frame" x="35" y="73" width="393" height="93"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" selectable="YES" id="ybb-s3-nWi">
+                                                <font key="font" size="12" name="HelveticaNeue"/>
+                                                <string key="title">To change the BIOS there is only a window tool called "PhoenixTool". You can download it as Windows Exe to execute it in your own Windows environment or you can choose a Winewrapper for macOS which behaves like a normal Mac app.</string>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WS0-Hj-1AU">
+                                            <rect key="frame" x="150" y="168" width="160" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="UEFI Bios Editor" id="gkm-PE-ZFz">
+                                                <font key="font" metaFont="systemBold" size="21"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-dS-gNQ">
+                                            <rect key="frame" x="180" y="49" width="104" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Download" id="pxK-ZI-1pc">
+                                                <font key="font" metaFont="systemBold" size="21"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-BX-qAz">
+                                            <rect key="frame" x="14" y="45" width="435" height="5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </box>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-Gt-8Az">
+                                            <rect key="frame" x="31" y="13" width="178" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="macOS (Winewrapper)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wma-l6-dpl">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="download_wine:" target="utw-dU-1OW" id="lHM-bB-caS"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-aO-hoa">
+                                            <rect key="frame" x="254" y="13" width="178" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Windows Exe" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZXM-Ne-WMI">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="download_phoenixtool:" target="utw-dU-1OW" id="dZg-GH-u8t"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X06-1b-MGR">
+                                <rect key="frame" x="194" y="13" width="132" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wxc-4h-FP8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="utw-dU-1OW" id="NS5-ZK-VQV"/>
+                                </connections>
+                            </button>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykr-iG-K0H">
+                                <rect key="frame" x="472" y="16" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5c1-c9-ig4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="help_mods:" target="utw-dU-1OW" id="tMz-Ba-LiT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="download_button" destination="Ybu-OV-cw9" id="t2M-IU-pyR"/>
+                        <outlet property="pulldown_empty_entry" destination="wNP-bV-CZu" id="yoN-sK-8j3"/>
+                        <outlet property="pulldown_menu" destination="Jnl-04-9fn" id="bsA-wt-MS6"/>
+                    </connections>
+                </viewController>
+                <customObject id="UbM-Se-lJC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="DEW-va-i2d"/>
+            </objects>
+            <point key="canvasLocation" x="-51.5" y="1326"/>
+        </scene>
+        <!--Changelog-->
+        <scene sceneID="CNW-KH-BMQ">
+            <objects>
+                <viewController title="Changelog" id="for-Wb-Iyj" customClass="Website" customModule="G_Flash" sceneMemberID="viewController">
+                    <view key="view" id="g7t-Sg-prS">
+                        <rect key="frame" x="0.0" y="0.0" width="660" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box fixedFrame="YES" boxType="custom" borderWidth="3" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-q5-KBt">
+                                <rect key="frame" x="17" y="15" width="626" height="237"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="pMN-4T-ohY">
+                                    <rect key="frame" x="3" y="3" width="620" height="231"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </box>
+                            <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwQ-WZ-hq4">
+                                <rect key="frame" x="20" y="20" width="620" height="228"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0" plugInsEnabled="NO" javaEnabled="NO" javaScriptEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6bp-oH-crr">
+                                <rect key="frame" x="143" y="264" width="374" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Changelog" id="vNL-ix-Bkg">
+                                    <font key="font" metaFont="systemBlack" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="YwQ-WZ-hq4" id="IZI-w2-5o0"/>
+                    </connections>
+                </viewController>
+                <customObject id="L19-U4-Pxu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="233"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSStatusAvailable" width="16" height="16"/>
+        <image name="NSStatusPartiallyAvailable" width="16" height="16"/>
+        <image name="NSStatusUnavailable" width="16" height="16"/>
+        <image name="logo" width="512" height="512"/>
+    </resources>
+</document>
