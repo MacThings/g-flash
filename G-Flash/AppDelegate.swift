@@ -21,7 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        
         let paths = NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true)
         let userDownloadDirectory = paths[0]
         
@@ -39,11 +38,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UserDefaults.standard.removeObject(forKey: "Successful")
         UserDefaults.standard.removeObject(forKey: "Chip Type")
         UserDefaults.standard.removeObject(forKey: "Chip Types")
-        UserDefaults.standard.removeObject(forKey: "Programmer found")
         UserDefaults.standard.removeObject(forKey: "Abort")
         UserDefaults.standard.set(false, forKey: "Force Chip Type")
         UserDefaults.standard.removeObject(forKey: "Model")
         defaults.synchronize()
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

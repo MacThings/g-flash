@@ -187,7 +187,7 @@ function _erase_eeprom()
 
 function _list_usb_devices()
 {
-  "$ScriptPath"/../bin/lsusb 
+  "$ScriptPath"/../bin/lsusb_list
 }
 
 function _check_programmer()
@@ -197,6 +197,7 @@ function _check_programmer()
     "$ScriptPath"/../bin/lsusb |grep "1a86:5512" > /dev/null
     if [ $? = 0 ]; then
       defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool true
+      touch /private/tmp/devok
     else
       defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Programmer found" -bool false
     fi

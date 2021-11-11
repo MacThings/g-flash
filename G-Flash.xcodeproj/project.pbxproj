@@ -13,6 +13,7 @@
 		2A8350D5247322DF00C70209 /* Biosmodding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8350D4247322DF00C70209 /* Biosmodding.swift */; };
 		2A8350DC2473F31600C70209 /* 7za in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A8350DA2473F2EE00C70209 /* 7za */; };
 		2A8B5EC92470A7080098B8BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B5EC72470A7080098B8BF /* Localizable.strings */; };
+		2A9CCCEE273DB0E300386A99 /* lsusb_list in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A9CCCEA273DB0C800386A99 /* lsusb_list */; };
 		2AB9DF0724712B1200677A16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB9DF0524712B1200677A16 /* InfoPlist.strings */; };
 		2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DF08247132BD00677A16 /* Preferences.swift */; };
 		2ABF4832266FA4910061B143 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2ABF4831266FA4910061B143 /* Sparkle */; };
@@ -33,6 +34,7 @@
 			dstPath = bin;
 			dstSubfolderSpec = 7;
 			files = (
+				2A9CCCEE273DB0E300386A99 /* lsusb_list in Copy 'bin' */,
 				2A8350DC2473F31600C70209 /* 7za in Copy 'bin' */,
 				2A02454D2470076700C9A87C /* lsusb in Copy 'bin' */,
 				2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */,
@@ -62,6 +64,7 @@
 		2A8350DA2473F2EE00C70209 /* 7za */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 7za; sourceTree = "<group>"; };
 		2A8B5EC32470A5C20098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		2A8B5EC82470A7080098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2A9CCCEA273DB0C800386A99 /* lsusb_list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsusb_list; sourceTree = "<group>"; };
 		2AA27D352470656B00F8E25B /* gflash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gflash.html; sourceTree = "<group>"; };
 		2AB9DF0624712B1200677A16 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2AB9DF08247132BD00677A16 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 		2AEC298A246FF43300ED7AD1 /* bin */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CCCEA273DB0C800386A99 /* lsusb_list */,
 				2AF7DE792472844000C07B69 /* patch.sh */,
 				2A02454B2470075A00C9A87C /* lsusb */,
 				2A8350DA2473F2EE00C70209 /* 7za */,
@@ -212,7 +216,7 @@
 				};
 			};
 			buildConfigurationList = 2AEC2971246FF35D00ED7AD1 /* Build configuration list for PBXProject "G-Flash" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
