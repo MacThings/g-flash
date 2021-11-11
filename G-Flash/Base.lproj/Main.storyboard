@@ -422,7 +422,7 @@ Cg
                                             </popUpButtonCell>
                                             <connections>
                                                 <action selector="programmer_chooser:" target="XfG-lQ-9wD" id="fdF-2g-2th"/>
-                                                <binding destination="4Qo-6o-qbk" name="selectedTag" keyPath="values.Programmer" id="hiv-yd-svB"/>
+                                                <binding destination="4Qo-6o-qbk" name="selectedTag" keyPath="values.Programmer" id="fSy-WG-fG3"/>
                                             </connections>
                                         </popUpButton>
                                         <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBQ-6e-zNx" userLabel="Dot_green">
@@ -539,7 +539,7 @@ Cg
                                             </textFieldCell>
                                             <connections>
                                                 <action selector="input_detection:" target="XfG-lQ-9wD" id="wjH-gC-FS4"/>
-                                                <binding destination="4Qo-6o-qbk" name="value" keyPath="values.Chip Type" id="cqr-Sd-bQA"/>
+                                                <binding destination="4Qo-6o-qbk" name="value" keyPath="values.Chip Type" id="rcw-h5-gbB"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxg-n6-2y0">
