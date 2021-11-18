@@ -185,6 +185,27 @@ function _erase_eeprom()
     fi
 }
 
+function _verify_rom()
+{
+  _set_programmer
+  
+ chip_type=$( defaults read "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type" )
+
+    cd "$ScriptPath"/../bin/
+    if [[ "$verbose" = "1" ]]; then
+        ./flashrom -V --programmer "$programmer" -v "$rom_readpath" -c "$chip_type"
+    else
+        ./flashrom --programmer "$programmer" -v "$rom_readpath" -c "$chip_type"
+    fi
+    if [[ "$?" = "0" ]]; then
+        defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool false
+        _successful
+    else
+        defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool true
+       _not_successful
+    fi
+}
+
 function _list_usb_devices()
 {
   "$ScriptPath"/../bin/lsusb_list
