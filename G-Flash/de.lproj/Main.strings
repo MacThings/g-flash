@@ -146,7 +146,7 @@
 "Vdr-fp-XzO.title" = "Andere ausblenden";
 
 /* Class = "NSButtonCell"; title = "Read ROM"; ObjectID = "VFl-2j-4lx"; */
-"VFl-2j-4lx.title" = "ROM auslesen";
+"VFl-2j-4lx.title" = "ROM lesen";
 
 /* Class = "NSMenuItem"; title = "Choose Programmer ..."; ObjectID = "Vid-Mc-Omj"; */
 "Vid-Mc-Omj.title" = "Programmer auswählen...";
@@ -154,8 +154,11 @@
 /* Class = "NSTextFieldCell"; title = "MOD-Files for Model:"; ObjectID = "vJb-2S-X8O"; */
 "vJb-2S-X8O.title" = "MOD-Dateien für Modell:";
 
+/* Class = "NSButtonCell"; title = "Flash ROM"; ObjectID = "xfo-uD-V2R"; */
+"xfo-uD-V2R.title" = "ROM prüf.";
+
 /* Class = "NSButtonCell"; title = "Flash ROM"; ObjectID = "vOF-Eb-YiJ"; */
-"vOF-Eb-YiJ.title" = "ROM flashen";
+"vOF-Eb-YiJ.title" = "ROM flash.";
 
 /* Class = "NSButtonCell"; title = "BIOS modding"; ObjectID = "wA4-lh-bTP"; */
 "wA4-lh-bTP.title" = "BIOS Modding";
