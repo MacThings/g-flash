@@ -102,3 +102,9 @@
 
 /* No comment provided by engineer. */
 "Move to Applications folder?" = "In den Programme-Ordner verschieben?";
+
+/* No comment provided by engineer. */
+"Error!" = "Fehler!";
+
+/* No comment provided by engineer. */
+"Content of EEPROM does not match with rom file." = "Der Inhalt das EEPROMs stimmt nicht mit der Rom Datei überein.";

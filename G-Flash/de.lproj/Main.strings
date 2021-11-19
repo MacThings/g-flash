@@ -155,10 +155,10 @@
 "vJb-2S-X8O.title" = "MOD-Dateien für Modell:";
 
 /* Class = "NSButtonCell"; title = "Flash ROM"; ObjectID = "xfo-uD-V2R"; */
-"xfo-uD-V2R.title" = "ROM prüf.";
+"xfo-uD-V2R.title" = "ROM prüfen";
 
 /* Class = "NSButtonCell"; title = "Flash ROM"; ObjectID = "vOF-Eb-YiJ"; */
-"vOF-Eb-YiJ.title" = "ROM flash.";
+"vOF-Eb-YiJ.title" = "ROM flashen";
 
 /* Class = "NSButtonCell"; title = "BIOS modding"; ObjectID = "wA4-lh-bTP"; */
 "wA4-lh-bTP.title" = "BIOS Modding";
@@ -178,8 +178,8 @@
 /* Class = "NSTextFieldCell"; title = "The ultimate \"flashrom\"-GUI for the Mac"; ObjectID = "XhB-Ia-2Jr"; */
 "XhB-Ia-2Jr.title" = "Die ultimative flashrom-GUI für macOS";
 
-/* Class = "NSButtonCell"; title = "Erase EEPROM"; ObjectID = "xO4-GM-CGG"; */
-"xO4-GM-CGG.title" = "EEPROM löschen";
+/* Class = "NSButtonCell"; title = "Erase ROM"; ObjectID = "xO4-GM-CGG"; */
+"xO4-GM-CGG.title" = "ROM löschen";
 
 /* Class = "NSTextFieldCell"; title = "To change the BIOS there is only a window tool called \"PhoenixTool\". You can download it as Windows Exe to execute it in your own Windows environment or you can choose a Winewrapper for macOS which behaves like a normal Mac app."; ObjectID = "ybb-s3-nWi"; */
 "ybb-s3-nWi.title" = "Um das BIOS zu ändern, gibt es nur ein Windowstool namens \"PhoenixTool\". Sie können es als Windows Exe herunterladen, um es in Ihrer eigenen Windows-Umgebung auszuführen, oder Sie können einen Winewrapper für macOS auswählen, der sich wie eine normale Mac-App verhält.";

@@ -198,10 +198,10 @@ function _verify_rom()
         ./flashrom --programmer "$programmer" -v "$rom_readpath" -c "$chip_type"
     fi
     if [[ "$?" = "0" ]]; then
-        defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool false
+        defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Verify Error" -bool false
         _successful
     else
-        defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Chip Type Mismatch" -bool true
+        defaults write "${ScriptHome}/Library/Preferences/gflash.slsoft.de.plist" "Verify Error" -bool true
        _not_successful
     fi
 }

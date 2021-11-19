@@ -39,6 +39,8 @@ class MainWindow: NSViewController {
     @IBOutlet weak var devices_pulldown: NSPopUpButton!
     @IBOutlet weak var devices_empty_entry: NSMenuItem!
     
+    
+    @IBOutlet weak var programmer_detect_button: NSButton!
     @IBOutlet weak var programmer_detect_text: NSTextField!
     @IBOutlet weak var programmer_green_dot: NSImageView!
     @IBOutlet weak var programmer_red_dot: NSImageView!
@@ -90,7 +92,8 @@ class MainWindow: NSViewController {
         selector: #selector(self.download_mods),
         name: NSNotification.Name(rawValue: "download_mods"),
         object: nil)
-    }
+        
+   }
     
     
     @IBAction func list_usb_devices(_ sender: Any) {
@@ -154,11 +157,15 @@ class MainWindow: NSViewController {
                     self.save_rom_button.isEnabled = true
                     self.verify_rom_button.isEnabled = true
                     self.erase_eeprom_button.isEnabled = true
+                    self.devices_pulldown.isEnabled = true
+                    self.programmer_detect_button.isEnabled = true
                 } else {
                     self.write_rom_button.isEnabled = false
                     self.save_rom_button.isEnabled = false
                     self.verify_rom_button.isEnabled = false
                     self.erase_eeprom_button.isEnabled = false
+                    self.devices_pulldown.isEnabled = false
+                    self.programmer_detect_button.isEnabled = false
                 }
                 self.get_chip_type_progressbar.isHidden=true
                 self.get_chip_type_progressbar?.stopAnimation(self);
@@ -172,10 +179,19 @@ class MainWindow: NSViewController {
         self.save_rom_button.isEnabled = true
         self.verify_rom_button.isEnabled = true
         self.erase_eeprom_button.isEnabled = true
+        self.devices_pulldown.isEnabled = true
+        self.programmer_detect_button.isEnabled = true
     }
     
     
     @IBAction func save_rom(_ sender: Any) {
+        self.write_rom_button.isEnabled = false
+        self.save_rom_button.isEnabled = false
+        self.verify_rom_button.isEnabled = false
+        self.erase_eeprom_button.isEnabled = false
+        self.devices_pulldown.isEnabled = false
+        self.programmer_detect_button.isEnabled = false
+        
         UserDefaults.standard.removeObject(forKey: "Successful")
         let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
         if programmer_check == "0" {
@@ -191,6 +207,12 @@ class MainWindow: NSViewController {
             DispatchQueue.global(qos: .background).async {
                 self.syncShellExec(path: self.scriptPath, args: ["_save_rom"])
                 DispatchQueue.main.async {
+                    self.write_rom_button.isEnabled = true
+                    self.save_rom_button.isEnabled = true
+                    self.verify_rom_button.isEnabled = true
+                    self.erase_eeprom_button.isEnabled = true
+                    self.devices_pulldown.isEnabled = true
+                    self.programmer_detect_button.isEnabled = true
                     self.read_rom_progressbar.isHidden=true
                     self.read_rom_progressbar?.stopAnimation(self);
                     let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
@@ -218,6 +240,13 @@ class MainWindow: NSViewController {
 
     
     @IBAction func write_rom(_ sender: Any) {
+        self.write_rom_button.isEnabled = false
+        self.save_rom_button.isEnabled = false
+        self.verify_rom_button.isEnabled = false
+        self.erase_eeprom_button.isEnabled = false
+        self.devices_pulldown.isEnabled = false
+        self.programmer_detect_button.isEnabled = false
+        
         UserDefaults.standard.removeObject(forKey: "Successful")
         let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
         if programmer_check == "0" {
@@ -233,7 +262,13 @@ class MainWindow: NSViewController {
         DispatchQueue.global(qos: .background).async {
             self.syncShellExec(path: self.scriptPath, args: ["_write_rom"])
             DispatchQueue.main.async {
+                self.write_rom_button.isEnabled = true
+                self.save_rom_button.isEnabled = true
+                self.verify_rom_button.isEnabled = true
+                self.erase_eeprom_button.isEnabled = true
                 self.flash_rom_progressbar.isHidden=true
+                self.devices_pulldown.isEnabled = true
+                self.programmer_detect_button.isEnabled = true
                 self.flash_rom_progressbar?.stopAnimation(self);
                 let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
                 let success_check = UserDefaults.standard.bool(forKey: "Successful")
@@ -255,6 +290,13 @@ class MainWindow: NSViewController {
     }
     
     @IBAction func verify_rom(_ sender: Any) {
+        self.write_rom_button.isEnabled = false
+        self.save_rom_button.isEnabled = false
+        self.verify_rom_button.isEnabled = false
+        self.erase_eeprom_button.isEnabled = false
+        self.devices_pulldown.isEnabled = false
+        self.programmer_detect_button.isEnabled = false
+        
         UserDefaults.standard.removeObject(forKey: "Successful")
         let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
         if programmer_check == "0" {
@@ -270,17 +312,27 @@ class MainWindow: NSViewController {
         DispatchQueue.global(qos: .background).async {
             self.syncShellExec(path: self.scriptPath, args: ["_verify_rom"])
             DispatchQueue.main.async {
+                self.write_rom_button.isEnabled = true
+                self.save_rom_button.isEnabled = true
+                self.verify_rom_button.isEnabled = true
+                self.erase_eeprom_button.isEnabled = true
                 self.verify_rom_progressbar.isHidden=true
+                self.devices_pulldown.isEnabled = true
+                self.programmer_detect_button.isEnabled = true
                 self.verify_rom_progressbar?.stopAnimation(self);
-                let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
+                let verify_error = UserDefaults.standard.bool(forKey: "Verify Error")
                 let success_check = UserDefaults.standard.bool(forKey: "Successful")
                 if success_check == true {
                     self.successful()
                 } else {
-                    if chip_type_mismatch == true {
-                        self.wrong_type_entered()
-                    } else {
-                        self.not_successful()
+                    if verify_error == true {
+                        let alert = NSAlert()
+                        alert.messageText = NSLocalizedString("Error!", comment: "")
+                        alert.informativeText = NSLocalizedString("Content of EEPROM does not match with rom file.", comment: "")
+                        alert.alertStyle = .warning
+                        let Button = NSLocalizedString("Bummer", comment: "")
+                        alert.addButton(withTitle: Button)
+                        alert.runModal()
                     }
                 }
             }
@@ -293,6 +345,13 @@ class MainWindow: NSViewController {
     }
     
     @IBAction func erase_eeprom(_ sender: Any) {
+        self.write_rom_button.isEnabled = false
+        self.save_rom_button.isEnabled = false
+        self.verify_rom_button.isEnabled = false
+        self.erase_eeprom_button.isEnabled = false
+        self.devices_pulldown.isEnabled = false
+        self.programmer_detect_button.isEnabled = false
+        
         erase_confirmation()
         UserDefaults.standard.removeObject(forKey: "Successful")
         let programmer_check = UserDefaults.standard.string(forKey: "Programmer")
@@ -308,6 +367,12 @@ class MainWindow: NSViewController {
             DispatchQueue.global(qos: .background).async {
                 self.syncShellExec(path: self.scriptPath, args: ["_erase_eeprom"])
                 DispatchQueue.main.async {
+                    self.write_rom_button.isEnabled = true
+                    self.save_rom_button.isEnabled = true
+                    self.verify_rom_button.isEnabled = true
+                    self.erase_eeprom_button.isEnabled = true
+                    self.devices_pulldown.isEnabled = true
+                    self.programmer_detect_button.isEnabled = true
                     self.erase_eeprom_progressbar.isHidden=true
                     self.erase_eeprom_progressbar?.stopAnimation(self);
                     let chip_type_mismatch = UserDefaults.standard.bool(forKey: "Chip Type Mismatch")
@@ -396,6 +461,10 @@ class MainWindow: NSViewController {
                   defaults.synchronize()
               }
           } else {
+            self.write_rom_button.isEnabled = true
+            self.save_rom_button.isEnabled = true
+            self.verify_rom_button.isEnabled = true
+            self.erase_eeprom_button.isEnabled = true
               UserDefaults.standard.set(true, forKey: "Abort")
               defaults.synchronize()
               return
@@ -421,6 +490,10 @@ class MainWindow: NSViewController {
                   defaults.synchronize()
               }
           } else {
+            self.write_rom_button.isEnabled = true
+            self.save_rom_button.isEnabled = true
+            self.verify_rom_button.isEnabled = true
+            self.erase_eeprom_button.isEnabled = true
               UserDefaults.standard.set(true, forKey: "Abort")
               defaults.synchronize()
               return
@@ -446,6 +519,10 @@ class MainWindow: NSViewController {
                   defaults.synchronize()
               }
           } else {
+            self.write_rom_button.isEnabled = true
+            self.save_rom_button.isEnabled = true
+            self.verify_rom_button.isEnabled = true
+            self.erase_eeprom_button.isEnabled = true
               UserDefaults.standard.set(true, forKey: "Abort")
               defaults.synchronize()
               return
@@ -536,6 +613,10 @@ class MainWindow: NSViewController {
         alert.addButton(withTitle: CancelButtonText)
         
         if alert.runModal() != .alertFirstButtonReturn {
+            self.write_rom_button.isEnabled = true
+            self.save_rom_button.isEnabled = true
+            self.verify_rom_button.isEnabled = true
+            self.erase_eeprom_button.isEnabled = true
             UserDefaults.standard.set(true, forKey: "Abort")
             return
         }
