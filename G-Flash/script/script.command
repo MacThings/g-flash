@@ -208,7 +208,7 @@ function _verify_rom()
 
 function _list_usb_devices()
 {
-  "$ScriptPath"/../bin/lsusb_list
+  "$ScriptPath"/../bin/lsusb
 }
 
 function _check_programmer()
