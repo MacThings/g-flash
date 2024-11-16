@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -152,23 +152,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		2AF7DEAB2472855000C07B69 /* Patch */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = patch.sh;
-			buildConfigurationList = 2AF7DEAC2472855000C07B69 /* Build configuration list for PBXLegacyTarget "Patch" */;
-			buildPhases = (
-			);
-			buildToolPath = /bin/bash;
-			buildWorkingDirectory = "$(SRCROOT)/G-Flash/bin";
-			dependencies = (
-			);
-			name = Patch;
-			passBuildSettingsInEnvironment = 1;
-			productName = Patch;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		2AEC2975246FF35D00ED7AD1 /* G-Flash */ = {
 			isa = PBXNativeTarget;
@@ -206,9 +189,6 @@
 					2AEC2975246FF35D00ED7AD1 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
-					2AF7DEAB2472855000C07B69 = {
-						CreatedOnToolsVersion = 11.4.1;
-					};
 				};
 			};
 			buildConfigurationList = 2AEC2971246FF35D00ED7AD1 /* Build configuration list for PBXProject "G-Flash" */;
@@ -229,7 +209,6 @@
 			projectRoot = "";
 			targets = (
 				2AEC2975246FF35D00ED7AD1 /* G-Flash */,
-				2AF7DEAB2472855000C07B69 /* Patch */,
 			);
 		};
 /* End PBXProject section */
@@ -264,7 +243,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nfind \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"/Contents/Resources -type d -name \"Sparkle.framework\" -exec rm -r \"{}\" \\;\nrm -r /Applications/\"${PRODUCT_NAME}.app\"\ncp -r \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\" /Applications/\nnewname=$( echo \"${PRODUCT_NAME}\" |tr '[:upper:]' '[:lower:]' |sed -e 's/\\ //g' -e 's/-//g' )\nif [ -d /Volumes/Homeshare/Xcode/$newname ]; then\n    cp \"/Users/luigi/Documents/Xcode/$newname/${PRODUCT_NAME}/$newname.html\" \"/Volumes/Homeshare/Xcode/$newname/upload/$newname.html\"\n    rm /Volumes/Homeshare/Xcode/$newname/upload/$newname.zip 2> /dev/null\n    cd /Applications\n    ditto -c -k --sequesterRsrc --keepParent \"${PRODUCT_NAME}.app\" /Volumes/Homeshare/Xcode/$newname/upload/$newname.zip\n    ditto -c -k --sequesterRsrc --keepParent \"${PRODUCT_NAME}.app\" ~/Desktop/\"${PRODUCT_NAME} ${MARKETING_VERSION}.zip\"\nfi\n";
+			shellScript = "#!/bin/bash\n\nSYS_USER=$(id -un)\n\nif [ -d \"/Volumes/Homeshare/Xcode/gflash/upload\" ]; then\n    cp \"/Users/$SYS_USER/Documents/Xcode/g-flash/G-Flash/gflash.html\" \"/Volumes/Homeshare/Xcode/gflash/upload/\"\n    \n  \n    codesign --force --deep --sign - \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"\n    ditto -c -k --sequesterRsrc --keepParent \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Volumes/Homeshare/Xcode/gflash/upload/gflash.zip\"\n\nfi\n\nif [ -d \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\" ]; then\n    rm -r \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\"\nfi\n\ncp -a \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Users/$SYS_USER/Desktop/.\"\ncodesign --force --deep --sign - /Users/$SYS_USER/Desktop/\"${PRODUCT_NAME}.app\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -438,7 +417,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "G-Flash/Info.plist";
@@ -446,8 +425,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.0.6;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -464,7 +443,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "G-Flash/Info.plist";
@@ -472,37 +451,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.0.6;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		2AF7DEAD2472855000C07B69 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		2AF7DEAE2472855000C07B69 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -527,15 +481,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2AF7DEAC2472855000C07B69 /* Build configuration list for PBXLegacyTarget "Patch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2AF7DEAD2472855000C07B69 /* Debug */,
-				2AF7DEAE2472855000C07B69 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -544,7 +489,7 @@
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.26.0;
+				minimumVersion = 2.6.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

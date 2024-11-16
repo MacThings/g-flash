@@ -1,3 +1,8 @@
+# brew fetch --force-bottle --arch all --os all libusb flashrom lsusb libftdi
+# lipo bin_arm/lib/libusb-1.0.0.dylib bin_x86/lib/libusb-1.0.0.dylib -create -output bin_u2b/lib/libusb-1.0.0.dylib
+# lipo bin_arm/lib/libftdi1.2.dylib bin_x86/lib/libftdi1.2.dylib -create -output bin_u2b/lib/libftdi1.2.dylib
+# lipo bin_arm/flashrom bin_x86/flashrom -create -output bin_u2b/flashrom
+
 libusb1="0.1.4"
 libusb1=$( echo "$libusb1" | xxd -p | cut -c -10 )
 libusb2="1.0.0"
