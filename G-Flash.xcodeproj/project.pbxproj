@@ -284,7 +284,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#Requires on ARM:\n#/opt/homebrew/bin/brew install innoextract dylibbundler flashrom\n#arch -x86_64 /usr/local/bin/./brew install innoextract flashrom\n\nbin=\"flashrom\"\ndest_path=\"$PROJECT_DIR/G-Flash/bin\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/bin\"\nx86_path=\"/usr/local/bin\"\n\ncd \"$dest_path\"\nmkdir x86 arm\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\ndylibbundler -of -cd -b -x \"$bin\"_arm -d arm -p @executable_path/\n\ndylibbundler -of -cd -b -x \"$bin\"_x86 -d x86 -p @executable_path/\n\ncd arm\n\nfor a in *.dylib; do lipo \"$a\" ../x86/\"$a\" -output ../\"$a\" -create; done\n\ncd ..\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm -r x86 arm \"$bin\"_*\n";
+			shellScript = "#Requires on ARM:\n#/opt/homebrew/bin/brew install dylibbundler flashrom\n#arch -x86_64 /usr/local/bin/./brew install flashrom\n\nbin=\"flashrom\"\ndest_path=\"$PROJECT_DIR/G-Flash/bin\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/bin\"\nx86_path=\"/usr/local/bin\"\n\ncd \"$dest_path\"\nmkdir x86 arm\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\ndylibbundler -of -cd -b -x \"$bin\"_arm -d arm -p @executable_path/\n\ndylibbundler -of -cd -b -x \"$bin\"_x86 -d x86 -p @executable_path/\n\ncd arm\n\nfor a in *.dylib; do lipo \"$a\" ../x86/\"$a\" -output ../\"$a\" -create; done\n\ncd ..\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm -r x86 arm \"$bin\"_*\n";
 		};
 		2AD1FE272CF8B18E00EB0DBE /* lipo 7zz */ = {
 			isa = PBXShellScriptBuildPhase;
