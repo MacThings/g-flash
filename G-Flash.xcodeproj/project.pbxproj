@@ -12,6 +12,7 @@
 			buildConfigurationList = 2AD1FDDF2CF8A98B00EB0DBE /* Build configuration list for PBXAggregateTarget "Bundle Libs" */;
 			buildPhases = (
 				2AD1FDE02CF8A9A800EB0DBE /* Bundle dylibs */,
+				2AD1FE272CF8B18E00EB0DBE /* lipo 7zz */,
 			);
 			dependencies = (
 			);
@@ -26,7 +27,6 @@
 		2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A163B3C246FF766007DB90A /* MainWindow.swift */; };
 		2A82F82924713E55006688EC /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A82F82824713E55006688EC /* Website.swift */; };
 		2A8350D5247322DF00C70209 /* Biosmodding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8350D4247322DF00C70209 /* Biosmodding.swift */; };
-		2A8350DC2473F31600C70209 /* 7za in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A8350DA2473F2EE00C70209 /* 7za */; };
 		2A8B5EC92470A7080098B8BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B5EC72470A7080098B8BF /* Localizable.strings */; };
 		2A9CCCEE273DB0E300386A99 /* lsusb in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A9CCCEA273DB0C800386A99 /* lsusb */; };
 		2AB9DF0724712B1200677A16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB9DF0524712B1200677A16 /* InfoPlist.strings */; };
@@ -35,6 +35,7 @@
 		2ABF4838266FA5EB0061B143 /* LetsMoveIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF4837266FA5EB0061B143 /* LetsMoveIt.swift */; };
 		2AD1FDE52CF8AE2300EB0DBE /* libftdi1.2.5.0.dylib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AD1FDE12CF8ADE900EB0DBE /* libftdi1.2.5.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2AD1FDE62CF8AE2300EB0DBE /* libusb-1.0.0.dylib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AD1FDE22CF8ADE900EB0DBE /* libusb-1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2AD1FE2A2CF8B27600EB0DBE /* 7zz in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AD1FE282CF8B22700EB0DBE /* 7zz */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */; };
 		2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC297B246FF35D00ED7AD1 /* ViewController.swift */; };
 		2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */; };
@@ -50,10 +51,10 @@
 			dstPath = bin;
 			dstSubfolderSpec = 7;
 			files = (
+				2AD1FE2A2CF8B27600EB0DBE /* 7zz in Copy 'bin' */,
 				2AD1FDE52CF8AE2300EB0DBE /* libftdi1.2.5.0.dylib in Copy 'bin' */,
 				2AD1FDE62CF8AE2300EB0DBE /* libusb-1.0.0.dylib in Copy 'bin' */,
 				2A9CCCEE273DB0E300386A99 /* lsusb in Copy 'bin' */,
-				2A8350DC2473F31600C70209 /* 7za in Copy 'bin' */,
 				2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */,
 			);
 			name = "Copy 'bin'";
@@ -76,7 +77,6 @@
 		2A163B3C246FF766007DB90A /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		2A82F82824713E55006688EC /* Website.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
 		2A8350D4247322DF00C70209 /* Biosmodding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biosmodding.swift; sourceTree = "<group>"; };
-		2A8350DA2473F2EE00C70209 /* 7za */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 7za; sourceTree = "<group>"; };
 		2A8B5EC32470A5C20098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		2A8B5EC82470A7080098B8BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2A9CCCEA273DB0C800386A99 /* lsusb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsusb; sourceTree = "<group>"; };
@@ -86,6 +86,7 @@
 		2ABF4837266FA5EB0061B143 /* LetsMoveIt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsMoveIt.swift; sourceTree = "<group>"; };
 		2AD1FDE12CF8ADE900EB0DBE /* libftdi1.2.5.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libftdi1.2.5.0.dylib; sourceTree = "<group>"; };
 		2AD1FDE22CF8ADE900EB0DBE /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libusb-1.0.0.dylib"; sourceTree = "<group>"; };
+		2AD1FE282CF8B22700EB0DBE /* 7zz */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 7zz; sourceTree = "<group>"; };
 		2AEC2976246FF35D00ED7AD1 /* G-Flash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Flash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AEC297B246FF35D00ED7AD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +155,7 @@
 				2AD1FDE12CF8ADE900EB0DBE /* libftdi1.2.5.0.dylib */,
 				2AD1FDE22CF8ADE900EB0DBE /* libusb-1.0.0.dylib */,
 				2A9CCCEA273DB0C800386A99 /* lsusb */,
-				2A8350DA2473F2EE00C70209 /* 7za */,
+				2AD1FE282CF8B22700EB0DBE /* 7zz */,
 				2AEC298D246FF45A00ED7AD1 /* flashrom */,
 			);
 			path = bin;
@@ -284,6 +285,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#Requires on ARM:\n#/opt/homebrew/bin/brew install innoextract dylibbundler flashrom\n#arch -x86_64 /usr/local/bin/./brew install innoextract flashrom\n\nbin=\"flashrom\"\ndest_path=\"$PROJECT_DIR/G-Flash/bin\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/bin\"\nx86_path=\"/usr/local/bin\"\n\ncd \"$dest_path\"\nmkdir x86 arm\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\ndylibbundler -of -cd -b -x \"$bin\"_arm -d arm -p @executable_path/\n\ndylibbundler -of -cd -b -x \"$bin\"_x86 -d x86 -p @executable_path/\n\ncd arm\n\nfor a in *.dylib; do lipo \"$a\" ../x86/\"$a\" -output ../\"$a\" -create; done\n\ncd ..\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm -r x86 arm \"$bin\"_*\n";
+		};
+		2AD1FE272CF8B18E00EB0DBE /* lipo 7zz */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "lipo 7zz";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#Requires on ARM:\n#/opt/homebrew/bin/brew install 7-zip\n#arch -x86_64 /usr/local/bin/./brew install 7-zip\n\nbin=\"7zz\"\ndest_path=\"$PROJECT_DIR/G-Flash/bin\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/bin\"\nx86_path=\"/usr/local/bin\"\n\ncd \"$dest_path\"\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm \"$bin\"_*\n\nchmod +x \"$bin\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
