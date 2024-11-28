@@ -6,6 +6,22 @@
 	objectVersion = 54;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		2AD1FDDC2CF8A98B00EB0DBE /* Bundle Libs */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2AD1FDDF2CF8A98B00EB0DBE /* Build configuration list for PBXAggregateTarget "Bundle Libs" */;
+			buildPhases = (
+				2AD1FDE02CF8A9A800EB0DBE /* Bundle dylibs */,
+			);
+			dependencies = (
+			);
+			name = "Bundle Libs";
+			packageProductDependencies = (
+			);
+			productName = "Bundle Libs";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		2A163B3D246FF766007DB90A /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A163B3C246FF766007DB90A /* MainWindow.swift */; };
 		2A82F82924713E55006688EC /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A82F82824713E55006688EC /* Website.swift */; };
@@ -186,6 +202,9 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Sascha Lamprecht";
 				TargetAttributes = {
+					2AD1FDDC2CF8A98B00EB0DBE = {
+						CreatedOnToolsVersion = 16.1;
+					};
 					2AEC2975246FF35D00ED7AD1 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -209,6 +228,7 @@
 			projectRoot = "";
 			targets = (
 				2AEC2975246FF35D00ED7AD1 /* G-Flash */,
+				2AD1FDDC2CF8A98B00EB0DBE /* Bundle Libs */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +264,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "#!/bin/bash\n\nSYS_USER=$(id -un)\n\nif [ -d \"/Volumes/Homeshare/Xcode/gflash/upload\" ]; then\n    cp \"/Users/$SYS_USER/Documents/Xcode/g-flash/G-Flash/gflash.html\" \"/Volumes/Homeshare/Xcode/gflash/upload/\"\n    \n  \n    codesign --force --deep --sign - \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"\n    ditto -c -k --sequesterRsrc --keepParent \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Volumes/Homeshare/Xcode/gflash/upload/gflash.zip\"\n\nfi\n\nif [ -d \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\" ]; then\n    rm -r \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\"\nfi\n\ncp -a \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Users/$SYS_USER/Desktop/.\"\ncodesign --force --deep --sign - /Users/$SYS_USER/Desktop/\"${PRODUCT_NAME}.app\"\n";
+		};
+		2AD1FDE02CF8A9A800EB0DBE /* Bundle dylibs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle dylibs";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#Requires:\n#/opt/homebrew/bin/brew install innoextract dylibbundler\n#arch -x86_64 /usr/local/bin/./brew install innoextract\n\nbin=\"flashrom\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/bin\"\nx86_path=\"/usr/local/bin\"\n\ncd \"$PROJECT_DIR/G-Flash/bin\"\nmkdir x86 arm\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\ndylibbundler -of -cd -b -x \"$bin\"_arm -d arm -p @executable_path/\n\ndylibbundler -of -cd -b -x \"$bin\"_x86 -d x86 -p @executable_path/\n\ncd arm\n\nfor a in *.dylib; do lipo \"$a\" ../x86/\"$a\" -output ../\"$a\" -create; done\n\ncd ..\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm -r x86 arm \"$bin\"_*\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -293,6 +331,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2AD1FDDD2CF8A98B00EB0DBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2AD1FDDE2CF8A98B00EB0DBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		2AEC2984246FF35E00ED7AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -465,6 +521,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2AD1FDDF2CF8A98B00EB0DBE /* Build configuration list for PBXAggregateTarget "Bundle Libs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AD1FDDD2CF8A98B00EB0DBE /* Debug */,
+				2AD1FDDE2CF8A98B00EB0DBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2AEC2971246FF35D00ED7AD1 /* Build configuration list for PBXProject "G-Flash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
