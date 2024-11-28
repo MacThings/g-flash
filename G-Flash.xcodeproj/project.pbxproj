@@ -33,12 +33,13 @@
 		2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DF08247132BD00677A16 /* Preferences.swift */; };
 		2ABF4832266FA4910061B143 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2ABF4831266FA4910061B143 /* Sparkle */; };
 		2ABF4838266FA5EB0061B143 /* LetsMoveIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF4837266FA5EB0061B143 /* LetsMoveIt.swift */; };
+		2AD1FDE52CF8AE2300EB0DBE /* libftdi1.2.5.0.dylib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AD1FDE12CF8ADE900EB0DBE /* libftdi1.2.5.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2AD1FDE62CF8AE2300EB0DBE /* libusb-1.0.0.dylib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AD1FDE22CF8ADE900EB0DBE /* libusb-1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2AEC297A246FF35D00ED7AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */; };
 		2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC297B246FF35D00ED7AD1 /* ViewController.swift */; };
 		2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */; };
 		2AEC2981246FF35E00ED7AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297F246FF35E00ED7AD1 /* Main.storyboard */; };
 		2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298D246FF45A00ED7AD1 /* flashrom */; };
-		2AEC2992246FF47F00ED7AD1 /* lib in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298C246FF45A00ED7AD1 /* lib */; };
 		2AEC2996246FF52700ED7AD1 /* script.command in Copy 'script' */ = {isa = PBXBuildFile; fileRef = 2AEC2993246FF50700ED7AD1 /* script.command */; };
 /* End PBXBuildFile section */
 
@@ -49,10 +50,11 @@
 			dstPath = bin;
 			dstSubfolderSpec = 7;
 			files = (
+				2AD1FDE52CF8AE2300EB0DBE /* libftdi1.2.5.0.dylib in Copy 'bin' */,
+				2AD1FDE62CF8AE2300EB0DBE /* libusb-1.0.0.dylib in Copy 'bin' */,
 				2A9CCCEE273DB0E300386A99 /* lsusb in Copy 'bin' */,
 				2A8350DC2473F31600C70209 /* 7za in Copy 'bin' */,
 				2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */,
-				2AEC2992246FF47F00ED7AD1 /* lib in Copy 'bin' */,
 			);
 			name = "Copy 'bin'";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +84,8 @@
 		2AB9DF0624712B1200677A16 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2AB9DF08247132BD00677A16 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		2ABF4837266FA5EB0061B143 /* LetsMoveIt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsMoveIt.swift; sourceTree = "<group>"; };
+		2AD1FDE12CF8ADE900EB0DBE /* libftdi1.2.5.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libftdi1.2.5.0.dylib; sourceTree = "<group>"; };
+		2AD1FDE22CF8ADE900EB0DBE /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libusb-1.0.0.dylib"; sourceTree = "<group>"; };
 		2AEC2976246FF35D00ED7AD1 /* G-Flash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Flash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEC2979246FF35D00ED7AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AEC297B246FF35D00ED7AD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,10 +93,8 @@
 		2AEC2980246FF35E00ED7AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AEC2982246FF35E00ED7AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AEC2983246FF35E00ED7AD1 /* G-Flash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "G-Flash.entitlements"; sourceTree = "<group>"; };
-		2AEC298C246FF45A00ED7AD1 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
 		2AEC298D246FF45A00ED7AD1 /* flashrom */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = flashrom; sourceTree = "<group>"; };
 		2AEC2993246FF50700ED7AD1 /* script.command */ = {isa = PBXFileReference; lastKnownFileType = text; path = script.command; sourceTree = "<group>"; };
-		2AF7DE792472844000C07B69 /* patch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = patch.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,11 +151,11 @@
 		2AEC298A246FF43300ED7AD1 /* bin */ = {
 			isa = PBXGroup;
 			children = (
+				2AD1FDE12CF8ADE900EB0DBE /* libftdi1.2.5.0.dylib */,
+				2AD1FDE22CF8ADE900EB0DBE /* libusb-1.0.0.dylib */,
 				2A9CCCEA273DB0C800386A99 /* lsusb */,
-				2AF7DE792472844000C07B69 /* patch.sh */,
 				2A8350DA2473F2EE00C70209 /* 7za */,
 				2AEC298D246FF45A00ED7AD1 /* flashrom */,
-				2AEC298C246FF45A00ED7AD1 /* lib */,
 			);
 			path = bin;
 			sourceTree = "<group>";
@@ -281,7 +283,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#Requires:\n#/opt/homebrew/bin/brew install innoextract dylibbundler\n#arch -x86_64 /usr/local/bin/./brew install innoextract\n\nbin=\"flashrom\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/bin\"\nx86_path=\"/usr/local/bin\"\n\ncd \"$PROJECT_DIR/G-Flash/bin\"\nmkdir x86 arm\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\ndylibbundler -of -cd -b -x \"$bin\"_arm -d arm -p @executable_path/\n\ndylibbundler -of -cd -b -x \"$bin\"_x86 -d x86 -p @executable_path/\n\ncd arm\n\nfor a in *.dylib; do lipo \"$a\" ../x86/\"$a\" -output ../\"$a\" -create; done\n\ncd ..\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm -r x86 arm \"$bin\"_*\n";
+			shellScript = "#Requires:\n#/opt/homebrew/bin/brew install innoextract dylibbundler flashrom\n#arch -x86_64 /usr/local/bin/./brew install innoextract flashrom\n\nbin=\"flashrom\"\ndest_path=\"$PROJECT_DIR/G-Flash/bin\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/bin\"\nx86_path=\"/usr/local/bin\"\n\ncd \"$dest_path\"\nmkdir x86 arm\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\ndylibbundler -of -cd -b -x \"$bin\"_arm -d arm -p @executable_path/\n\ndylibbundler -of -cd -b -x \"$bin\"_x86 -d x86 -p @executable_path/\n\ncd arm\n\nfor a in *.dylib; do lipo \"$a\" ../x86/\"$a\" -output ../\"$a\" -create; done\n\ncd ..\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm -r x86 arm \"$bin\"_*\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -482,6 +484,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/G-Flash/bin",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
@@ -508,6 +514,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/G-Flash/bin",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MARKETING_VERSION = 1.0.7;
