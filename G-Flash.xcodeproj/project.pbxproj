@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		2ACABC992D05CDD6005204BC /* Publish */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2ACABC9C2D05CDD6005204BC /* Build configuration list for PBXAggregateTarget "Publish" */;
+			buildPhases = (
+				2ACABC9D2D05CDD9005204BC /* Publish */,
+			);
+			dependencies = (
+			);
+			name = Publish;
+			packageProductDependencies = (
+			);
+			productName = Publish;
+		};
 		2AD1FDDC2CF8A98B00EB0DBE /* Bundle Libs */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 2AD1FDDF2CF8A98B00EB0DBE /* Build configuration list for PBXAggregateTarget "Bundle Libs" */;
@@ -28,7 +41,7 @@
 		2A82F82924713E55006688EC /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A82F82824713E55006688EC /* Website.swift */; };
 		2A8350D5247322DF00C70209 /* Biosmodding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8350D4247322DF00C70209 /* Biosmodding.swift */; };
 		2A8B5EC92470A7080098B8BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A8B5EC72470A7080098B8BF /* Localizable.strings */; };
-		2A9CCCEE273DB0E300386A99 /* lsusb in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A9CCCEA273DB0C800386A99 /* lsusb */; };
+		2A9CCCEE273DB0E300386A99 /* lsusb in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2A9CCCEA273DB0C800386A99 /* lsusb */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2AB9DF0724712B1200677A16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB9DF0524712B1200677A16 /* InfoPlist.strings */; };
 		2AB9DF09247132BD00677A16 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DF08247132BD00677A16 /* Preferences.swift */; };
 		2ABF4832266FA4910061B143 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2ABF4831266FA4910061B143 /* Sparkle */; };
@@ -40,8 +53,8 @@
 		2AEC297C246FF35D00ED7AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC297B246FF35D00ED7AD1 /* ViewController.swift */; };
 		2AEC297E246FF35E00ED7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297D246FF35E00ED7AD1 /* Assets.xcassets */; };
 		2AEC2981246FF35E00ED7AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AEC297F246FF35E00ED7AD1 /* Main.storyboard */; };
-		2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298D246FF45A00ED7AD1 /* flashrom */; };
-		2AEC2996246FF52700ED7AD1 /* script.command in Copy 'script' */ = {isa = PBXBuildFile; fileRef = 2AEC2993246FF50700ED7AD1 /* script.command */; };
+		2AEC2991246FF47F00ED7AD1 /* flashrom in Copy 'bin' */ = {isa = PBXBuildFile; fileRef = 2AEC298D246FF45A00ED7AD1 /* flashrom */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2AEC2996246FF52700ED7AD1 /* script.command in Copy 'script' */ = {isa = PBXBuildFile; fileRef = 2AEC2993246FF50700ED7AD1 /* script.command */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -205,6 +218,9 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Sascha Lamprecht";
 				TargetAttributes = {
+					2ACABC992D05CDD6005204BC = {
+						CreatedOnToolsVersion = 16.1;
+					};
 					2AD1FDDC2CF8A98B00EB0DBE = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -232,6 +248,7 @@
 			targets = (
 				2AEC2975246FF35D00ED7AD1 /* G-Flash */,
 				2AD1FDDC2CF8A98B00EB0DBE /* Bundle Libs */,
+				2ACABC992D05CDD6005204BC /* Publish */,
 			);
 		};
 /* End PBXProject section */
@@ -266,7 +283,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "#!/bin/bash\n\nSYS_USER=$(id -un)\n\nif [ -d \"/Volumes/Homeshare/Xcode/gflash/upload\" ]; then\n    cp \"/Users/$SYS_USER/Documents/Xcode/g-flash/G-Flash/gflash.html\" \"/Volumes/Homeshare/Xcode/gflash/upload/\"\n    \n  \n    codesign --force --deep --sign - \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"\n    ditto -c -k --sequesterRsrc --keepParent \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Volumes/Homeshare/Xcode/gflash/upload/gflash.zip\"\n\nfi\n\nif [ -d \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\" ]; then\n    rm -r \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\"\nfi\n\ncp -a \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Users/$SYS_USER/Desktop/.\"\ncodesign --force --deep --sign - /Users/$SYS_USER/Desktop/\"${PRODUCT_NAME}.app\"\n";
+			shellScript = "#!/bin/bash\n\nSYS_USER=$(id -un)\n\nif [ -d \"/Volumes/Homeshare/Xcode/gflash/upload\" ]; then\n    cp \"/Users/$SYS_USER/Documents/Xcode/g-flash/G-Flash/gflash.html\" \"/Volumes/Homeshare/Xcode/gflash/upload/\"\n    \n  \n    codesign --force --deep --sign \"Apple Development: s.lamprecht@sl-soft.de (85JZW6284R)\" \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"\n    ditto -c -k --sequesterRsrc --keepParent \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Volumes/Homeshare/Xcode/gflash/upload/gflash.zip\"\n\nfi\n\nif [ -d \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\" ]; then\n    rm -r \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\"\nfi\n\ncp -a \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Users/$SYS_USER/Desktop/.\"\ncodesign --force --deep --sign \"Apple Development: s.lamprecht@sl-soft.de (85JZW6284R)\" /Users/$SYS_USER/Desktop/\"${PRODUCT_NAME}.app\"\n\nexit 0\n";
+		};
+		2ACABC9D2D05CDD9005204BC /* Publish */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Publish;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nbash /Volumes/Homeshare/Xcode/gflash/push.command\n\nexit 0\n";
 		};
 		2AD1FDE02CF8A9A800EB0DBE /* Bundle dylibs */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -284,7 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#Requires on ARM:\n#/opt/homebrew/bin/brew install dylibbundler flashrom\n#arch -x86_64 /usr/local/bin/./brew install flashrom\n\nbin=\"flashrom\"\ndest_path=\"$PROJECT_DIR/G-Flash/bin\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/bin\"\nx86_path=\"/usr/local/bin\"\n\ncd \"$dest_path\"\nmkdir x86 arm\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\ndylibbundler -of -cd -b -x \"$bin\"_arm -d arm -p @executable_path/\n\ndylibbundler -of -cd -b -x \"$bin\"_x86 -d x86 -p @executable_path/\n\ncd arm\n\nfor a in *.dylib; do lipo \"$a\" ../x86/\"$a\" -output ../\"$a\" -create; done\n\ncd ..\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm -r x86 arm \"$bin\"_*\n";
+			shellScript = "#Requires on ARM:\n#/opt/homebrew/bin/brew install dylibbundler flashrom\n#arch -x86_64 /usr/local/bin/./brew install flashrom\n\nbin=\"flashrom\"\ndest_path=\"$PROJECT_DIR/G-Flash/bin\"\n\nexport PATH=\"/opt/homebrew/bin:$PATH\"\narm_path=\"/opt/homebrew/sbin\"\nx86_path=\"/usr/local/sbin\"\n\ncd \"$dest_path\"\nmkdir x86 arm\n\ncp \"$arm_path\"/\"$bin\" \"$bin\"_arm\ncp \"$x86_path\"/\"$bin\" \"$bin\"_x86\n\ndylibbundler -of -cd -b -x \"$bin\"_arm -d arm -p @executable_path/\n\ndylibbundler -of -cd -b -x \"$bin\"_x86 -d x86 -p @executable_path/\n\ncd arm\n\nfor a in *.dylib; do lipo \"$a\" ../x86/\"$a\" -output ../\"$a\" -create; done\n\ncd ..\n\nlipo \"$bin\"_arm \"$bin\"_x86 -output \"$bin\" -create\n\nrm -r x86 arm \"$bin\"_*\n\nexit 0\n";
 		};
 		2AD1FE272CF8B18E00EB0DBE /* lipo 7zz */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -352,6 +388,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2ACABC9A2D05CDD6005204BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2ACABC9B2D05CDD6005204BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		2AD1FDDD2CF8A98B00EB0DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,11 +543,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "G-Flash/G-Flash.entitlements";
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 107;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 108;
+				DEVELOPMENT_TEAM = 4ATFWV7M4B;
 				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "G-Flash/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -507,8 +559,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/G-Flash/bin",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
-				MARKETING_VERSION = 1.0.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -522,11 +574,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "G-Flash/G-Flash.entitlements";
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 107;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 108;
+				DEVELOPMENT_TEAM = 4ATFWV7M4B;
 				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "G-Flash/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -538,8 +590,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/G-Flash/bin",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
-				MARKETING_VERSION = 1.0.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = gflash.slsoft.de;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -550,6 +602,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2ACABC9C2D05CDD6005204BC /* Build configuration list for PBXAggregateTarget "Publish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ACABC9A2D05CDD6005204BC /* Debug */,
+				2ACABC9B2D05CDD6005204BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2AD1FDDF2CF8A98B00EB0DBE /* Build configuration list for PBXAggregateTarget "Bundle Libs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
